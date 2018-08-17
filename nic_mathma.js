@@ -130,7 +130,7 @@ function update_grid (pointset) {
     if (pointset == "map") {
         for (r = 0; r < circle_pointsets.length; r++) {
             for (p = 0; p <circle_pointsets[r].length; p++) {
-                var rgb_val = "rgb(0,0," + (255 * (1 - r/max_radius)).toString() + "," + (255 * (r/max_radius)).toString() + ")";
+                var rgb_val = "rgb(0," + (255 * (1 - r/max_radius)).toString() + "," + (255 * (r/max_radius)).toString() + ")";
                 $('#' + circle_pointsets[r][p]).attr("style", "fill:" + rgb_val);
             }
         }
