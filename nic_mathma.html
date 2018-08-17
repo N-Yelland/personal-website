@@ -1,0 +1,71 @@
+<!DOCTYPE = html>
+<html>
+    
+    <head>
+        <title>Knight's Move Metric</title>
+    
+        <style>
+            svg .rects:hover { 
+                //fill: #111;
+                stroke-width:1;
+                stroke:rgb(0,0,0)
+            }
+
+            .active {
+                fill: #33f;
+            }
+            
+            [data-status="selected"] {
+                stroke:rgb(255,0,0)
+            }
+
+            .random{
+                stroke-width:2;
+                stroke:#f00;
+            }
+
+            svg .rects { 
+              transition: 50ms;
+              transition-timing-function: ease-in-out;
+              -webkit-transition: 50ms;
+              -webkit-transition-timing-function: ease-in-out;
+            }
+        </style>
+    </head>
+
+    <body>
+        Below is an attempt at demonstrating the Knight's Move Metric, a metric in which the distance between two
+        points is the minium number of Knight's moves needed to get from one to the other.
+
+
+        <div id="drawing" style='margin:14px'>
+        </div>
+        
+        <p>
+            <b>Radius:</b>
+            <button onclick="change_radius(-1)">-</button>
+            <input type="text" id="radius_value" size="1" onchange="change_radius(0);">
+            <button onclick="change_radius(1);">+</button>
+        </p>
+
+        <p>
+            The metric can also be defined for any L-move piece. Enter your own L-move below:<br>
+            <input type="text" id="a" maxlength="2" size="1" onchange="validate()"> &times; 
+            <input type="text" id="b" maxlength="2" size="1" onchange="validate()">
+            <span id="error_msg" style="color:red"></span>
+        </p>
+        
+        <p>
+            <button onclick="clear_grid()">Clear Grid</button>
+            <button onclick="update_grid('map')">Show Heatmap</button>
+        </p>
+
+        <span id="hover_dist"></span>
+        <span id="select_dist" style="color:red"></span>
+
+        <script src="svg.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="nic_mathma.js"></script>
+
+    </body>
+</html>
