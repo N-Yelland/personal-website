@@ -1,3 +1,5 @@
+```python
+
 ###  0. Import relevant modules:
 #    tkinter for GUI
 #    random for CPU's random choices
@@ -382,3 +384,5 @@ def launchcode():
     if firstmove == "CPU":
         computer_move(gameState)
 launchcode()
+
+```
