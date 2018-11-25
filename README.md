@@ -5,4 +5,4 @@ Full of maths things
 
 [Notakto Code](https://nicyelland.com/notakto_annotated)
 
-[Quaternions - Python Class](https://nicyelland.com/quaternions)
+[Quaternions - Python Class]((https://nicyelland.com/quaternions)
