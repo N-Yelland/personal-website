@@ -1,4 +1,4 @@
-#Quarternions
+# Quarternions
 def addc(pc,qc):
    """addc(pc,qc): adds the lists pc and qc as polynomials"""
    if len(pc) < len(qc):
