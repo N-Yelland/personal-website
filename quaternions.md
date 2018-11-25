@@ -1,3 +1,5 @@
+```python
+
 # Quarternions
 def addc(pc,qc):
    """addc(pc,qc): adds the lists pc and qc as polynomials"""
@@ -64,3 +66,4 @@ class Qtrn:
         q2 = self._c
         #invert q2 and then return q1 * inverse(q2)
         #incomplete!
+       ```
