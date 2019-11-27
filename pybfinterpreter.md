@@ -1,6 +1,6 @@
 # Python Brainfuck Interpreter
 
-```
+```python
 """
 Brainfuck Compiler and Interpreter
 
