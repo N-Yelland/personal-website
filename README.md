@@ -8,3 +8,5 @@ Full of maths things
 [Quaternions - Python Class](https://nicyelland.com/quaternions)
 
 [Python BF Interpreter](https://nicyelland.com/pybfinterpreter)
+
+[Heap Split Nim](https://nicyelland.com/heapsplitnim)
