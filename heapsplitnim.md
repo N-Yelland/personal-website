@@ -21,9 +21,14 @@ def run(S):
             btns[i][c] = tk.Button(app, height=1, width=2, text = '',
                 command = lambda x=id: press(x))
             btns[i][c].grid(row = i+1, column = c, padx=1, pady=1)
+    submit.config(text='CPU Start', state=tk.ACTIVE)
+    submit.grid()
+    msg.grid_forget()
     game.mainloop()
 
 def update_selection(CPU=False,move=True):
+    if submit['text'] != 'Submit':
+        submit.config(text = 'Submit', state=tk.DISABLED)
     new_S = [0]
     for row in btns:
         if new_S[-1] != 0:
@@ -43,6 +48,7 @@ def btn(btn_id):
     return btns[btn_id[0]][btn_id[1]]
 #·
 def press(ID):
+    submit.config(text='Submit', state=tk.ACTIVE)
     if btn(ID)['text'] in ['','-']:
         btn(ID).config(text = '+')
         for i,row in enumerate(btns):
@@ -63,6 +69,7 @@ def press(ID):
                     nbours += 1
         if nbours == 0:
             btn(ID).config(text = '')
+            submit.config(state=tk.DISABLED)
             update_selection(move=False)
         elif nbours == 1:
             btn(ID).config(text = '-')
@@ -96,6 +103,9 @@ def cpu_move(S):
         #print("CPU cannot find winning move")
     else:
         print("CPU Wins!")
+        submit.grid_forget()
+        msg.config(text = 'CPU Wins!')
+        msg.grid()
         return None
     random.shuffle(move[1])
     a,b,c = move[0], move[1][0], move[1][1]
@@ -128,16 +138,45 @@ def cpu_move(S):
     
     if all([s == 'X' for s in stringS]):
         print("Human Wins!")
-        
-    
-def reset():
-    app.destroy()
-    print("====RESET====")
-    run(S_0)
+        submit.grid_forget()
+        msg.config(text = 'Human Wins!')
+        msg.grid()
 
+def validate(parent,string):
+    # checking if string is of integer list format
+    try:
+        lst = [n for n in string.split(',')]
+        if all([ (n.isdigit()) for n in lst]):
+            if all([int(n) != 0 for n in lst]):
+                parent.destroy()
+                reset(S=[int(n) for n in lst])
+            else:
+                int('1.1')
+    except:
+        alert = tk.Toplevel(parent)
+        error = tk.Label(alert, text='Invalid Entry. Please try again.')
+        error.pack()
+
+def change_S():
+    window = tk.Toplevel(game)
+    instructions = 'Enter a series of integers separated by commas, each one is the number of boxes in each row of a new grid.'
+    txtmsg = tk.Label(window,text=instructions, wraplength=200, justify=tk.LEFT)
+    txtmsg.grid(row=1,column=1)
+    
+    new_S = tk.StringVar()
+    e = tk.Entry(window, textvariable=new_S)
+    submitbtn = tk.Button(window, text='Submit', command= lambda: validate(window,new_S.get()))
+    e.grid(row=2, column=1)
+    submitbtn.grid(row=2, column=2)
+       
 #GLOBAL VARIABLES
 S_0 = [1,2,5,7]
 btns = []
+
+def reset(S=S_0):
+    app.destroy()
+    print("====RESET====")
+    run(S)
 
 game = tk.Tk()
 game.title("HeapSplitNim")
@@ -149,15 +188,19 @@ subfooter = tk.Frame(game, bg="white")
 
 footer.grid(row=2, pady=10)        
 submit = tk.Button(footer, text="Submit", command=update_selection)
-submit.pack()
+submit.grid(row=1, column=1)
+msg = tk.Label(footer, text='', font='Helvetica 16 bold',bg='white')
+msg.grid(row=1, column=2)
 
 subfooter.grid(row=3, pady=5)
 resetbtn = tk.Button(subfooter, text="Reset", command=reset)
 resetbtn.grid(row=1,column=1,padx=5)
-newS = tk.StringVar()
-changeS = tk.Entry(subfooter, textvariable=newS)
-changeS.grid(row=1,column=2,padx=5)
+editbtn = tk.Button(subfooter, text="Setup", command=change_S)
+editbtn.grid(row=1,column=2,padx=5)
+quitbtn = tk.Button(subfooter, text="Quit", command=lambda: game.destroy())
+quitbtn.grid(row=1, column=3, padx=5)
 
 run(S_0)
+
 
 ```
