@@ -1,0 +1,36 @@
+<!DOCTYPE = html>
+<html>
+    
+    <head>
+        <title>Hangman</title>
+        <link rel="stylesheet" href="hangman.css">
+        
+    </head>
+    
+    <body>
+        <h1>Play Hangman!</h1>
+        
+        <div id="game">
+        
+            <div id="length-input">
+                Enter Length of Word:
+                <input type="number" min=1 id="length-input-box" step=1 value=1>
+                <button type="button" onclick="submitLength()">Submit</button>
+            </div>
+            
+            <div id="blanks-row">
+                <table id="blanks"></table>
+            </div>
+            
+            <div id="guess-row">
+                <div id="guess-msg">I guess...</div>
+                <button type="button" onclick="submitLetters()">Submit Letters</button>
+            </div>
+        
+        </div>
+        
+    </body>
+        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="hangman.js"></script>
+</html>
