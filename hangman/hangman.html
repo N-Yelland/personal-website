@@ -14,7 +14,7 @@
         
             <div id="length-input">
                 Enter Length of Word:
-                <input type="number" min=1 id="length-input-box" step=1 value=1>
+                <input type="number" min=1 max=25 id="length-input-box" step=1 value=1>
                 <button type="button" onclick="submitLength()">Submit</button>
             </div>
             
@@ -26,8 +26,21 @@
                 <div id="guess-msg">I guess...</div>
                 <button type="button" onclick="submitLetters()">Submit Letters</button>
             </div>
+            
+            <div id="final-guess">
+                <div id="final-guess-msg">I think your word is...</div>
+                <button onclick='startNewGame()'>Play Again</button>
+            </div>
         
         </div>
+        
+        <div>
+            <img id="image" src="images/0-fails.jpg" data-num=0>
+            <div id="guesses" width=50%></div>
+        </div>
+        
+        
+        
         
     </body>
         
