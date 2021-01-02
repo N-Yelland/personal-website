@@ -1,9 +1,4 @@
-/* eslint-env browser */
-
-// GLOBAL VARIABLES:
-var alph = "ABCDEFGHIHJLMNOPQRSTUVWXYZ"
-
-var game = document.getElementById("game")
+/* HANGMAN in JAVASCRIPT */
 
 // Get data from 'big_wordlist.txt'
 fetch('big_wordlist.txt')
@@ -15,6 +10,7 @@ fetch('big_wordlist.txt')
         .split(/\r?\n/)
         .map(word => word.toUpperCase());
     
+    var alph = "ABCDEFGHIHJLMNOPQRSTUVWXYZ"
     // filter out all words that contain characters not present in alph
     // full_dict contains all words
     full_dict = raw_dict.filter(function(word){
@@ -31,6 +27,7 @@ function show(elementid) {
 
 function startNewGame() {
     // hides all objects
+    var game = document.getElementById("game")
     Array.from(game.children).forEach(child => child.classList.add('hidden'));
     hide('guesses');
     // unhide length-input
