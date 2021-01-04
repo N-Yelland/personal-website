@@ -38,7 +38,9 @@ function startNewGame() {
 }
 
 function submitLength() {
-    var length = document.getElementById('length-input-box').value;
+    
+    //length of word, global variable
+    length = parseInt(document.getElementById('length-input-box').value);
     
     // stops image loop
     clearInterval(imgloop);
@@ -95,11 +97,15 @@ function getMatches(wordlist, pattern, guesses) {
 
 function rankChar(char, wordlist) {
     // returns 'rank' for how good a guess the letter char is, i.e: how close
-    // the proportion of words in wordlist that contain char is to 50/50
+    // the proportion of words in wordlist that contain char is to p = L/(L+1)
+    // where L is the length of the word
     // lower rank is better, 0 is ideal.
     
     var n = wordlist.reduce((a,v) => v.includes(char) ? a + 1 : a, 0);
-    return Math.abs(n/wordlist.length - 0.5);
+    var p = length/(length + 1);
+
+    return Math.abs(p - n/wordlist.length);
+    
 }
 
 function makeGuess(wordlist){
@@ -115,7 +121,7 @@ function makeGuess(wordlist){
             msg.innerHTML = 'I think your word is <span class="blue">'+ wordlist[0] + '</span>';
             
             var letters = Array.from(document.getElementById('top-row').children);
-            for (i=0; i < letters.length; i++) {
+            for (i=0; i < length; i++) {
                 if (letters[i].innerHTML == '_') {
                     letters[i].innerHTML = '<span class="blue">' + wordlist[0][i] + '</span>';
                 }
@@ -169,7 +175,7 @@ function submitLetters() {
     // update html
     var letters = Array.from(document.getElementById('top-row').children);
     var hit = false
-    for (i=0; i < letters.length; i++) {
+    for (i=0; i < length; i++) {
         if (letters[i].children.length > 0) {
             word[i] = letters[i].children[0].innerHTML;
             if (!(word[i] == '_')) {
