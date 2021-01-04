@@ -10,7 +10,7 @@ fetch('big_wordlist.txt')
         .split(/\r?\n/)
         .map(word => word.toUpperCase());
     
-    var alph = "ABCDEFGHIHJLMNOPQRSTUVWXYZ"
+    var alph = "ABCDEFGHIHJKLMNOPQRSTUVWXYZ"
     // filter out all words that contain characters not present in alph
     // full_dict contains all words
     full_dict = raw_dict.filter(function(word){
@@ -105,7 +105,6 @@ function rankChar(char, wordlist) {
     var p = length/(length + 1);
 
     return Math.abs(p - n/wordlist.length);
-    
 }
 
 function makeGuess(wordlist){
@@ -135,7 +134,6 @@ function makeGuess(wordlist){
         var N = wordlist.length;
         console.log('Considering ' + N + ' words, expecting to need '
                     + Math.round(Math.log2(N)) + ' guesses.');
-        
         // characters that can be guessed
         var charset = new Set(wordlist.join('').split(''));
         var pos_chars = Array.from(charset).filter(char => !guesses.includes(char));
