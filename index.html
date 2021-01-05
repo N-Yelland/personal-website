@@ -1,4 +1,53 @@
 <!DOCTYPE = html>
 <html>
-    test
+    <head>
+        <title>Nicholas Yelland</title>
+        <link rel="stylesheet" href="style.css">
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div class="ext" src="header.html"></div>
+        
+            
+            <table id="menu-boxes">
+                <tr>
+                    <td>Code</td>
+                    <td>Tutoring</td>
+                    <td>Maths</td>
+                </tr>
+                <tr>
+                    <td>Music</td>
+                    <td>CV</td>
+                    <td>Quizzes</td>
+                </tr>
+            </table>
+           
+            <div class="ext" src="footer.html"></div>
+            
+        </main>
+    </body>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        
+        // gets html from src for each object in class 'ext'
+        $(".ext").each(function(index) {
+            var url = $(this).attr("src");
+            fetch(url).then(response => {return response.text();})
+                .then(data => {
+                    $(this).html(data);
+                    $("#home-link").addClass("current");
+                });
+        });
+        
+        // gets background images for table 'menu-boxes'
+        $("#menu-boxes td").each(function(index) {
+            var css_img_url = "url(images/"+$(this).text()+".jpg)";
+            $(this).css("background-image", css_img_url);
+        });
+        
+    </script>
+    
 </html>
