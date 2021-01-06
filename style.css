@@ -1,11 +1,10 @@
-
-body{
+body {
     background-color: darkgray;
     font-family: garamond;
     margin: 0px;
 }
 
-main{
+main {
     background-color: white;
     width: 66vw;
     margin: auto;
@@ -22,28 +21,28 @@ main{
     letter-spacing: 5pt;
 }
 
-#title h2{
+#title h2 {
     font-weight: normal;
     margin-top: 0vh;
     padding-top: 0vh;
     font-size: 16px;
 }
 
-a:any-link{
+a:any-link {
     color: inherit;
     text-decoration: none;
 }
 
-#title a:hover{
+#title a:hover {
     text-decoration: underline;
 }
 
-#navbar li a{
+#navbar li a {
     display: inline-block;
     padding: 5px 15px 5px 15px;
 }
 
-li .current{
+li .current {
     color: grey;
 }
 
@@ -51,7 +50,7 @@ li .current{
     background-color: whitesmoke;
 }
 
-#navbar ul{
+#navbar ul {
     list-style-type: none;
     display: flex;
     justify-content: center;
@@ -60,19 +59,19 @@ li .current{
     margin: 0px;
 }
 
-#navbar hr{
+#navbar hr {
     height: 1px;
     background-color: gray;
     border-width: 0px;
     margin: 0px;
 }
 
-#menu-boxes{
+#menu-boxes {
     margin: auto;
     border-spacing: 20px;
 }
 
-#menu-boxes td{
+#menu-boxes td {
     width: 15vw;
     text-align: center;
     height: 9vw;
@@ -90,15 +89,32 @@ li .current{
     transition: all .6s;
 }
 
-#menu-boxes td:hover{
+#menu-boxes td:hover {
     border: 0vw solid rgba(0,0,0,.25);
     transform: scale(1.1) 
 }
 
-div[src="footer.html"]{
+#quote {
+    margin: auto;
+    text-align: center;
+    font-style: oblique;
+    font-size: 2em;
+}
+
+#quote p {
+    font-style: normal;
+    text-align: right;
+    width: 50%;
+    margin: auto;
+    font-size: .75em;
+}
+
+div[src="footer.html"] {
     text-align: center;
     position: absolute;
     margin-left: auto;
     margin-right: auto;
     bottom: 2vh;
+    left: 0;
+    right: 0;
 }
