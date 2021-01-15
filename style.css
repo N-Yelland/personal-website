@@ -2,9 +2,12 @@ body {
     background-color: darkgray;
     font-family: garamond;
     margin: 0px;
+    z-index: -2;
+    position: sticky;
 }
 
 main {
+    display: none;
     background-color: white;
     width: 66vw;
     margin: auto;
@@ -33,7 +36,7 @@ a:any-link {
     text-decoration: none;
 }
 
-#title a:hover {
+a:hover {
     text-decoration: underline;
 }
 
@@ -104,7 +107,7 @@ li .current {
 #quote p {
     font-style: normal;
     text-align: right;
-    width: 50%;
+    width: 60%;
     margin: auto;
     font-size: .75em;
 }
@@ -117,4 +120,19 @@ div[src="footer.html"] {
     bottom: 2vh;
     left: 0;
     right: 0;
+}
+
+#bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+}
+
+#bg .cells[data-status="dead"] {
+    fill: darkgray;
+}
+
+#bg .cells[data-status="alive"] {
+    fill: white;
 }

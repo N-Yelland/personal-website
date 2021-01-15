@@ -1,6 +1,7 @@
 <!DOCTYPE = html>
 <html>
     <head>
+        
         <title>Nicholas Yelland</title>
         <link rel="stylesheet" href="style.css">
         
@@ -31,27 +32,13 @@
             <div class="ext" src="footer.html"></div>
             
         </main>
+        
+        <div id="bg"></div>
+        
     </body>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script>
-        
-        // gets html from src for each object in class 'ext'
-        $(".ext").each(function(index) {
-            var url = $(this).attr("src");
-            fetch(url).then(response => {return response.text();})
-                .then(data => {
-                    $(this).html(data);
-                    $("#home-link").addClass("current");
-                });
-        });
-        
-        // gets background images for table 'menu-boxes'
-        $("#menu-boxes td").each(function(index) {
-            var css_img_url = "url(images/"+$(this).text()+".jpg)";
-            $(this).css("background-image", css_img_url);
-        });
-        
-    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="homepage.js"></script>
     
 </html>
