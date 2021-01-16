@@ -13,6 +13,8 @@ main {
     height: 100vh;
     box-shadow: 0px 0px 3px 3px gray;
     padding: 0em 1em 0em 1em;
+    position: relative;
+    transition: visibility 6s;
 }
 
 #title {
@@ -35,7 +37,7 @@ a:any-link {
     text-decoration: none;
 }
 
-a:hover {
+:not(li)>a:hover {
     text-decoration: underline;
 }
 
@@ -132,6 +134,36 @@ div[src="footer.html"] {
     fill: darkgray;
 }
 
+#bg .cells {
+    transition: stroke 2s;
+}
+
+#bg .cells:hover {
+        stroke: lightgrey !important;
+}
+
 #bg .cells[data-status="alive"] {
     fill: white;
+}
+
+#hide-main-btn {
+    position: absolute;
+    top: 0;
+    right: 16vw;
+    padding: 5pt;
+    z-index: 2;
+}
+
+.arrow {
+    fill: lightgrey;
+    transition: fill .6s;
+    transform-origin: inherit;
+}
+
+.arrow:hover{
+    fill: grey;
+}
+
+.arrow.flipped {
+    transform: rotate(-180deg);
 }

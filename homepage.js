@@ -36,8 +36,9 @@ $(document).ready(function() {
     var h = window.innerHeight;
 
     xnum = 100;
+    refresh_rate = 100; //ms
     var initDensity = 0.33;
-    var refresh_rate = 100; //ms
+    
     
     var squareWidth = w / xnum;
     ynum = Math.ceil(h / squareWidth);
@@ -65,24 +66,34 @@ $(document).ready(function() {
     isMouseDown = false
     $('body').mousedown(function() {
         isMouseDown = true;
-        clearInterval(bg_anim);
     })
     .mouseup(function() {
         isMouseDown = false;
-        bg_anim = setInterval(update, refresh_rate)
     });
     
     
     $(".cells").mouseover(function() {
         if (isMouseDown) {
-            $(this).attr("data-status","alive");
+            toggle_life($(this));
         }
     });
     
-    bg_anim = setInterval(update, refresh_rate)
+    $(".cells").click(function() {
+        toggle_life($(this));
+    });
+    
+    window.anim = setInterval(update, refresh_rate)
+    isPaused = false;
     
 });
 
+function toggle_life(cell){
+    if (cell.attr("data-status") == "alive") {
+        cell.attr("data-status", "dead");
+    } else {
+        cell.attr("data-status", "alive");
+    }
+}
 
 function update() {
     $(".cells").each(function(index) {
@@ -114,3 +125,31 @@ function update() {
         }
     });
 }
+
+function togglemain() {
+    $("main").toggle();
+    $("#gol-tools").toggle();
+    if ($(".arrow").hasClass("flipped")) {
+        $(".arrow").removeClass("flipped");
+    } else {
+        $(".arrow").addClass("flipped");
+    }
+}
+
+function clear_bg() {
+    $(".cells").each(function(index) {
+        $(this).attr("data-status", "dead");
+    });
+}
+
+$("#play-pause").click(function(){
+    if (isPaused) {
+        window.anim = setInterval(update, refresh_rate)
+        isPaused = false;
+        $(this).html("Pause");
+    } else {
+        clearInterval(window.anim);
+        isPaused = true;
+        $(this).html("Play");
+    }
+});

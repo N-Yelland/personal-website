@@ -7,9 +7,19 @@
         
     </head>
     <body>    
+        <div id="gol-tools" hidden>
+            <button onclick="clear_bg()">Clear</button>
+            <button id="play-pause">Pause</button>
+        </div>
+            
+        <svg id="hide-main-btn" height="30" width="30">
+                <polygon points="0,20 20,20 10,0" class="arrow" onclick="togglemain()"/>
+            </svg>
+        
         <main>
             
             <div class="ext" src="header.html"></div>
+            
         
             <table id="menu-boxes">
                 <tr>
@@ -31,9 +41,12 @@
             
             <div class="ext" src="footer.html"></div>
             
+            
+            
         </main>
         
         <div id="bg"></div>
+        
         
     </body>
     
