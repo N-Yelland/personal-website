@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Nicholas Yelland</title>
+        <link rel="stylesheet" href="style.css">
+        
+        <!-- KaTeX Loading...-->    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                  // customised options
+                  // • auto-render specific keys, e.g.:
+                  delimiters: [
+                      {left: '$$', right: '$$', display: true},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ],
+                  // • rendering keys, e.g.:
+                  throwOnError : false
+                });
+            });
+        </script>
+        
+        <style>
+            .graph {
+                margin: auto;
+                width: 50%;
+                position: relative;
+            }
+            
+            .graph iframe{
+                display: block;
+                position: relative;
+                z-index: 1;    
+            }
+            
+            .graph::before{
+                content: "";
+                position: absolute;
+                z-index: 2;
+                box-shadow: inset 0 0 10px #000000;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                pointer-events: none;
+                width: 500px;
+                height: 400px;
+            }
+            
+            .graphtitle {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            
+            .graphtext {
+                margin: 0 50px;
+                margin-top: 20px;
+                font-size: 1.1em;
+            }
+            
+            .katex {
+                font-size: 1.1em;
+            }
+            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+            
+            img {
+                margin: auto;
+                display: block;
+                padding-bottom: 20px;
+            }
+            
+            .graphtext a {
+                font-weight: bold;
+                color: midnightblue;
+            }
+            
+            .img-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .img-row img {
+                flex 33.3%;
+            }
+            
+            
+        </style>
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div id="header" class="ext" src="header.html"></div>
+            
+            <h1>Desmos Interactive Graphs</h1>
+            
+            <h2 class="graphtitle">Order from Chaos</h2>
+            <div class="graph">
+                <iframe src="https://www.desmos.com/calculator/dgle24vls5?embed" width="500px" height="400px" frameborder=0></iframe>
+            </div>
+            
+            <div class="graphtext">
+                Before playing with the slider above, have a think about the following process:
+                <ol>
+                    <li>Pick a random point $x_0$ inside a triangle</li>
+                    <li>Choose a random vertex of the triangle</li>
+                    <li>Draw a line between $x_0$ and your chosen vertex</li>
+                    <li>Label the midpoint of this line $x_1$</li>
+                    <li>Repeat from step 2, with $x_1$ replacing $x_0$ and so on for $x_2$, $x_3$,...</li>
+                </ol>
+                
+                <p>If you show all the points $x_0, x_1,\dots, x_N$ for some large number $N$, what do you think you will see? Will there be a pattern?</p>
+                
+                <p>Pick a random point by dragging the point above, and use the slider to change $N$ to see what you get. Scroll down to find out more.</p>
+                
+                <img src="images/sierpinski%20triangle.png" width="75%">
+                
+                <p>Quite unexpectedly, a regular pattern emerges from these random choices. No matter which point you chose to begin with, nor the order in which you choose the vertices, the result quickly begins to resemble the fractal pattern shown above, called a <a href="https://en.wikipedia.org/wiki/Sierpi%C5%84ski_triangle">Sierpiński triangle</a>.<p>
+                
+                <p>The image above was generated by repeating the process 100000 times. It actually began with a point outside the triangle - indeed, you'll get the same result starting with any point, as long as you continue the process long enough. Why do you think this works?</p>
+                
+                <p>We can investigate this further! What happens when we use a square instead of a triangle?</p>
+                
+            </div>
+            
+            <div class="graph">
+                <iframe src="https://www.desmos.com/calculator/obsbpwhrno?embed" width="500px" height="400px" frameborder=0></iframe>
+            </div>
+            
+            <div class="graphtext">
+                <p> Spot any patterns for this one?</p>
+                <p> No. Me neither. It's just random noise, which is arguably interesting in its own right, but if it's fractals we're after, we just need to tweak the rules a little bit. When choosing the vertices, we'll make sure to never pick the same vertex twice in a row. Have a look at the pattern that this creates...</p>
+            </div>
+            
+            <div class="graph">
+                <iframe src="https://www.desmos.com/calculator/qmqky9rdnj?embed" width="500px" height="400px" frameborder=0></iframe>
+            </div>
+            
+            <div class="graphtext">
+                <p>There's definitely a pattern emerging here, though we might need a finer resolution to see it, so let's use 100000 points again...</p>
+                
+                <img src="images/fractalsquare.png" width="50%">
+                
+                <p>These fractals have some really intricate and beatiful structure, once of many examples where regularity can emerge from randomness in mathematics. This method of generating fractals from random iterated functions is called the <a href="https://en.wikipedia.org/wiki/Chaos_game">chaos game</a>.</p>
+                
+                <p>If you want to see how I created these images and have a play with some other shapes and effects, take a look at my <a href="https://colab.research.google.com/drive/1p_Pn7K15IpuDUKb7u3LU4Z6LAlsrSFvP?usp=sharing">Python code</a> on Google Colab. What other interesting things can you find?</p>
+                
+                <div class="img-row">
+                    <img src="images/fractalsquare2.png" width="33%">
+                    <img src="images/pentafractal.png" width="33%">
+                    <img src="images/fractalsnowflake.png" width="33%">
+                </div>
+                
+            </div>
+            
+            <div class="ext" src="footer.html"></div>
+
+        </main>
+        
+        <div id="bg"></div>
+        
+        
+    </body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="homepage.js"></script>
+    <script src="background.js"></script>
+</html>
