@@ -29,28 +29,15 @@
         <style>
             .graph {
                 margin: auto;
-                width: 50%;
-                position: relative;
+                width: 100%;
+                overflow: hidden;
+                height: 750px;
             }
             
             .graph iframe{
                 display: block;
                 position: relative;
-                z-index: 1;    
-            }
-            
-            .graph::before{
-                content: "";
-                position: absolute;
-                z-index: 2;
-                box-shadow: inset 0 0 10px #000000;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                pointer-events: none;
-                width: 500px;
-                height: 400px;
+                top: -150px;
             }
             
             .graphtitle {
@@ -94,6 +81,12 @@
                 flex 33.3%;
             }
             
+            .vid {
+                margin: auto;
+                width: 50%;
+                padding: 20px;
+            }
+            
             
         </style>
         
@@ -106,12 +99,24 @@
             <h1 class="graphtitle">Modular Multiplication Circles</h1>
             
             <div class="graph">
-                <iframe src="https://www.desmos.com/calculator/dgle24vls5?embed" width="500px" height="400px" frameborder=0></iframe>
+                <iframe src="https://www.desmos.com/calculator/qn1ka1jyy9?embed" width="100%" height="900px" frameborder=0></iframe>
             </div>
             
-            <div class="graphtext"></div>
-                
-            <div class="ext" src="../footer.html"></div>
+            <div class="graphtext">This is a desmos-built interactive demonstration of the concept covered in this Mathologer video:</div>
+            
+            <div class="vid">
+                <iframe width="100%" height="315" src="https://www.youtube.com/embed/qhbuKbxJsk8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            
+            <div class="graphtext">
+                <h3>What's going on?</h3>
+                <ul>
+                    <li>Take $n$ evenly-spaced points on a circle, and label them going round starting with $0, 1, 2, \dots, n-1$.</li>
+                    <li>For the point labelled $k$, connect it with a straight line to the point labelled $m\cdot k$, where this multiplication is done modulo $n$.</li>
+                    <li>Repeating this for all the $n$ points, some interesting patterns emerge...</li>
+                </ul>
+            </div>
+            
 
         </main>
         
