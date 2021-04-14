@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Nicholas Yelland</title>
+        <link rel="stylesheet" href="style.css">
+        
+        
+        <style>            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+            
+            h1 {
+                text-align: center;
+            }
+            
+            ul.list {
+                list-style-type: none;
+                padding: 0;
+            }
+            
+            ul.list li {
+                margin: auto;
+                padding: 5px;
+                border: 1px solid grey;
+                border-bottom: 0px;
+                width: 50%;
+                
+                text-align: center;
+                transition: background .5s;
+                font-size: 1.5em;
+            }
+            ul.list li:hover {
+                background: whitesmoke;
+            }
+            
+            ul.list li:last-child {
+                border-bottom: 1px solid grey;
+            }
+            
+            ul.list li a {
+                display: block;
+            }
+            
+        </style>
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div id="header" class="ext" src="header.html"></div>
+            
+            <h1>Maths Content</h1>
+            
+            <ul class="list">    
+                <li><a href="maths/graphs.html">Order from Chaos</a></li>
+                <li><a href="maths/kmm.html">Knight's Move Metric</a></li>
+                <li>Modular Multiplication Circles</li>
+                <li>Interesting Problems</li>
+            </ul>
+            
+            <div class="ext" src="footer.html"></div>
+
+        </main>
+        
+        <div id="bg"></div>
+        
+        
+    </body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="homepage.js"></script>
+    <script src="background.js"></script>
+</html>

@@ -3,29 +3,30 @@
 $(document).ready(function() {
 	
     var w = window.innerWidth;
-    var h = $(document).height()+350;
+    var h = window.innerHeight;
     console.log(h)
     
-    xnum = 50;
-    refresh_rate = 100; //ms
+    xnum = 100;
+    refresh_rate = 1000; //ms
     var initDensity = 0.33;
     
     
-    var squareWidth = w / xnum;
+    var squareWidth = 0.02 * w;
     ynum = Math.ceil(h / squareWidth);
     
 	// create svg drawing
-	var draw = SVG("bg").size(w, h);
+    var draw = SVG("bg").size("100%", "100%");
     for (var i = 0; i < xnum; i++) {
 		for (var j = 0; j < ynum; j++) {
-			draw.rect(squareWidth-1, squareWidth-1).attr({
-                x: squareWidth*i,
-                y: squareWidth*j,
+			draw.rect("2vw", "2vw").attr({
+                x: 2*i + "vw",
+                y: 2*j + "vw",
                 id: 'c-'+i+'-'+j,
                 class: 'cells',
             });
 		}
 	}
+    
     $(".cells").each(function (index) {
         if (Math.random() < initDensity) {
             $(this).attr("data-status","alive");
@@ -51,6 +52,7 @@ $(document).ready(function() {
     
     $(".cells").click(function() {
         toggle_life($(this));
+        console.log($(this).offset())
     });
     
     window.anim = setInterval(update, refresh_rate)
@@ -91,9 +93,14 @@ function update() {
         var status = $(this).attr("data-status");
         if (nbrs == 3 || (nbrs == 2 && status == "alive")) {
             $(this).attr("data-status","alive");
+            $(this).attr("data-time-dead", 0);
         } else {
             $(this).attr("data-status","dead");
+            var t = $(this).attr("data-time-dead");
+            $(this).attr("data-time-dead", parseInt(t)+1);
         }
+        //var f = "#" + Math.max((200-(t+1)*5),128).toString(16).repeat(3);
+        //$(this).css("fill", f);
     });
 }
 

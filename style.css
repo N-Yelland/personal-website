@@ -37,7 +37,7 @@ a:any-link {
     text-decoration: none;
 }
 
-:not(li)>a:hover {
+:not(li, td)>a:hover {
     text-decoration: underline;
 }
 
@@ -124,26 +124,29 @@ div[src="footer.html"] {
 }
 
 #bg {
-    position: absolute;
+    position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     z-index: -1;
 }
 
 #bg .cells[data-status="dead"] {
-    fill: darkgray;
+    fill: darkgrey;
 }
 
 #bg .cells {
-    transition: stroke 2s;
+    transition: fill .25s;
+    position: fixed;
 }
 
 #bg .cells:hover {
-        stroke: lightgrey !important;
+    stroke: lightgrey !important;
 }
 
 #bg .cells[data-status="alive"] {
-    fill: white;
+    fill: lightgrey;
 }
 
 #hide-main-btn {
