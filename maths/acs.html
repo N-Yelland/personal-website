@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Affine Cipher Solver</title>
+        <link rel="stylesheet" href="../style.css">
+        
+        <!-- KaTeX Loading...-->    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                  // customised options
+                  // • auto-render specific keys, e.g.:
+                  delimiters: [
+                      {left: '$$', right: '$$', display: true},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ],
+                  // • rendering keys, e.g.:
+                  throwOnError : false
+                });
+            });
+        </script>
+        
+        <style>
+            .graph {
+                margin: auto;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .graph iframe{
+                display: block;
+                position: relative;
+            }
+            
+            .graphtitle {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            
+            .graphtext {
+                margin: 0 50px;
+                margin-top: 20px;
+                font-size: 1.1em;
+            }
+            
+            .katex {
+                font-size: 1.1em;
+            }
+            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+            
+            img {
+                margin: auto;
+                display: block;
+                padding-bottom: 20px;
+            }
+            
+            .graphtext a {
+                font-weight: bold;
+                color: midnightblue;
+            }
+            
+            .img-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .img-row img {
+                flex 33.3%;
+            }
+            
+            .vid {
+                margin: auto;
+                width: 50%;
+                padding: 20px;
+            }
+            
+            
+        </style>
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div id="header" class="ext" src="../header.html"></div>
+            
+            <h1 class="graphtitle">Affine Cipher Solver</h1>
+            
+            <div class="graph">
+                <iframe src="https://www.desmos.com/calculator/rnlmruyzon?embed" width="100%" height="500px" ></iframe>
+            </div>
+            
+            <div class="graphtext">
+                <h3>Notes:</h3>
+                <ul>
+                    <li>An alphabet with $N$ different letters can be represented by the $N$ non-negative integers less than $N$.</li>
+                    <li>An <b>affine cipher</b> takes each plain text letter represented by $x$ to the cipher letter represent by $y\equiv \alpha x +\beta\mod{N}$ where $\alpha,\beta$ are integers and $\alpha$ coprime to $N$.</li>
+                    <li> Given two letters of the plain text $x_1, x_2$ and their corresponding encrypted letters in the cipher text $y_1, y_2$ it is possible to 'crack the code' by finding the 'key' $(\alpha,\beta)$ - this solution is shown as the labelled <span style="color:rebeccapurple">purple</span> point $(\alpha,\beta)$</li>
+                    <li> A valid code should not give rise to multiple solutions.</li>
+                </ul>
+            </div>
+            
+
+        </main>
+        
+        <div id="bg"></div>
+        
+        
+    </body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../homepage.js"></script>
+    <script src="../background.js"></script>
+</html>

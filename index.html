@@ -4,7 +4,6 @@
         
         <title>Nicholas Yelland</title>
         <link rel="stylesheet" href="style.css">
-        <script data-ad-client="ca-pub-8511964115106803" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
         
     </head>
     <body>    
@@ -24,13 +23,13 @@
         
             <table id="menu-boxes">
                 <tr>
-                    <td>Code</td>
-                    <td>Tutoring</td>
+                    <td onclick="document.location.href='/code.html'">Code</td>
+                    <td onclick="not_ready_alert()">Tutoring</td>
                     <td onclick="document.location.href='/maths.html'">Maths</td>
                 </tr>
                 <tr>
                     <td>Music</td>
-                    <td>CV</td>
+                    <td onclick="document.location.href='/CV.pdf'">CV</td>
                     <td>Quizzes</td>
                 </tr>
             </table>
@@ -53,5 +52,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="homepage.js"></script>
     <script src="background.js"></script>
+    <script type="text/javascript">
+        function not_ready_alert(){
+            window.alert("Not quite ready! The follwinh content exists, but I haven't put it online yet:\n"
+                        +" - Tutoring\n"
+                        +" - Music\n"
+                        +" - Quizzes\n")
+        }
+    </script>
     
 </html>

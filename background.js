@@ -7,8 +7,8 @@ $(document).ready(function() {
     console.log(h)
     
     xnum = 100;
-    refresh_rate = 1000; //ms
-    var initDensity = 0.33;
+    refresh_rate = 500; //ms
+    var initDensity = 0.25;
     
     
     var squareWidth = 0.02 * w;
@@ -93,11 +93,9 @@ function update() {
         var status = $(this).attr("data-status");
         if (nbrs == 3 || (nbrs == 2 && status == "alive")) {
             $(this).attr("data-status","alive");
-            $(this).attr("data-time-dead", 0);
         } else {
             $(this).attr("data-status","dead");
-            var t = $(this).attr("data-time-dead");
-            $(this).attr("data-time-dead", parseInt(t)+1);
+
         }
         //var f = "#" + Math.max((200-(t+1)*5),128).toString(16).repeat(3);
         //$(this).css("fill", f);

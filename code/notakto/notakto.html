@@ -1,0 +1,50 @@
+<html>
+    
+    <head>
+        <title>Notakto</title>
+    
+        <style>
+            [data-status="empty"]:hover { 
+                //fill: #111;
+                stroke-width:2;
+                stroke:rgb(0,0,0);
+                box-shadow: 0 10px 20px #fff;
+            }
+            
+            body {
+                font-family: "Times New Roman", Times, serif;
+            }
+            
+            p, h1 {
+                margin: 0 10%;
+                padding-bottom: 20pt;
+            }
+            
+            button {
+                margin: auto;
+            }
+            
+        </style>
+    </head>
+
+    <body>
+        <h1>Notakto</h1>
+        <p>
+        Below is a game called "Notakto", in which players take tunrs to place stones in the circles.
+        To place a "stone", click an empty space. If three stones are placed in a row in a grid,
+        then it is removed. The player to remove the last grid loses.
+        </p>
+        
+        <p> You can find some python code which runs this game using the tkinter module <a href="/code/notakto_annotated.md">here</a>.</p>
+        
+        <div id="drawing" style="width: 100%; margin-left: 200pt "></div>
+        <div id="whose_turn"></div>
+        
+        <p><button onclick="reset_game()">Restart</button></p>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="notakto.js"></script>
+
+    </body>
+</html>

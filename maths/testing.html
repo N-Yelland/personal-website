@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Disease Testing</title>
+        <link rel="stylesheet" href="../style.css">
+        
+        <!-- KaTeX Loading...-->    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                  // customised options
+                  // • auto-render specific keys, e.g.:
+                  delimiters: [
+                      {left: '$$', right: '$$', display: true},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ],
+                  // • rendering keys, e.g.:
+                  throwOnError : false
+                });
+            });
+        </script>
+        
+        <style>
+            .graph {
+                margin: auto;
+                width: 100%;
+                overflow: hidden;
+            }
+            
+            .graph iframe{
+                display: block;
+                position: relative;
+            }
+            
+            .graphtitle {
+                text-align: center;
+                margin-bottom: 0;
+            }
+            
+            .graphtext {
+                margin: 0 50px;
+                margin-top: 20px;
+                font-size: 1.1em;
+            }
+            
+            .katex {
+                font-size: 1.1em;
+            }
+            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+            
+            img {
+                margin: auto;
+                display: block;
+                padding-bottom: 20px;
+            }
+            
+            .graphtext a {
+                font-weight: bold;
+                color: midnightblue;
+            }
+            
+            .img-row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .img-row img {
+                flex 33.3%;
+            }
+            
+            .vid {
+                margin: auto;
+                width: 50%;
+                padding: 20px;
+            }
+            
+            
+        </style>
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div id="header" class="ext" src="../header.html"></div>
+            
+            <h1 class="graphtitle">Disease Testing</h1>
+            
+            <div class="graph">
+                <iframe src="https://www.desmos.com/calculator/dbjpjgbdod?embed" width="100%" height="500px" ></iframe>
+            </div>
+            
+            <div class="graphtext">
+                <h3>Notes:</h3>
+                <ul>
+                    <li>The probability that you have the disease given a positive test result is calculated by $$P(D+|T+)=\frac{\text{False Positives}}{\text{Total Positives}}=\frac{ap}{ap+(1-a)(1-p)}$$ where $a$ is the accuracy, and $p$ the prevalence.</li>
+                    <li>In reality, the concept of accuracy is split into <b>sensitivity</b>, the proportion of the positive test results which correctly identify the disease, and <b>specificity</b> the proportion of negative test results that correctly identify the absence of the disease. The simplification used here assumes they are the same, but in general this is not the case!</li> 
+                </ul>
+            </div>
+            
+
+        </main>
+        
+        <div id="bg"></div>
+        
+        
+    </body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../homepage.js"></script>
+    <script src="../background.js"></script>
+</html>
