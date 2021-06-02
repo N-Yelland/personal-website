@@ -1,0 +1,136 @@
+{
+    "title": "Cryptic Crossword 1",
+    "size": [15, 15],
+    "description": "A brief Description",
+    "clues": [
+        {"loc": ["A", 0, 4],
+         "clue": "Creep a short distance?",
+         "answer": "INCH"},
+        {"loc": ["A", 0, 9],
+         "clue": "Leave the beach",
+         "answer": "STRAND"},
+        {"loc": ["A", 1, 0],
+         "clue": "It sounds like you besmirch the state",
+         "answer": "UTAH"},
+        {"loc": ["A", 2, 4],
+         "clue": "Rather the French didn't show for the tequila shot",
+         "answer": "QUITE"
+        },
+        {"loc": ["A", 2, 10],
+         "clue": "Fake friendliness without meeting first leads to anger",
+         "answer": "WRATH"
+        },
+        {"loc": ["A", 4, 0],
+         "clue": "Group of old birds try a rope each, roughly ten",
+         "answer": "ARCHAEOPTERYX"
+        },
+        {"loc": ["A", 6, 1],
+         "clue": "Fantastic, and initially really interesting comedy material",
+         "answer": "FABRIC"
+        },
+        {"loc": ["A", 6, 10],
+         "clue": "If returning before the finale makes you a devil...",
+         "answer": "FIEND"
+        },
+        {"loc": ["A", 7, 6],
+         "clue": "Mythical creature starts ruining our crops",
+         "answer": "ROC"
+        },
+        {"loc": ["A", 8, 0],
+         "clue": "From the Palatine?",
+         "answer": "LATIN"
+        },
+        {"loc": ["A", 8, 8],
+         "clue": "A foreign name's no longer on my back",
+         "answer": "EXONYM"
+        },
+        {"loc": ["A", 10, 2],
+         "clue": "Ad-hoc and filthy after Bob escapes from quicksand",
+         "answer": "QUICK AND DIRTY"
+        },
+        {"loc": ["A", 12, 0],
+         "clue": "Grab a bargin",
+         "answer": "STEAL"
+        },
+        {"loc": ["A", 12, 6],
+         "clue": "Blackbird?",
+         "answer": "RAVEN"
+        },
+        {"loc": ["A", 13, 11],
+         "clue": "Back up regularly, not just at the start, onto CDs!",
+         "answer": "BURN"
+        },
+        {"loc": ["A", 14, 0],
+         "clue": "The beginnings of life are possibly by Rome",
+         "answer": "EMBRYO"
+        },
+        {"loc": ["A", 14, 7],
+         "clue": "Charity members speak out",
+         "answer": "ALMS"
+        },
+        {"loc": ["D", 0, 0],
+         "clue": "Fair, while at the same time...",
+         "answer": "JUST AS"
+        },
+        {"loc": ["D", 0, 2],
+         "clue": "Simple language?",
+         "answer": "BASIC"
+        },
+        {"loc": ["D", 0, 6],
+         "clue": "Capital in America, ironically",
+         "answer": "CAIRO"
+        },
+        {"loc": ["D", 0, 13],
+         "clue": "Invest even what's left after expenses",
+         "answer": "NET"
+        },
+        {"loc": ["D", 0, 10],
+         "clue": "Castle flower to erupt on teacher",
+         "answer": "TOWER OF LONDON"
+        },
+        {"loc": ["D", 1, 8],
+         "clue": "It starts with some capital punishment?",
+         "answer": "SENTENCE"
+        },
+        {"loc": ["D", 2, 4],
+         "clue": "Drain equally, roughly every four years",
+         "answer": "QUADRENNIALLY"
+        },
+        {"loc": ["D", 2, 12],
+         "clue": "Worry a little about an unknown one: an alien",
+         "answer": "ANXIETY"
+        },
+        {"loc": ["D", 2, 14],
+         "clue": "Chases dogs",
+         "answer": "HOUNDS"
+        },
+        {"loc": ["D", 6, 2],
+         "clue": "Against what Spanish artefact?",
+         "answer": "ANTIQUE"
+        },
+        {"loc": ["D", 6, 6],
+         "clue": "Dishes criminal nothing out, very nearly",
+         "answer": "CROCKERY"
+        },
+        {"loc": ["D", 7, 0],
+         "clue": "The Arabic weapons should be warnings",
+         "answer": "ALARMS"
+        },
+        {"loc": ["D", 9, 14],
+         "clue": "Lost tabby, go nearby to find it",
+         "answer": "BYGONE"
+        },
+        {"loc": ["D", 10, 8],
+         "clue": "Shipment finally comes out from the Levant, around the central point",
+         "answer": "NAVEL"
+        },
+        {"loc": ["D", 10, 12],
+         "clue": "Space announced for sleep",
+         "answer": "RHEUM"
+        },
+        {"loc": ["D", 12, 1],
+         "clue": "Guy from Baltimore",
+         "answer": "TIM"
+        }
+    ]
+}

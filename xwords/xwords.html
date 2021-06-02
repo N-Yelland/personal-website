@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Nicholas Yelland</title>
+        <link rel="stylesheet" href="../style.css">
+        
+        
+        <style>            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+            
+            h1 {
+                text-align: center;
+            }
+            
+            .container{
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+                
+                height: calc(2em + 10pt);
+                
+            }
+            
+            #table-div .container{
+                align-items: flex-start;
+                height: auto;
+            }
+            
+            .contents{
+                display: block;
+                padding: 5pt;
+                margin: 0 5pt;
+                
+                background: white;
+                border-radius: 7pt;
+                box-shadow: 0 0 5pt 1pt #888;
+                
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2em;
+                
+                -webkit-user-select: none; /* Safari */        
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* IE10+/Edge */
+                user-select: none; /* Standard */
+                
+                transition: all .25s;
+                cursor: pointer;
+
+            }
+            
+            .contents:hover{
+                box-shadow: 0 0 5pt 3pt #444;
+                font-size: 2em;
+            }
+            
+            #table-div {
+                text-align: center;
+                margin: 20pt;
+                font-family: "Times New Roman", Times, serif;
+            }
+            
+            table#grid {
+                border-collapse:  collapse;
+                margin: auto;
+            }
+            
+            table#grid td {
+                width: 1.5em;
+                height: 1.5em;
+                border: 1px solid black;
+                position: relative;
+                
+                transition: background .25s;
+                padding: 0pt;
+            }
+            
+            td:not(.word) {
+                background-color: black;
+            }
+            
+            .number {
+                padding: 1pt;
+                margin: 0pt;
+                font-size: 0.66em;
+                position: absolute;
+                top: 0;
+                width: 25%;
+                
+                pointer-events: none;
+            }
+            
+            #clue-box {
+                margin-top: 20pt;
+                text-align: left;
+            }
+            
+            h4, ol {
+                margin: 0;
+            }
+            
+            ol {
+                padding-left: 2em;
+            }
+            
+            li {
+                transition: all .25s;
+            }
+            
+            #clue-box div {
+                width: 48%;
+            }
+            
+            .hovered {
+                background-color: #dbebff;
+            }
+            
+            .selected {
+                background-color: #a1cbff;
+            }
+            
+            td input {
+                width: inherit;
+                height: inherit;
+                padding: 0pt;
+                margin: 0pt;
+                
+                border: none;
+                background: transparent;
+                
+                text-align: center;
+                font-size: 1.2em;
+                font-family: inherit;
+                caret-color: transparent;
+                
+                text-transform: uppercase;
+                transition: all .1s;
+                
+            }
+            
+            td input:focus {
+                background-color: #4488db;
+                outline: none;
+            }
+            
+            .test {
+                background: red !important;
+            }
+            
+        </style>
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div id="header" class="ext" src="../header.html"></div>
+            
+            <h1>Crossword Puzzles</h1>
+            
+            <div class="container">
+                <div class="contents">No. 1</div>
+                <div class="contents">No. 2</div>
+                <div class="contents">No. 3</div>
+                <div class="contents">No. 4</div>
+                <div class="contents">No. 5</div>
+            </div>
+            
+            <div id="table-div">
+                <table id="grid"></table>
+                <div id="clue-box" class="container">
+                    <div id="A-clues"><h4>Across</h4><ol></ol></div>
+                    <div id="D-clues"><h4>Down</h4><ol></ol></div>
+                </div>
+            </div>
+            
+            <br>
+            <div class="ext" src="../footer.html"></div>
+
+        </main>
+        
+        <div id="bg"></div>
+        
+        
+    </body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../homepage.js"></script>
+    <script src="not../background.js"></script>
+    <script src="xwords.js"></script>
+</html>
