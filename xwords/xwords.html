@@ -5,7 +5,6 @@
         <title>Nicholas Yelland</title>
         <link rel="stylesheet" href="../style.css">
         
-        
         <style>            
             main {
                 height: auto;
@@ -64,6 +63,7 @@
                 text-align: center;
                 margin: 20pt;
                 font-family: "Times New Roman", Times, serif;
+                position: relative;
             }
             
             table#grid {
@@ -149,8 +149,58 @@
                 outline: none;
             }
             
-            .test {
-                background: red !important;
+            .error {
+                background-image: linear-gradient(rgba(255,0,0,.65),rgba(255,0,0,.65));
+            }
+            
+            .error.hovered {
+                background-image: linear-gradient(rgba(255,0,0,.4),rgba(255,0,0,.4));
+            }
+            
+            .error:focus {
+                background-image: linear-gradient(rgba(255,0,0,.4),rgba(255,0,0,.4));
+            }
+            
+            h3 {
+                text-align: center;
+            }
+            
+            #game-menu {
+                position: absolute;
+                top: 0pt;
+                right: -4em;
+                
+                width: 3.5em;
+                
+                padding-left: 1.5em;
+                
+                display: flex;
+                flex-direction: column;
+                align-content: center;
+                
+            }
+            
+            #grid-container {
+                margin: auto;
+                width: calc(22.5em + 15pt);
+                position: relative;
+            }
+            
+            #game-menu > :not(:last-child) {
+                margin-bottom: 1em;
+            }
+            
+            #game-menu div {
+                overflow: visible;
+            }
+            
+            #puzzle-description {
+                margin-bottom: 1em;
+            }
+            
+            #completion-msg {
+                font-weight: bold;
+                color: goldenrod
             }
             
         </style>
@@ -163,16 +213,24 @@
             
             <h1>Crossword Puzzles</h1>
             
-            <div class="container">
-                <div class="contents">No. 1</div>
-                <div class="contents">No. 2</div>
-                <div class="contents">No. 3</div>
-                <div class="contents">No. 4</div>
-                <div class="contents">No. 5</div>
+            <div id="puzzle-menu" class="container">
+                <div class="contents" src="xword_json/cxw001.json">No. 1</div>
+                <div class="contents" src="xword_json/cxw002.json">No. 2</div>
             </div>
             
             <div id="table-div">
-                <table id="grid"></table>
+                <h3 id="puzzle-title">Puzzle Title</h3>
+                <div id="puzzle-description"></div>
+                <div id="grid-container">
+                    <table id="grid"></table>
+                    <div id="game-menu">
+                        <button id="toggle-errors-btn" onclick="toggle_show_errors()">Show<br>Errors</button>
+                        <button id="clear-grid-btn" onclick="clear_grid()">Clear<br>Grid</button>
+                        <div id="completion-msg">Puzzle Complete!</div>
+                    </div>
+                </div>
+                
+                
                 <div id="clue-box" class="container">
                     <div id="A-clues"><h4>Across</h4><ol></ol></div>
                     <div id="D-clues"><h4>Down</h4><ol></ol></div>
@@ -186,12 +244,13 @@
         
         <div id="bg"></div>
         
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type='text/javascript' src='http://code.jquery.com/ui/1.12.0/jquery-ui.min.js'></script> 
+        <script src="../homepage.js"></script>
+        <script src="../background.js"></script>
+        <script src="xwords.js"></script>
+        
         
     </body>
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="../homepage.js"></script>
-    <script src="not../background.js"></script>
-    <script src="xwords.js"></script>
 </html>

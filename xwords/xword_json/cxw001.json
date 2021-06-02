@@ -1,7 +1,7 @@
 {
     "title": "Cryptic Crossword 1",
     "size": [15, 15],
-    "description": "A brief Description",
+    "description": "This is a cryptic crossword puzzle.",
     "clues": [
         {"loc": ["A", 0, 4],
          "clue": "Creep a short distance?",

@@ -1,0 +1,166 @@
+{
+    "title": "Cryptic Crossword 2",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 0],
+            "clue": "First trip for housekeeper, who is sent out on time",
+            "answer": "MAIDEN VOYAGE"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "Pause for first shot",
+            "answer": "BREAK"
+        },
+        {
+            "loc": ["A", 2, 6],
+            "clue": "Resistance fighter sounds like an ape",
+            "answer": "GUERRILLA"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Strangely, it'll make a cheerful tune",
+            "answer": "LILT"
+        },
+        {
+            "loc": ["A", 4, 5],
+            "clue": "Improvised a fraudulent trial?",
+            "answer": "JURY-RIGGED"
+        },
+        {
+            "loc": ["A", 6, 0],
+            "clue": "It's said you journeyed on foot to reach a European city",
+            "answer": "UTRECHT"
+        },
+        {
+            "loc": ["A", 6, 8],
+            "clue": "Ship containing it - that'll make some bucks",
+            "answer": "STAGS"
+        },
+        {
+            "loc": ["A", 8, 2],
+            "clue": "Sombre tomb",
+            "answer": "GRAVE"
+        },
+        {
+            "loc": ["A", 8, 8],
+            "clue": "Food parcels regularly arrive in a mess, one with oil that's got all over the place!",
+            "answer": "RAVIOLI"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Shell chairmen, they support parliament?",
+            "answer": "ROUNDHEADS"
+        },
+        {
+            "loc": ["A", 10, 11],
+            "clue": "It should be clarified, he's entered back, for instance?",
+            "answer": "GHEE"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "If I named Gary's head, insanely it got much bigger",
+            "answer": "MAGNIFIED"
+        },
+        {
+            "loc": ["A", 12, 10],
+            "clue": "Mad troops follow first brigadiers",
+            "answer": "BARMY"
+        },
+        {
+            "loc": ["A", 14, 3],
+            "clue": "Read this: harbours half destroyed for very little distance",
+            "answer": "HARISBREADTH"
+        },
+        {
+            "loc": ["D", 0, 2],
+            "clue": "The underside always hides fitting",
+            "answer": "IDEAL"
+        },
+        {
+            "loc": ["D", 0, 4],
+            "clue": "The son of an Estonian sides with no German kid",
+            "answer": "ENKI"
+        },
+        {
+            "loc": ["D", 0, 7],
+            "clue": "All of one person's work brings light on Old English revolutionary queen",
+            "answer": "OEUVRE"
+        },
+        {
+            "loc": ["D", 0, 9],
+            "clue": "Next in Line heard broadcast",
+            "answer": "AIR"
+        },
+        {
+            "loc": ["D", 0, 11],
+            "clue": "They ingeniously reveal an observation",
+            "answer": "EYING"
+        },
+        {
+            "loc": ["D", 0, 14],
+            "clue": "Secretly, the future embraces the Spanish band first",
+            "answer": "CLANDESTINELY"
+        },
+        {
+            "loc": ["D", 2, 0],
+            "clue": "Book or memoir primarily about nursing lad!",
+            "answer": "BILDUNGSROMAN"
+        },
+        {
+            "loc": ["D", 4, 3],
+            "clue": "Some of the Irish are possessive",
+            "answer": "THEIR"
+        },
+        {
+            "loc": ["D", 4, 5],
+            "clue": "The leaders of Judea entered; however, none have returned without enouncing first to God",
+            "answer": "JEHOVAH"
+        },
+        {
+            "loc": ["D", 4, 9],
+            "clue": "Naked brits start off usual strange traditions",
+            "answer": "RITUALS"
+        },
+        {
+            "loc": ["D", 4, 12],
+            "clue": "The latter half of the final letters caused amusement",
+            "answer": "GAS"
+        },
+        {
+            "loc": ["D", 6, 11],
+            "clue": "Endless sorrow before song's end for composer",
+            "answer": "GRIEG"
+        },
+        {
+            "loc": ["D", 8, 2],
+            "clue": "Reared some young animal",
+            "answer": "GNU"
+        },
+        {
+            "loc": ["D", 9, 7],
+            "clue": "Bad listeners get original value, thus at last they spend less",
+            "answer": "SAVERS"
+        },
+        {
+            "loc": ["D", 10, 3],
+            "clue": "From down in the one before the tenth",
+            "answer": "NINTH"
+        },
+        {
+            "loc": ["D", 10, 12],
+            "clue": "In he rode, a Roman king",
+            "answer": "HEROD"
+        },
+        {
+            "loc": ["D", 11, 10],
+            "clue": "Instrument with two holes and two keys, roughly!",
+            "answer": "OBOE"
+        },
+        {
+            "loc": ["D", 12, 5],
+            "clue": "Government organisation providing housing benefits initially in return",
+            "answer": "FBI"
+        }
+    ]
+}

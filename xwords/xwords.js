@@ -1,213 +1,139 @@
+// Initialising variables...
 var A_clues = new Array();
 var D_clues = new Array();
-    
+$("#table-div").hide();
 
-$.getJSON("xword_json/cxw001.json", function (data) {
-    var grid = data;
-    window.grid = data;
+$("#puzzle-menu > div").on("click", function(){
+    $("#table-div").show();
+    $("#completion-msg").hide();
+    var url = $(this).attr("src");
+    window.puzzle = url
     
-    var grid_info = new Array(grid.size[0]);
-    for (i=0; i < grid.size[1]; i++) {
-        grid_info[i] = new Array(grid.size[1]);
-    }
+    A_clues = [];
+    D_clues = [];
+    window.show_errors_enabled = false;
     
-    // build table
-    for (i=0; i < grid.size[0]; i++) {
-        $("#grid").append(`<tr></tr>`)
-        for (j=0; j < grid.size[1]; j++) {            
-            $(`#grid tr:nth-child(${i+1})`).append("<td></td>")
-        }
-    }
-    
-    var clues_list = grid.clues.sort( (a,b) => {
-        var size = grid.size[1];
-        var a = a.loc.slice(1)[0]*size + a.loc.slice(1)[1];
-        var b = b.loc.slice(1)[0]*size + b.loc.slice(1)[1];
-        return a-b; 
-    });
-    
-    var index = 0
-    var prev_starts = new Array();
-    
-    clues_list.forEach(function (clue) {
-        var coord = clue.loc.slice(1);
-        
-        // if this word does not share a start with another...
-        if (!array_list_contains(prev_starts, coord)) {
-            prev_starts.push(coord.slice());
-            index++;
-            var cell=getCell(coord);
-            cell.append(`<div class="number">${index}</div>`);    
-        }
-        
-        var clueID = (index).toString() + clue.loc[0];
-        
-        var answer_text = clue.answer.replace(/-|\s/g, "");
-        var len = answer_text.length;
-        
-        var Enum = createEnum(clue.answer);
-        
-        var clue_text = {
-            num: clueID.slice(0,-1),
-            text: clue.clue + " (" + Enum + ")",
-            answer: clue.answer
-        }
-        
-        if (clue.loc[0] == "A") {
-            A_clues.push(clue_text);
-        }
-        
-        if (clue.loc[0] == "D") {
-            D_clues.push(clue_text);
-        }
-        
-        
-        for (i=0; i < len; i++) {
-            var cell = getCell(coord);
-            cell.addClass("word");
-            cell.addClass("clue" + clueID);
-            
-            if (cell.has("input").length == 0) {
-                var input = document.createElement("input");
-                input.setAttribute("type", "text");
-                input.setAttribute("pattern", "[a-zA-Z]")
-                cell.append(input);
-            }
-            
-            //cell.html(answer_text[i]);
-            
-            if (clue.loc[0] == "A") {
-                coord[1] += 1;
-            } else if (clue.loc[0] == "D") {
-                coord[0] += 1;
-            }            
-        }
-    });
-    
-    A_clues.forEach(function(clue) {
-        var li = document.createElement("li");
-        li.setAttribute("value", clue.num);
-        li.classList.add("clue" + clue.num + "A");
-        li.innerHTML = clue.text;
-        $("#A-clues ol").append(li);
-    });
-    D_clues.forEach(function(clue) {
-        var li = document.createElement("li");
-        li.setAttribute("value", clue.num);
-        li.classList.add("clue" + clue.num + "D");
-        li.innerHTML = clue.text;
-        $("#D-clues ol").append(li);
-    });
-    
-    
-    $(".word, li").on("mouseover", function () {
-        var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
-        var clueID = classes[0];
-        $(`[class*="${clueID}"]`).addClass("hovered");
-    });
-    
-    $(".word, li").on("mouseout", function () {
-        var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
-        var clueID = classes[0];
-        $(`[class*="${clueID}"]`).removeClass("hovered");
-    });
-    
-    $(".word, li").on("click", function () {
-        
-        var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
-        if (classes.length > 1) {
-            if (window.selectedClue == classes[0]) {
-                var clueID = classes[1];
-                window.selectedClue = classes[1];
-            } else {
-                var clueID = classes[0];
-                window.selectedClue = classes[0];
-            }
+    $("#grid, #A-clues ol, #D-clues ol").empty();
+    buildGrid(url);
+});
+
+// Function to build crossword from json file located at url
+function buildGrid(url) {
+    $.getJSON(url, function (data) {
+        var grid = data;
+        window.grid = data;
+
+        $("#puzzle-title").html(grid.title);
+        if (grid.description) {
+            $("#puzzle-description").html(grid.description);
         } else {
+            $("#puzzle-description").html("");
+        }
+
+        // build table
+        for (i=0; i < grid.size[0]; i++) {
+            $("#grid").append(`<tr></tr>`)
+            for (j=0; j < grid.size[1]; j++) {            
+                $(`#grid tr:nth-child(${i+1})`).append("<td></td>")
+            }
+        }
+
+        var clues_list = grid.clues.sort( (a,b) => {
+            var size = grid.size[1];
+            var a = a.loc.slice(1)[0]*size + a.loc.slice(1)[1];
+            var b = b.loc.slice(1)[0]*size + b.loc.slice(1)[1];
+            return a-b; 
+        });
+
+        var index = 0
+        var prev_starts = new Array();
+
+        clues_list.forEach(function (clue) {
+            var coord = clue.loc.slice(1);
+
+            // if this word does not share a start with another...
+            if (!array_list_contains(prev_starts, coord)) {
+                prev_starts.push(coord.slice());
+                index++;
+                var cell=getCell(coord);
+                cell.append(`<div class="number">${index}</div>`);    
+            }
+
+            var clueID = (index).toString() + clue.loc[0];
+
+            var answer_text = clue.answer.replace(/-|\s/g, "");
+            var len = answer_text.length;
+
+            var Enum = createEnum(clue.answer);
+
+            var clue_text = {
+                num: clueID.slice(0,-1),
+                text: clue.clue + " (" + Enum + ")",
+                answer: clue.answer
+            }
+
+            if (clue.loc[0] == "A") {
+                A_clues.push(clue_text);
+            }
+
+            if (clue.loc[0] == "D") {
+                D_clues.push(clue_text);
+            }
+
+
+            for (i=0; i < len; i++) {
+                var cell = getCell(coord);
+                cell.addClass("word");
+                cell.addClass("clue" + clueID);
+
+                if (cell.has("input").length == 0) {
+                    var input = document.createElement("input");
+                    input.setAttribute("type", "text");
+                    input.setAttribute("pattern", "[a-zA-Z]")
+                    cell.append(input);
+                }
+
+                if (clue.loc[0] == "A") {
+                    coord[1] += 1;
+                } else if (clue.loc[0] == "D") {
+                    coord[0] += 1;
+                }            
+            }
+        });
+
+        A_clues.forEach(function(clue) {
+            var li = document.createElement("li");
+            li.setAttribute("value", clue.num);
+            li.classList.add("clue" + clue.num + "A");
+            li.innerHTML = clue.text;
+            $("#A-clues ol").append(li);
+        });
+        D_clues.forEach(function(clue) {
+            var li = document.createElement("li");
+            li.setAttribute("value", clue.num);
+            li.classList.add("clue" + clue.num + "D");
+            li.innerHTML = clue.text;
+            $("#D-clues ol").append(li);
+        });
+
+
+        $(".word, li").on("mouseover", function () {
+            var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
             var clueID = classes[0];
-            window.selectedClue = classes[0];
-        }
-        
-        
-        $(".word, li").removeClass("selected");
-        $(`[class*="${clueID}"]`).addClass("selected");
-        
-        if ($(this).is("li")) {
-            $(`td[class*="${clueID}"]`).first().find("input").focus();
-        }
-    });
-    
-    $(".word input").inputFilter(function (value) {
-        return /^(|[a-z])$/i.test(value);
-    });
-    
-    $(".word input").on("input", function (value) {
-        var cell = $(this).parent();
-        var word = $(`td[class*="${window.selectedClue}"]`);
-        var ind = word.index(cell) 
-        if (this.value != "" && ind < word.length - 1) {
-            var next_cell = $(word[ind + 1]);
-            var input = next_cell.find("input");
-            setCaretPosition(input[0], input[0].value.length);
-        }
-    });
-    
-    $(".word").on("keydown", function (e) {
-        var input = $(this).find("input");
-        var word = $(`td[class*="${window.selectedClue}"]`);
-        var cell = $(":focus").parent();
-        
-        if (e.keyCode == 8) {
-            //backspace pressed...
-            var ind = word.index($(this));
-            if (input.val() == "" && ind > 0) {
-                var next_cell = $(word[ind - 1]);
-                
-            }
-        } else if (e.key.match(/^[a-z]$/i)) {
-            input.val("");
-        } else if (e.key.match(/Arrow/)) {
-            e.preventDefault();
-            var row = $(this).parent().children("td");
-            var ind = row.index(cell);
-            
-            var wordrow = row.filter(".word");
-            var xind = wordrow.index(cell);
-            
-            var col = $(`#grid tr td.word:nth-child(${ind+1})`);
-            var yind = col.index(cell);
-            
-            if (e.key == "ArrowLeft") {
-                if (xind > 0) {
-                    var next_cell = $(wordrow[xind - 1]);
-                    
-                }
-            } else if (e.key == "ArrowRight") {
-                if (xind < wordrow.length - 1) {
-                    var next_cell = $(wordrow[xind + 1]);
-                    
-                }
-            } else if (e.key == "ArrowUp") {
-                if (yind > 0) {
-                    var next_cell = $(col[yind - 1]);
-                    
-                }
-            } else if (e.key == "ArrowDown") {
-                if (yind < col.length - 1) {
-                    var next_cell = $(col[yind + 1]);
-                    
-                }
-            }
-        }
-        
-        if (next_cell) {
-            var input = next_cell.find("input");
-            setCaretPosition(input[0], 2);
-            
-            var classes = next_cell.attr("class").match(/clue\d+(A|D)/g);
-            
+            $(`[class*="${clueID}"]`).addClass("hovered");
+        });
+
+        $(".word, li").on("mouseout", function () {
+            var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
+            var clueID = classes[0];
+            $(`[class*="${clueID}"]`).removeClass("hovered");
+        });
+
+        $(".word, li").on("click", function () {
+
+            var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
             if (classes.length > 1) {
-                if (window.selectedClue != classes[0]) {
+                if (window.selectedClue == classes[0]) {
                     var clueID = classes[1];
                     window.selectedClue = classes[1];
                 } else {
@@ -218,14 +144,141 @@ $.getJSON("xword_json/cxw001.json", function (data) {
                 var clueID = classes[0];
                 window.selectedClue = classes[0];
             }
-            
+
             $(".word, li").removeClass("selected");
             $(`[class*="${clueID}"]`).addClass("selected");
-        }
+
+            if ($(this).is("li")) {
+                var input = $(`td[class*="${clueID}"]`).first().find("input");
+            } else {
+                var input = $(this).find("input");
+            }
+            setCaretPosition(input[0], input[0].value.length);
+        });
+
+        $(".word input").inputFilter(function (value) {
+            if (window.show_errors_enabled) {
+                show_errors();
+            }
+            return /^(|[a-z])$/i.test(value);
+        });
+
+        $(".word input").on("input", function (value) {
+            var cell = $(this).parent();
+            var word = $(`td[class*="${window.selectedClue}"]`);
+            var ind = word.index(cell) 
+            if (this.value != "" && ind < word.length - 1) {
+                var next_cell = $(word[ind + 1]);
+                var input = next_cell.find("input");
+                setCaretPosition(input[0], input[0].value.length);
+            }
+        });
+
+        $(".word").on("keydown", function (e) {
+            var input = $(this).find("input");
+            var word = $(`td[class*="${window.selectedClue}"]`);
+            var cell = $(":focus").parent();
+
+            if (e.keyCode == 8) {
+                //backspace pressed...
+                var ind = word.index($(this));
+                if (input.val() == "" && ind > 0) {
+                    var next_cell = $(word[ind - 1]);
+
+                }
+            } else if (e.key.match(/^[a-z]$/i)) {
+                input.val("");
+            } else if (e.key.match(/Arrow/)) {
+                e.preventDefault();
+                var row = $(this).parent().children("td");
+                var ind = row.index(cell);
+
+                var wordrow = row.filter(".word");
+                var xind = wordrow.index(cell);
+
+                var col = $(`#grid tr td.word:nth-child(${ind+1})`);
+                var yind = col.index(cell);
+
+                if (e.key == "ArrowLeft") {
+                    if (xind > 0) {
+                        var next_cell = $(wordrow[xind - 1]);
+
+                    }
+                } else if (e.key == "ArrowRight") {
+                    if (xind < wordrow.length - 1) {
+                        var next_cell = $(wordrow[xind + 1]);
+
+                    }
+                } else if (e.key == "ArrowUp") {
+                    if (yind > 0) {
+                        var next_cell = $(col[yind - 1]);
+
+                    }
+                } else if (e.key == "ArrowDown") {
+                    if (yind < col.length - 1) {
+                        var next_cell = $(col[yind + 1]);
+
+                    }
+                }
+            }
+
+            if (next_cell) {
+                var input = next_cell.find("input");
+                setCaretPosition(input[0], 2);
+
+                var classes = next_cell.attr("class").match(/clue\d+(A|D)/g);
+
+                if (classes.length > 1) {
+                    if (window.selectedClue != classes[0]) {
+                        var clueID = classes[1];
+                        window.selectedClue = classes[1];
+                    } else {
+                        var clueID = classes[0];
+                        window.selectedClue = classes[0];
+                    }
+                } else {
+                    var clueID = classes[0];
+                    window.selectedClue = classes[0];
+                }
+
+                $(".word, li").removeClass("selected");
+                $(`[class*="${clueID}"]`).addClass("selected");
+            }
+
+        });
         
+        // detect correct completion...
+        $(".word").on("keyup", function(){
+            check_completion()
+        });
+        
+        var c = getCookie(window.puzzle);
+        if (c != "") {
+            $(".word input").each(function (index) {
+                if (c[index] != "_") {
+                    $(this).val(c[index]);
+                }
+            });
+        }
+        check_completion()
+        
+        // function to make cookie
+        setInterval(function () {
+            var cookie = "";
+            $(".word input").each(function(){
+                if ($(this).val() != "") {
+                    cookie += $(this).val().toUpperCase();
+                } else {
+                    cookie += "_";
+                }
+            });
+            //console.log(cookie);
+            setCookie(window.puzzle, cookie, 30);
+        }, 5000);
+
     });
-    
-});
+}
+
 
 function getCell(coord) {
     var col = coord[0] + 1;
@@ -258,15 +311,69 @@ function createEnum(answer) {
     return Enum;
 }
 
-function show_errors() {
+function show_errors(counting = false) {
+    var error_count = 0;
     $(".word").each(function(index){    
         var input = $(this).find("input");
         if (input.val() != "") {
             var clues = $(this).attr("class").match(/clue\d+(A|D)/g);
             var clueID = clues[0];
+            var cluenum = clueID.replace(/clue|A|D/g, "");
+            if (clueID.slice(-1) == "A") {
+                var clue = A_clues.find(c => c.num == cluenum);
+            } else {
+                var clue = D_clues.find(c => c.num == cluenum);
+            }
+            var word = $(`td[class*="${clueID}"]`);
+            var ind = word.index($(this));
+            var answer_text = clue.answer.replace(/-|\s/g, "");
             
+            if (answer_text[ind] != input.val().toUpperCase()) {
+                error_count ++;
+                if (!counting) {
+                    input.addClass("error");
+                }
+            } else {
+                input.removeClass("error");
+            }
+        } else {
+            input.removeClass("error");
         }
-    })
+    });
+    return error_count;
+}
+
+function toggle_show_errors() {
+    if (window.show_errors_enabled) {
+        window.show_errors_enabled = false;
+        $(".word input").removeClass("error");
+        $("#toggle-errors-btn").html("Show<br>Errors");
+    } else {
+        window.show_errors_enabled = true;
+        $("#toggle-errors-btn").html("Hide<br>Errors");
+        show_errors();
+    }
+}
+
+function clear_grid() {
+    // prompts user to confirm that they do indeed want to clear the grid!
+    var letters = $(".word input").toArray();
+    if (letters.some(node => $(node).val() != "")) {
+        if (window.confirm("Are you sure you want to clear the grid? Your progress will be lost!")) {
+          $(".word input").val("");  
+        }
+    }
+    
+}
+
+function check_completion() {
+    var error_count = show_errors(counting = true);
+    var letters = $(".word input").toArray().map(a => $(a).val());
+    if (error_count === 0 && letters.indexOf("") == -1 && letters.length > 0) {
+        //console.log("Puzzle completed!");
+        var msg = $("#completion-msg");
+        msg.show();
+    }
 }
 
 // Restricts input for the set of matched elements to the given inputFilter function.
@@ -307,33 +414,25 @@ function setCaretPosition(ctrl, pos) {
 }
 
 // cookie management, to automatically save progress:
-// Original JavaScript code by Chirp Internet: chirpinternet.eu
-// Please acknowledge use of this code by including this header.
-
-var today = new Date();
-var expiry = new Date(today.getTime() + 30 * 24 * 3600 * 1000); // plus 30 days
-
-function setCookie(name, value) {
-    document.cookie=name + "=" + escape(value) + "; path=/; expires=" + expiry.toGMTString();
+// from https://www.w3schools.com/js/js_cookies.asp
+function setCookie(cname, cvalue, exdays) {
+  var d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  var expires = "expires="+ d.toUTCString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
-
-function buildCookie() {
-    var cookie = "";
-    $("#grid tr").each(function (index) {
-        $(this).children("td").each(function (index2) {
-            if ($(this).hasClass("word")) {
-                var input = $(this).find("input");
-                if (input.val() == "") {
-                    cookie += "_";
-                } else {
-                    cookie += input.val();
-                }
-            } else {
-                cookie += "-"
-            }
-        });
-    });
-    setCookie("grid1", cookie);
+function getCookie(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i <ca.length; i++) {
+    var c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "";
 }
-
-setInterval(buildCookie, 2000);
