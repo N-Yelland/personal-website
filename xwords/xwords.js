@@ -2,16 +2,14 @@
 var A_clues = new Array();
 var D_clues = new Array();
 $("#table-div").hide();
-window.setting_tools = false;
 
+window.setting_tools = false;
 if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
     buildGrid("xword_json/cxw003.json");
-}
-
-    
+}    
 
 $("#puzzle-menu > div").on("click", function(){
     $("#table-div").show();
@@ -21,7 +19,9 @@ $("#puzzle-menu > div").on("click", function(){
     
     A_clues = [];
     D_clues = [];
-    window.show_errors_enabled = false;
+    if (window.show_errors_enabled) {
+        toggle_show_errors();
+    }
     
     buildGrid(url);
 });
