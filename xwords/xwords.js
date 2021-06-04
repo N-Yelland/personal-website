@@ -2,6 +2,16 @@
 var A_clues = new Array();
 var D_clues = new Array();
 $("#table-div").hide();
+window.setting_tools = false;
+
+if (window.setting_tools) {
+    $("h1").html("Crossword Setting Tool");
+    $("#table-div").show();
+    $("#puzzle-menu, #game-menu").hide();
+    buildGrid("xword_json/cxw003.json");
+}
+
+    
 
 $("#puzzle-menu > div").on("click", function(){
     $("#table-div").show();
@@ -13,12 +23,12 @@ $("#puzzle-menu > div").on("click", function(){
     D_clues = [];
     window.show_errors_enabled = false;
     
-    $("#grid, #A-clues ol, #D-clues ol").empty();
     buildGrid(url);
 });
 
 // Function to build crossword from json file located at url
 function buildGrid(url) {
+    $("#grid, #A-clues ol, #D-clues ol").empty();
     $.getJSON(url, function (data) {
         var grid = data;
         window.grid = data;
@@ -65,12 +75,16 @@ function buildGrid(url) {
             var len = answer_text.length;
 
             var Enum = createEnum(clue.answer);
-
+            
+            if (clue.clue == "" && window.setting_tools) {
+                clue.clue = clue.answer;
+            }
             var clue_text = {
                 num: clueID.slice(0,-1),
                 text: clue.clue + " (" + Enum + ")",
                 answer: clue.answer
             }
+            
 
             if (clue.loc[0] == "A") {
                 A_clues.push(clue_text);
@@ -91,6 +105,10 @@ function buildGrid(url) {
                     input.setAttribute("type", "text");
                     input.setAttribute("pattern", "[a-zA-Z]")
                     cell.append(input);
+                }
+                
+                if (window.setting_tools) {
+                    cell.html(answer_text[i]);
                 }
 
                 if (clue.loc[0] == "A") {
@@ -135,16 +153,14 @@ function buildGrid(url) {
             if (classes.length > 1) {
                 if (window.selectedClue == classes[0]) {
                     var clueID = classes[1];
-                    window.selectedClue = classes[1];
                 } else {
                     var clueID = classes[0];
-                    window.selectedClue = classes[0];
                 }
             } else {
                 var clueID = classes[0];
-                window.selectedClue = classes[0];
             }
-
+            window.selectedClue = clueID;
+            
             $(".word, li").removeClass("selected");
             $(`[class*="${clueID}"]`).addClass("selected");
 

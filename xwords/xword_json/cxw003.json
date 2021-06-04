@@ -1,0 +1,141 @@
+{
+    "title": "Cryptic Crossword 3",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 0],
+            "clue": "An eye operation, after the procedure my health deteriorated along with the company trademark",
+            "answer": "OPHTHALMECTOMY"
+        },
+        {
+            "loc": ["A", 14, 1],
+            "clue": "Paste, too!",
+            "answer": "MASHED POTATOES"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "Stick shift",
+            "answer": "SWITCH"
+        },
+        {
+            "loc": ["A", 2, 7],
+            "clue": "Bottomless ravine separates a hundred from the leaders of the group and supplies, causing hunger",
+            "answer": "CRAVINGS"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Tasks go wrong, in addition to some starting",
+            "answer": "ERRANDS"
+        },
+        {
+            "loc": ["A", 4, 11],
+            "clue": "Payment made with two different notes",
+            "answer": "FARE"
+        },
+        {
+            "loc": ["A", 6, 1],
+            "clue": "Some sad liberals make it up as they go along",
+            "answer": "AD LIB"
+        },
+        {
+            "loc": ["A", 6, 7],
+            "clue": "She waits with a distraught sister",
+            "answer": "WAITRESS"
+        },
+        {
+            "loc": ["A", 8, 0],
+            "clue": "Have a think and play again: ignore the first!",
+            "answer": "MULLIGAN"
+        },
+        {
+            "loc": ["A", 8, 9],
+            "clue": "Send it digitally from Australia, message over",
+            "answer": "EMAIL"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Son has seizures, we hear",
+            "answer": "FITZ"
+        },
+        {
+            "loc": ["A", 10, 8],
+            "clue": "African city ruin is large",
+            "answer": "ALGIERS"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "Prime Minister from Middle Eastern country is surrounded by policemen",
+            "answer": "DISRAELI"
+        },
+        {
+            "loc": ["A", 12, 9],
+            "clue": "I came after judgement for a teacher",
+            "answer": "SENSEI"
+        },
+        {
+            "loc": ["D", 0, 1],
+            "clue": "Authority from the Church held over the Queen",
+            "answer": "POWER"
+        },
+        {
+            "loc": ["D", 0, 5],
+            "clue": "A doctorate covering one insect",
+            "answer": "APHID"
+        },
+        {
+            "loc": ["D", 0, 7],
+            "clue": "A spice that really hits you?",
+            "answer": "MACE"
+        },
+        {
+            "loc": ["D", 0, 9],
+            "clue": "Grab sack, I say, to stop fighting",
+            "answer": "CEASEFIRE"
+        },
+        {
+            "loc": ["D", 0, 13],
+            "clue": "Sacred ash obtained from cooking eggs rapidly, without a hint of even a bit of pepper",
+            "answer": "YGGDRASIL"
+        },
+        {
+            "loc": ["D", 2, 3],
+            "clue": "Pioneer jacket found below path",
+            "answer": "TRAILBLAZER"
+        },
+        {
+            "loc": ["D", 2, 11],
+            "clue": "Arranged what you know",
+            "answer": "INFORMATION"
+        },
+        {
+            "loc": ["D", 5, 7],
+            "clue": "Two did not finish in time, but they began at the same time",
+            "answer": "TWINS"
+        },
+        {
+            "loc": ["D", 6, 1],
+            "clue": "Unlimited value: small sum, non-starter material",
+            "answer": "ALUMINIUM"
+        },
+        {
+            "loc": ["D", 6, 5],
+            "clue": "Major cries before shooting important person",
+            "answer": "BIG CHEESE"
+        },
+        {
+            "loc": ["D", 10, 9],
+            "clue": "Composer heard to order",
+            "answer": "LISZT"
+        },
+        {
+            "loc": ["D", 10, 13],
+            "clue": "What's said about the topic is heard in lots of papers",
+            "answer": "RHEME"
+        },
+        {
+            "loc": ["D", 11, 7],
+            "clue": "Disfigured lips might lead to this!",
+            "answer": "LISP"
+        }
+    ]
+}
