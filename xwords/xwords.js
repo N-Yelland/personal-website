@@ -8,7 +8,7 @@ if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
-    buildGrid("xword_json/cxw003.json");
+    buildGrid("xword_json/cxw004.json");
 }    
 
 $("#puzzle-menu > div").on("click", function(){
@@ -171,18 +171,24 @@ function buildGrid(url) {
             }
             setCaretPosition(input[0], input[0].value.length);
         });
-
+        
+        // Ensures input is only letters (of the Roman alphabet)
         $(".word input").inputFilter(function (value) {
-            if (window.show_errors_enabled) {
-                show_errors();
-            }
             return /^(|[a-z])$/i.test(value);
         });
-
+        
+        // Tasks to be done whenever input is recieved:
         $(".word input").on("input", function (value) {
             var cell = $(this).parent();
             var word = $(`td[class*="${window.selectedClue}"]`);
-            var ind = word.index(cell) 
+            var ind = word.index(cell)
+            
+            // show errors, if enabled.
+            if (window.show_errors_enabled) {
+                show_errors();
+            }
+            
+            // position the cursor on the right
             if (this.value != "" && ind < word.length - 1) {
                 var next_cell = $(word[ind + 1]);
                 var input = next_cell.find("input");
@@ -268,6 +274,7 @@ function buildGrid(url) {
             check_completion()
         });
         
+        // refill answers from cookie
         var c = getCookie(window.puzzle);
         if (c != "") {
             $(".word input").each(function (index) {
@@ -383,6 +390,19 @@ function clear_grid() {
 }
 
 function check_completion() {
+    // check completion of each word
+    $("#clue-box li").each(function(){
+        var clueID = $(this).attr("class").match(/clue\d+(A|D)/g)[0];
+        var word = $(`td[class*="${clueID}"]`);
+        var letters = word.toArray().map(c => $(c).find("input").val().toUpperCase());
+        if (letters.every(l => l != "")) {
+            $(`li.${clueID}`).addClass("complete");
+        } else {
+            $(`li.${clueID}`).removeClass("complete");
+        } 
+    });
+    
+    // check completion of whole grid
     var error_count = show_errors(counting = true);
     var letters = $(".word input").toArray().map(a => $(a).val());
     if (error_count === 0 && letters.indexOf("") == -1 && letters.length > 0) {

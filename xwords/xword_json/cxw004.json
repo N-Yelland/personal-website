@@ -1,0 +1,161 @@
+{
+    "title": "Cryptic Crossword 4",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 0],
+            "clue": "Ugly Danish sound changes",
+            "answer": "SANDHI"
+        },
+        {
+            "loc": ["A", 0, 7],
+            "clue": "Upon a summit",
+            "answer": "ATOP"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "America has started recruiting child stars",
+            "answer": "URSA MINOR"
+        },
+        {
+            "loc": ["A", 1, 10],
+            "clue": "Twenty points",
+            "answer": "SCORE"
+        },
+        {
+            "loc": ["A", 3, 8],
+            "clue": "Staccato composition, but not the beginning!",
+            "answer": "TOCCATA"
+        },
+        {
+            "loc": ["A", 5, 0],
+            "clue": "Why, why are you uttering slur to upset me?",
+            "answer": "YOURS TRULY"
+        },
+        {
+            "loc": ["A", 5, 11],
+            "clue": "After elevator's cleared out, it came back rank",
+            "answer": "TIER"
+        },
+        {
+            "loc": ["A", 7, 1],
+            "clue": "Consult about name invention!",
+            "answer": "NOMENCLATURES"
+        },
+        {
+            "loc": ["A", 9, 0],
+            "clue": "Midwives are not part of the peculiar lives of dogs, for example",
+            "answer": "ISLE"
+        },
+        {
+            "loc": ["A", 9, 5],
+            "clue": "Key to the French-Italian from the east: there's no going back from taking it to the next level ",
+            "answer": "ESCALATION"
+        },
+        {
+            "loc": ["A", 11, 0],
+            "clue": "Instrument for an aortic disturbance missing final component",
+            "answer": "OCARINA"
+        },
+        {
+            "loc": ["A", 12, 6],
+            "clue": "Gone into Chile a long time ago",
+            "answer": "NEOLITHIC"
+        },
+        {
+            "loc": ["A", 13, 0],
+            "clue": "Contract showing the time it happened?",
+            "answer": "TENSE"
+        },
+        {
+            "loc": ["A", 14, 4],
+            "clue": "Satisfy customers at every exhibition",
+            "answer": "SATE"
+        },
+        {
+            "loc": ["A", 14, 9],
+            "clue": "Regularly, Tom did, filthy weirdo",
+            "answer": "ODDITY"
+        },
+        {
+            "loc": ["D", 0, 0],
+            "clue": "Wink-wink?",
+            "answer": "SHUT EYE"
+        },
+        {
+            "loc": ["D", 0, 2],
+            "clue": "North America ships gold to capital",
+            "answer": "NASSAU"
+        },
+        {
+            "loc": ["D", 0, 4],
+            "clue": "I'm shafted badly for being clumsy",
+            "answer": "HAM-FISTED"
+        },
+        {
+            "loc": ["D", 1, 6],
+            "clue": "Intially I never found even rhyme or reason",
+            "answer": "INFER"
+        },
+        {
+            "loc": ["D", 0, 8],
+            "clue": "Everyone, I jog back - that's a wrap",
+            "answer": "TORTILLA"
+        },
+        {
+            "loc": ["D", 0, 10],
+            "clue": "Prepare some autopsy chemicals",
+            "answer": "PSYCH"
+        },
+        {
+            "loc": ["D", 0, 12],
+            "clue": "Worried if an obituary will turn up and reveal that it's true?",
+            "answer": "BONA FIDE"
+        },
+        {
+            "loc": ["D", 0, 14],
+            "clue": "Fury for a million ages",
+            "answer": "MEGAERA"
+        },
+        {
+            "loc": ["D", 8, 0],
+            "clue": "Misguided ire contained after returning insult",
+            "answer": "RIPOSTE"
+        },
+        {
+            "loc": ["D", 7, 2],
+            "clue": "Having ignored the new leader, I plan on it roughly being medium",
+            "answer": "OIL PAINT"
+        },
+        {
+            "loc": ["D", 10, 4],
+            "clue": "References to settlements without primary infrastructure",
+            "answer": "CITES"
+        },
+        {
+            "loc": ["D", 7, 6],
+            "clue": "Short instrument to starting catching fish?",
+            "answer": "CAST A NET"
+        },
+        {
+            "loc": ["D", 9, 8],
+            "clue": "It directs you to top and tail a carrot, on top of the last few",
+            "answer": "ARROW"
+        },
+        {
+            "loc": ["D", 6, 10],
+            "clue": "People make buzz over article on style",
+            "answer": "HUMANKIND"
+        },
+        {
+            "loc": ["D", 9, 12],
+            "clue": "I'm this worried for those which join different lands",
+            "answer": "ISTHMI"
+        },
+        {
+            "loc": ["D", 8, 14],
+            "clue": "Some imprisoned the principal, creating disorder",
+            "answer": "ANARCHY"
+        }
+    ]
+}

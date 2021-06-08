@@ -104,14 +104,15 @@
             h4, ol {
                 margin: 0;
                 font-size: 1.1em;
-            }
-            
-            ol {
                 padding-left: 2em;
             }
             
-            li {
+            #clue-box li {
                 transition: all .25s;
+            }
+            
+            #clue-box li.complete.selected {
+                color: gray;
             }
             
             #clue-box div {
@@ -204,6 +205,10 @@
                 color: goldenrod
             }
             
+            li.complete {
+               color: lightgray;
+            }
+            
         </style>
         
     </head>
@@ -218,6 +223,7 @@
                 <div class="contents" src="xword_json/cxw001.json">No. 1</div>
                 <div class="contents" src="xword_json/cxw002.json">No. 2</div>
                 <div class="contents" src="xword_json/cxw003.json">No. 3</div>
+                <div class="contents" src="xword_json/cxw004.json">No. 4</div>
             </div>
             
             <div id="table-div">
