@@ -1,0 +1,167 @@
+{
+    "title": "Cryptic Crossword 5",
+    "description": "My first attempt at a 'themed' puzzle. There are five clues that contribute to the theme.",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 0],
+            "clue": "Nice bed found in important-sounding property",
+            "answer": "QUALITY"
+        },
+        {
+            "loc": ["A", 0, 8],
+            "clue": "Tangled trees either side of central Austria show the way",
+            "answer": "STREET"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "Uncertain arrival",
+            "answer": "INFLUX"
+        },
+        {
+            "loc": ["A", 3, 5],
+            "clue": "Clown, get undressed for peanuts, perhaps",
+            "answer": "COMIC STRIP"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Assistance to replace drug with cocktail of algae",
+            "answer": "KELP"
+        },
+        {
+            "loc": ["A", 5, 3],
+            "clue": "Repeatedly didn't borrow as much in bank",
+            "answer": "RELENTLESSLY"
+        },
+        {
+            "loc": ["A", 7, 0],
+            "clue": "General taken out after brutal disembowlment",
+            "answer": "BLANKET"
+        },
+        {
+            "loc": ["A", 7, 8],
+            "clue": "Oh balls, I left without changing end",
+            "answer": "ABOLISH"
+        },
+        {
+            "loc": ["A", 9, 0],
+            "clue": "Missing fine song from nowhere",
+            "answer": "OUT OF THIN AIR"
+        },
+        {
+            "loc": ["A", 10, 11],
+            "clue": "A container is half open",
+            "answer": "AJAR"
+        },
+        {
+            "loc": ["A", 11, 0],
+            "clue": "No point in inheritance arranged for Russian empress",
+            "answer": "CATHERINE I"
+        },
+        {
+            "loc": ["A", 12, 9],
+            "clue": "Mountains in Australia, they provide protection",
+            "answer": "OZARKS"
+        },
+        {
+            "loc": ["A", 14, 1],
+            "clue": "Hear one of 25 read out the champions",
+            "answer": "HEROES"
+        },
+        {
+            "loc": ["A", 14, 8],
+            "clue": "Leads to one side of backstreet, beyond the supermarket, having missed the junction",
+            "answer": "ESCORTS"
+        },
+        {
+            "loc": ["D", 0, 0],
+            "clue": "Doctor, I was replaced by a genius",
+            "answer": "QUICK"
+        },
+        {
+            "loc": ["D", 0, 2],
+            "clue": "Anyone who figuratively uses literally starts to fit this description!",
+            "answer": "AWFUL"
+        },
+        {
+            "loc": ["D", 0, 5],
+            "clue": "Actor holds stringed instrument the wrong way round, unknown before a theatre head starts Matthew’s job.",
+            "answer": "TAX COLLECTOR"
+        },
+        {
+            "loc": ["D", 0, 10],
+            "clue": "Makes fun of bones",
+            "answer": "RIBS"
+        },
+        {
+            "loc": ["D", 0, 12],
+            "clue": "Former star performing in non-speaking roles",
+            "answer": "EXTRAS"
+        },
+        {
+            "loc": ["D", 1, 7],
+            "clue": "Greek character removed from statue for a short while",
+            "answer": "MOMENT"
+        },
+        {
+            "loc": ["D", 1, 14],
+            "clue": "Painting fall down? Try empty church",
+            "answer": "DIPTYCH"
+        },
+        {
+            "loc": ["D", 3, 9],
+            "clue": "A certain lobe's possible functions",
+            "answer": "CELEBRATIONS"
+        },
+        {
+            "loc": ["D", 4, 1],
+            "clue": "It's not good being back in person",
+            "answer": "EVIL"
+        },
+        {
+            "loc": ["D", 4, 3],
+            "clue": "Very quickly the expert holds on tight initially.",
+            "answer": "PRONTO"
+        },
+        {
+            "loc": ["D", 5, 11],
+            "clue": "Are laces regularly brought back white?",
+            "answer": "SCLERA"
+        },
+        {
+            "loc": ["D", 7, 13],
+            "clue": "Drink and note Russian approval",
+            "answer": "SODA"
+        },
+        {
+            "loc": ["D", 8, 7],
+            "clue": "Child returns money for organ",
+            "answer": "KIDNEY"
+        },
+        {
+            "loc": ["D", 9, 2],
+            "clue": "Spread rumours that gallery held last event before the end of April",
+            "answer": "TATTLE"
+        },
+        {
+            "loc": ["D", 10, 12],
+            "clue": "Person swearing heard on Scottish island?",
+            "answer": "JUROR"
+        },
+        {
+            "loc": ["D", 10, 14],
+            "clue": "Flowers found in Paros especially",
+            "answer": "ROSES"
+        },
+        {
+            "loc": ["D", 11, 4],
+            "clue": "Reverberation measured accurately through monitor every second",
+            "answer": "ECHO"
+        },
+        {
+            "loc": ["D", 7, 0],
+            "clue": "Spotted by circling the lake in which the beast's tail was found",
+            "answer": "BLOTCHY"
+        }
+    ]
+}

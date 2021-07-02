@@ -8,7 +8,7 @@ if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
-    buildGrid("xword_json/cxw004.json");
+    buildGrid("xword_json/cxw005.json");
 }    
 
 $("#puzzle-menu > div").on("click", function(){
