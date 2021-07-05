@@ -2,61 +2,64 @@
 
 $(document).ready(function() {
 	
-    var w = window.innerWidth;
-    var h = window.innerHeight;
-    console.log(h)
-    
-    xnum = 100;
-    refresh_rate = 500; //ms
-    var initDensity = 0.25;
-    
-    
-    var squareWidth = 0.02 * w;
-    ynum = Math.ceil(h / squareWidth);
-    
-	// create svg drawing
-    var draw = SVG("bg").size("100%", "100%");
-    for (var i = 0; i < xnum; i++) {
-		for (var j = 0; j < ynum; j++) {
-			draw.rect("2vw", "2vw").attr({
-                x: 2*i + "vw",
-                y: 2*j + "vw",
-                id: 'c-'+i+'-'+j,
-                class: 'cells',
-            });
-		}
-	}
-    
-    $(".cells").each(function (index) {
-        if (Math.random() < initDensity) {
-            $(this).attr("data-status","alive");
-        } else {
-            $(this).attr("data-status","dead");
+    if (!detectMob()) {
+        var w = window.innerWidth;
+        var h = window.innerHeight;
+        console.log(h)
+
+        xnum = 100;
+        refresh_rate = 500; //ms
+        var initDensity = 0.25;
+
+
+        var squareWidth = 0.02 * w;
+        ynum = Math.ceil(h / squareWidth);
+
+        // create svg drawing
+        var draw = SVG("bg").size("100%", "100%");
+        for (var i = 0; i < xnum; i++) {
+            for (var j = 0; j < ynum; j++) {
+                draw.rect("2vw", "2vw").attr({
+                    x: 2*i + "vw",
+                    y: 2*j + "vw",
+                    id: 'c-'+i+'-'+j,
+                    class: 'cells',
+                });
+            }
         }
-    });
-    
-    isMouseDown = false
-    $('body').mousedown(function() {
-        isMouseDown = true;
-    })
-    .mouseup(function() {
-        isMouseDown = false;
-    });
-    
-    
-    $(".cells").mouseover(function() {
-        if (isMouseDown) {
+
+        $(".cells").each(function (index) {
+            if (Math.random() < initDensity) {
+                $(this).attr("data-status","alive");
+            } else {
+                $(this).attr("data-status","dead");
+            }
+        });
+
+        isMouseDown = false
+        $('body').mousedown(function() {
+            isMouseDown = true;
+        })
+        .mouseup(function() {
+            isMouseDown = false;
+        });
+
+
+        $(".cells").mouseover(function() {
+            if (isMouseDown) {
+                toggle_life($(this));
+            }
+        });
+
+        $(".cells").click(function() {
             toggle_life($(this));
-        }
-    });
+            console.log($(this).offset())
+        });
+
+        window.anim = setInterval(update, refresh_rate)
+        isPaused = false;
     
-    $(".cells").click(function() {
-        toggle_life($(this));
-        console.log($(this).offset())
-    });
-    
-    window.anim = setInterval(update, refresh_rate)
-    isPaused = false;
+    }
     
 });
 
@@ -115,6 +118,22 @@ function togglemain() {
 function clear_bg() {
     $(".cells").each(function(index) {
         $(this).attr("data-status", "dead");
+    });
+}
+
+function detectMob() {
+    const toMatch = [
+        /Android/i,
+        /webOS/i,
+        /iPhone/i,
+        /iPad/i,
+        /iPod/i,
+        /BlackBerry/i,
+        /Windows Phone/i
+    ];
+
+    return toMatch.some((toMatchItem) => {
+        return navigator.userAgent.match(toMatchItem);
     });
 }
 
