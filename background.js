@@ -2,6 +2,7 @@
 
 $(document).ready(function() {
 	
+    // only active for non-mobile devices!
     if (!detectMob()) {
         var w = window.innerWidth;
         var h = window.innerHeight;

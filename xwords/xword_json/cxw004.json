@@ -34,7 +34,7 @@
         },
         {
             "loc": ["A", 5, 11],
-            "clue": "After elevator's cleared out, it came back rank",
+            "clue": "Before elevator's cleared out, it came back rank",
             "answer": "TIER"
         },
         {
@@ -49,7 +49,7 @@
         },
         {
             "loc": ["A", 9, 5],
-            "clue": "Key to the French-Italian from the east: there's no going back from taking it to the next level ",
+            "clue": "Key to the French-Italian from the east: there's no going back from taking it to the next level",
             "answer": "ESCALATION"
         },
         {
@@ -64,7 +64,7 @@
         },
         {
             "loc": ["A", 13, 0],
-            "clue": "Contract showing the time it happened?",
+            "clue": "Contract showing the time something happened?",
             "answer": "TENSE"
         },
         {
@@ -74,7 +74,7 @@
         },
         {
             "loc": ["A", 14, 9],
-            "clue": "Regularly, Tom did, filthy weirdo",
+            "clue": "Regularly Tom did, filthy weirdo",
             "answer": "ODDITY"
         },
         {
