@@ -26,6 +26,16 @@ $("#puzzle-menu > div").on("click", function(){
     buildGrid(url);
 });
 
+// Deselection handling
+$(document).click(function(event) {
+    var target = $(event.target);
+    if (target.closest(".word, li").length == 0) {
+        $(".word, li").removeClass("selected");
+        $(".word, li").removeClass("cursor");
+        $("#clue-display").empty();
+    }
+});
+
 // Function to build crossword from json file located at url
 function buildGrid(url) {
     $("#grid, #A-clues ol, #D-clues ol").empty();
@@ -148,18 +158,32 @@ function buildGrid(url) {
         });
 
         $(".word, li").on("click", function () {
-
+            
             var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
+            
+            // deals with case where letter is in multiple words...
             if (classes.length > 1) {
-                if (window.selectedClue == classes[0]) {
-                    var clueID = classes[1];
+                // If the letter is not in the selected word, prioritises 'earliest' clue...
+                if (!classes.includes(window.selectedClue)) {
+                    var clueID = classes.sort()[0];
                 } else {
-                    var clueID = classes[0];
+                    // Otherwise, ensures that 'classes[0]' is the selected clue...
+                    if (window.selectedClue == classes[1]) {
+                        classes.reverse();
+                    }
+                    
+                    // ...then the selected word only changes if the box is already selected.
+                    if (window.selectedClue == classes[0] && $(this).hasClass("cursor")) {
+                        var clueID = classes[1];
+                    } else {
+                        var clueID = window.selectedClue;
+                    }
                 }
             } else {
                 var clueID = classes[0];
             }
             window.selectedClue = clueID;
+            update_clue_display(clueID);
             
             $(".word, li").removeClass("selected");
             $(`[class*="${clueID}"]`).addClass("selected");
@@ -170,6 +194,13 @@ function buildGrid(url) {
                 var input = $(this).find("input");
             }
             setCaretPosition(input[0], input[0].value.length);
+            
+            $(".cursor").removeClass("cursor");
+            if ($(this).hasClass("word")) {
+                $(this).addClass("cursor");
+            } else {
+                $(`td[class*="${clueID}"]`).first().addClass("cursor");
+            }
         });
         
         // Ensures input is only letters (of the Roman alphabet)
@@ -193,6 +224,10 @@ function buildGrid(url) {
                 var next_cell = $(word[ind + 1]);
                 var input = next_cell.find("input");
                 setCaretPosition(input[0], input[0].value.length);
+                
+                // highlight 'cursor' box
+                $(".cursor").removeClass("cursor");
+                next_cell.addClass("cursor");
             }
         });
 
@@ -245,6 +280,11 @@ function buildGrid(url) {
             }
 
             if (next_cell) {
+                
+                // highlight 'cursor' box
+                $(".cursor").removeClass("cursor");
+                next_cell.addClass("cursor");
+                
                 var input = next_cell.find("input");
                 setCaretPosition(input[0], 2);
 
@@ -265,6 +305,7 @@ function buildGrid(url) {
 
                 $(".word, li").removeClass("selected");
                 $(`[class*="${clueID}"]`).addClass("selected");
+                update_clue_display(clueID);
             }
 
         });
@@ -412,6 +453,12 @@ function check_completion() {
     }
 }
 
+function update_clue_display(clueID) {
+    var clue_text = $(`li.${window.selectedClue}`).html();
+    var clue_html = `<strong>${clueID.substring(4)}:</strong> ${clue_text}`;
+    $("#clue-display").html(clue_html);
+}
+
 // Restricts input for the set of matched elements to the given inputFilter function.
 (function($) {
   $.fn.inputFilter = function(inputFilter) {
@@ -434,19 +481,23 @@ function check_completion() {
 // function to position cursor at the end of input text
 // Credits: http://blog.vishalon.net/index.php/javascript-getting-and-setting-caret-position-in-textarea/, via https://codepen.io/chrisshaw/pen/yNOVaz
 function setCaretPosition(ctrl, pos) {
-  // Modern browsers
-  if (ctrl.setSelectionRange) {
-    ctrl.focus();
-    ctrl.setSelectionRange(pos, pos);
-  
-  // IE8 and below
-  } else if (ctrl.createTextRange) {
-    var range = ctrl.createTextRange();
-    range.collapse(true);
-    range.moveEnd('character', pos);
-    range.moveStart('character', pos);
-    range.select();
-  }
+    
+    // scroll window
+    $("html").animate({scrollTop: $("#puzzle-title").offset().top}, 200);
+    
+    // Modern browsers
+    if (ctrl.setSelectionRange) {
+        ctrl.focus();
+        ctrl.setSelectionRange(pos, pos);
+
+    // IE8 and below
+    } else if (ctrl.createTextRange) {
+        var range = ctrl.createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+    }
 }
 
 // cookie management, to automatically save progress:
