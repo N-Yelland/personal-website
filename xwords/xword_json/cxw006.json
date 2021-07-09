@@ -1,0 +1,168 @@
+{
+    "title": "Cryptic Crossword 6",
+    "description": "Another themed puzzle, with six themed clues. <br> It's also my first puzzle to follow the rule that 'alternate letters in each word must be checked', making for a prettier grid, I think!",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 1],
+            "clue": "There is value beyond what he has written!",
+            "answer": "WORDSWORTH"
+        },
+        {
+            "loc": ["A", 0, 12],
+            "clue": "Emerged victorious in the finals of Moscow judo competition",
+            "answer": "WON"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "Drifting sheet that is around one hundred feet long initially, before one's cleaned out",
+            "answer": "ICE FLOE"
+        },
+        {
+            "loc": ["A", 2, 8],
+            "clue": "Soft youth leader follows rear edge, close to the ground",
+            "answer": "PILLOWY"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Pull towards large area of land",
+            "answer": "ATTRACT"
+        },
+        {
+            "loc": ["A", 4, 8],
+            "clue": "Waste of a former Greek islander, nearly",
+            "answer": "EXCRETA"
+        },
+        {
+            "loc": ["A", 6, 0],
+            "clue": "Terrible experience for a horse",
+            "answer": "MARE"
+        },
+        {
+            "loc": ["A", 6, 5],
+            "clue": "Nice to hear amendment of bill passed through Sentate",
+            "answer": "LISTENABLE"
+        },
+        {
+            "loc": ["A", 8, 0],
+            "clue": "Requirement about extremely well-protected tooth is not like what I'm used to",
+            "answer": "NEWFANGLED"
+        },
+        {
+            "loc": ["A", 8, 11],
+            "clue": "Canteen clutter",
+            "answer": "MESS"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Vehicle crushed his pair",
+            "answer": "AIRSHIP"
+        },
+        {
+            "loc": ["A", 10, 8],
+            "clue": "Old money brings church into excitement",
+            "answer": "DRACHMA"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "Disgusting smell around location",
+            "answer": "OBSCENE"
+        },
+        {
+            "loc": ["A", 12, 8],
+            "clue": "Uplift by putting adapted reins around a character",
+            "answer": "INSPIRE"
+        },
+        {
+            "loc": ["A", 14, 0],
+            "clue": "Some money from the east!",
+            "answer": "YEN"
+        },
+        {
+            "loc": ["A", 14, 4],
+            "clue": "Disc knit back around wildly wrong left, replaced with thread at the end",
+            "answer": "TIDDLYWINK"
+        },
+        {
+            "loc": ["D", 0, 2],
+            "clue": "Put an end to open hour before we turned up",
+            "answer": "OVERTHREW"
+        },
+        {
+            "loc": ["D", 0, 4],
+            "clue": "Everyone's inside, bar returning Canadian or Australian, perhaps",
+            "answer": "DOLLAR"
+        },
+        {
+            "loc": ["D", 0, 6],
+            "clue": "Girls went out fighting",
+            "answer": "WRESTLING"
+        },
+        {
+            "loc": ["D", 0, 8],
+            "clue": "Exchange shilling in old purse for last of the currency",
+            "answer": "RUPEE"
+        },
+        {
+            "loc": ["D", 0, 10],
+            "clue": "Shout noticed audibly in recent times",
+            "answer": "HOLOCENE"
+        },
+        {
+            "loc": ["D", 0, 12],
+            "clue": "We went around the bottomless pit unscathed",
+            "answer": "WHOLE"
+        },
+        {
+            "loc": ["D", 0, 14],
+            "clue": "For these people, 'no' ultimately comes before affirmative and empty responses!",
+            "answer": "NAYSAYERS"
+        },
+        {
+            "loc": ["D", 1, 0],
+            "clue": "Search the stall I ran for money",
+            "answer": "LIRA"
+        },
+        {
+            "loc": ["D", 6, 0],
+            "clue": "Military leader with a politician cannot be avoided",
+            "answer": "MANDATORY"
+        },
+        {
+            "loc": ["D", 6, 8],
+            "clue": "Exercise machine badly made, with vibrating noises on either side",
+            "answer": "TREADMILL"
+        },
+        {
+            "loc": ["D", 6, 12],
+            "clue": "Crab in the exotic kind of theatre",
+            "answer": "BRECHTIAN"
+        },
+        {
+            "loc": ["D", 7, 4],
+            "clue": "Home county finally thanks quiet capital",
+            "answer": "TASHKENT"
+        },
+        {
+            "loc": ["D", 9, 10],
+            "clue": "European city has seen conflict before",
+            "answer": "WARSAW"
+        },
+        {
+            "loc": ["D", 10, 2],
+            "clue": "Give up without starting to give pitch",
+            "answer": "RESIN"
+        },
+        {
+            "loc": ["D", 10, 6],
+            "clue": "Beg to be included in multiple addresses ",
+            "answer": "PLEAD"
+        },
+        {
+            "loc": ["D", 10, 14],
+            "clue": "The second child sounds like he can",
+            "answer": "ABEL"
+        }
+        
+    ]
+}
