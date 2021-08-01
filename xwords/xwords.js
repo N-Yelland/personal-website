@@ -8,7 +8,7 @@ if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
-    buildGrid("xword_json/cxw006.json");
+    buildGrid("xword_json/cxw007.json");
 }    
 
 $("#puzzle-menu > div").on("click", function(){
@@ -25,6 +25,15 @@ $("#puzzle-menu > div").on("click", function(){
     
     buildGrid(url);
 });
+
+// allows instant puzzle navigation via the hash...
+// format: #cxw{n} takes you to the {n}th puzzle
+if(window.location.hash.match(/^#cxw\d+$/)){
+    console.log("TEST");
+    var n = window.location.hash.replace(/#cxw/,"");
+    console.log(n);
+    $(`#puzzle-menu div:nth-child(${n})`).click();
+}
 
 // Deselection handling
 $(document).click(function(event) {

@@ -1,0 +1,147 @@
+{
+    "title": "<i>Challenging</i> Cryptic Crossword 7",
+    "description": "This crossword is made more difficult by the obscurity and esotericity of many of the words being clued. Good luck!",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 0],
+            "clue": "Go off a country",
+            "answer": "BADUK"
+        },
+        {
+            "loc": ["A", 0, 6],
+            "clue": "I drink, mostly after a saloon, for a tick - it's deadly",
+            "answer": "ACARICIDE"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "At the end, river current turned around in two different ways, making you repeat from the beginning",
+            "answer": "DA CAPO"
+        },
+        {
+            "loc": ["A", 2, 7],
+            "clue": "Redundancy for some people on a smallholding",
+            "answer": "PLEONASM"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Old spit sample is cleaned off and reused",
+            "answer": "PALIMPSEST"
+        },
+        {
+            "loc": ["A", 4, 11],
+            "clue": "Children's author makes lentil dish",
+            "answer": "DAHL"
+        },
+        {
+            "loc": ["A", 6, 0],
+            "clue": "Hormone a scan found before the end of the month",
+            "answer": "ACTH"
+        },
+        {
+            "loc": ["A", 6, 5],
+            "clue": "The Queen, in Great Britain, came back following poorly chosen musician",
+            "answer": "SCHOENBERG"
+        },
+        {
+            "loc": ["A", 8, 0],
+            "clue": "Ho ho, can he possibly consume the tail of a lizard for the master?",
+            "answer": "HEAD HONCHO"
+        },
+        {
+            "loc": ["A", 8, 11],
+            "clue": "For instance, a dog, primarily created by God",
+            "answer": "EGAD"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Guide spoke of truth and existence",
+            "answer": "ASHA"
+        },
+        {
+            "loc": ["A", 10, 5],
+            "clue": "Space-marine mammals swap left and right, they can make you feel happy",
+            "answer": "ENDORPHINS"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "Epic and long-mashed soybeans have one vitamin replaced with another",
+            "answer": "ODYSSEAN"
+        },
+        {
+            "loc": ["A", 12, 9],
+            "clue": "Before the morning, between the borders of Tibet, the wizard returned to make flatbreads",
+            "answer": "MATZOT"
+        },
+        {
+            "loc": ["A", 14, 0],
+            "clue": "Trees seen in wild-ass safaris, in which I was not included",
+            "answer": "SASSAFRAS"
+        },
+        {
+            "loc": ["A", 14, 10],
+            "clue": "Outer castle is involved in mysterious tale",
+            "answer": "ECTAL"
+        },
+        {
+            "loc": ["D", 0, 1],
+            "clue": "Pose for cameras: an audience, essentially",
+            "answer": "ASANA"
+        },
+        {
+            "loc": ["D", 0, 3],
+            "clue": "Sacred text is kind of diaphanous, but without any holes",
+            "answer": "UPANISHAD"
+        },
+        {
+            "loc": ["D", 0, 7],
+            "clue": "Get me fresh peaches",
+            "answer": "CAPEESH"
+        },
+        {
+            "loc": ["D", 0, 9],
+            "clue": "Wander around short end, and get turning inert gas up (safety first!) for X-ray images",
+            "answer": "ROENTGENOGRAMS"
+        },
+        {
+            "loc": ["D", 0, 11],
+            "clue": "Can I dine holding a fox, perhaps?",
+            "answer": "CANID"
+        },
+        {
+            "loc": ["D", 0, 13],
+            "clue": "Rhapsody composed about me in state of unhappiness",
+            "answer": "DYSPHORIA"
+        },
+        {
+            "loc": ["D", 6, 1],
+            "clue": "After the cold, a dry spell nearly affected device measuring water for a time",
+            "answer": "CLEPSYDRA"
+        },
+        {
+            "loc": ["D", 10, 3],
+            "clue": "Accent from Inverness is rather backward",
+            "answer": "ARSIS"
+        },
+        {
+            "loc": ["D", 1, 5],
+            "clue": "Write music unaided to calm down",
+            "answer": "COMPOSE ONESELF"
+        },
+        {
+            "loc": ["D", 8, 7],
+            "clue": "Around burrow, mid-sized area reveals a very flowery passage",
+            "answer": "CADENZA"
+        },
+        {
+            "loc": ["D", 6, 11],
+            "clue": "It's helpful, vaguely, to be the initally lacking jerk",
+            "answer": "BOETHETIC"
+        },
+        {
+            "loc": ["D", 10, 13],
+            "clue": "Among beaten drums",
+            "answer": "NGOMA"
+        }
+    ]
+}
