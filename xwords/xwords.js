@@ -3,6 +3,30 @@ var A_clues = new Array();
 var D_clues = new Array();
 $("#table-div").hide();
 
+// Initialises puzzle menu...
+var puzzle_count = 8; // how many puzzles are there?
+for (i=1; i <= puzzle_count; i++) {
+    var i_3 = ("00" + i).slice(-3)
+    $("#puzzle-menu").append(`<div class="contents" src="xword_json/cxw${i_3}.json">No. ${i}</div`)
+}
+// currently assumes all crosswords are located in the file xwords_json,
+// and have file names of the form cxwXXX.json where X is a digit.
+
+$("#puzzle-menu > div").on("click", function(){
+    $("#table-div").show();
+    $("#completion-msg").hide();
+    var url = $(this).attr("src");
+    window.puzzle = url
+
+    A_clues = [];
+    D_clues = [];
+    if (window.show_errors_enabled) {
+        toggle_show_errors();
+    }
+
+    buildGrid(url);
+});
+
 window.setting_tools = false;
 if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
@@ -11,20 +35,7 @@ if (window.setting_tools) {
     buildGrid("xword_json/cxw007.json");
 }    
 
-$("#puzzle-menu > div").on("click", function(){
-    $("#table-div").show();
-    $("#completion-msg").hide();
-    var url = $(this).attr("src");
-    window.puzzle = url
-    
-    A_clues = [];
-    D_clues = [];
-    if (window.show_errors_enabled) {
-        toggle_show_errors();
-    }
-    
-    buildGrid(url);
-});
+
 
 // allows instant puzzle navigation via the hash...
 // format: #cxw{n} takes you to the {n}th puzzle

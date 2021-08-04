@@ -1,0 +1,152 @@
+{
+    "title": "Cryptic Crossword 8",
+    "description": "A return to a slightly simpler set of clues and answers",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["D", 0, 0],
+            "clue": "Possibly one for mentioning public unhappiness initially!",
+            "answer": "OPEN FORUM"
+        },
+        {
+            "loc": ["D", 0, 2],
+            "clue": "London attraction where Thomas abseils regularly and quickly",
+            "answer": "HMS BELFAST"
+        },
+        {
+            "loc": ["D", 0, 4],
+            "clue": "Nerve in part of the face",
+            "answer": "CHEEK"
+        },
+        {
+            "loc": ["D", 0, 6],
+            "clue": "Shot game animal with round, creating feeling of self-importance",
+            "answer": "MEGALOMANIA"
+        },
+        {
+            "loc": ["D", 0, 10],
+            "clue": "Come round to get into dang small party",
+            "answer": "DEMOCRATS"
+        },
+        {
+            "loc": ["D", 0, 12],
+            "clue": "Spring is manufactured from a pole with nothing removed",
+            "answer": "LEAP"
+        },
+        {
+            "loc": ["D", 0, 14],
+            "clue": "Shallots: first remove the outer layer from the bottom, or drop off",
+            "answer": "SLEEP"
+        },
+        {
+            "loc": ["A", 1, 0],
+            "clue": "Speaker in the outskirts of Porstmouth is with licensed flyer",
+            "answer": "PAMPHLET"
+        },
+        {
+            "loc": ["A", 1, 9],
+            "clue": "Regular show on the radio is grainy?",
+            "answer": "CEREAL"
+        },
+        {
+            "loc": ["A", 3, 0],
+            "clue": "It does not react to aristocratic amusement",
+            "answer": "NOBLE GAS"
+        },
+        {
+            "loc": ["A", 3, 9],
+            "clue": "Remains to be unable to keep a straight face",
+            "answer": "CORPSE"
+        },
+        {
+            "loc": ["A", 5, 0],
+            "clue": "Awfully slow forming a parliament?",
+            "answer": "OWLS"
+        },
+        {
+            "loc": ["A", 5, 5],
+            "clue": "Grey horde returns before the leader of Scythia attacks",
+            "answer": "BOMBARDS"
+        },
+        {
+            "loc": ["A", 7, 0],
+            "clue": "To the west, I'm a mushroom extract!",
+            "answer": "UMAMI"
+        },
+        {
+            "loc": ["A", 7, 6],
+            "clue": "Scottish town's broadcast heard",
+            "answer": "AYR"
+        },
+        {
+            "loc": ["A", 7, 10],
+            "clue": "Wee like a thirteen-year-old",
+            "answer": "TEENY"
+        },
+        {
+            "loc": ["D", 4, 8],
+            "clue": "Wandering west, stray by the Welsh town",
+            "answer": "ABERYSTWYTH"
+        },
+        {
+            "loc": ["D", 6, 4],
+            "clue": "Tarnish club owned by us, outside the first league",
+            "answer": "DISCOLOUR"
+        },
+        {
+            "loc": ["D", 5, 12],
+            "clue": "It's never more than seventy miles piloted badly - look out!",
+            "answer": "SPEED LIMIT"
+        },
+        {
+            "loc": ["D", 6, 14],
+            "clue": "Miss refurbishment, round up - gosh, that's a deduction",
+            "answer": "SYLLOGISM"
+        },
+        {
+            "loc": ["A", 9, 2],
+            "clue": "Most adhesive has worse taste than anything else",
+            "answer": "TACKIEST"
+        },
+        {
+            "loc": ["A", 9, 11],
+            "clue": "Observe model in audition for hero",
+            "answer": "IDOL"
+        },
+        {
+            "loc": ["D", 10, 0],
+            "clue": "Swapping note for £1,000 in their turnover is appropriate",
+            "answer": "RIGHT"
+        },
+        {
+            "loc": ["D", 10, 10],
+            "clue": "Pursue around a frequented place",
+            "answer": "HAUNT"
+        },
+        {
+            "loc": ["D", 11, 2],
+            "clue": "Become submerged in a basin",
+            "answer": "SINK"
+        },
+        {
+            "loc": ["A", 11, 0],
+            "clue": "Primary use: nails building block",
+            "answer": "INSULA"
+        },
+        {
+            "loc": ["A", 11, 7],
+            "clue": "Promising second taxing",
+            "answer": "SWEARING"
+        },
+        {
+            "loc": ["A", 13, 0],
+            "clue": "Is it a problem to end the call?",
+            "answer": "HANG-UP"
+        },
+        {
+            "loc": ["A", 13, 7],
+            "clue": "Unless it ruined tools",
+            "answer": "UTENSILS"
+        }
+    ]
+}
