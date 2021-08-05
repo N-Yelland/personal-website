@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Brainf*ck Interpreter</title>
+        <link rel="stylesheet" href="../../style.css">
+        
+        <!-- KaTeX Loading...-->    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.css" integrity="sha384-Cqd8ihRLum0CCg8rz0hYKPoLZ3uw+gES2rXQXycqnL5pgVQIflxAUDS7ZSjITLb5" crossorigin="anonymous">
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/katex.min.js" integrity="sha384-1Or6BdeNQb0ezrmtGeqQHFpppNd7a/gw29xeiSikBbsb44xu3uAo8c7FwbF5jhbd" crossorigin="anonymous"></script>
+        <script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.2/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl" crossorigin="anonymous"></script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                renderMathInElement(document.body, {
+                  // customised options
+                  // • auto-render specific keys, e.g.:
+                  delimiters: [
+                      {left: '$$', right: '$$', display: true},
+                      {left: '$', right: '$', display: false},
+                      {left: '\\(', right: '\\)', display: false},
+                      {left: '\\[', right: '\\]', display: true}
+                  ],
+                  // • rendering keys, e.g.:
+                  throwOnError : false
+                });
+            });
+        </script>
+        
+        <style>            
+            .katex {
+                font-size: 1.1em;
+            }
+            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+
+            
+            h1 {
+                text-align: center;
+            }
+            
+            #interpreter {
+                width: 75%;
+                margin: auto;
+                padding: 5pt 2.5pt 5pt 2.5pt;
+                border-radius: 5pt;
+                background: #e0e0e0;
+                box-shadow: 5px 5px;
+            }
+            
+            .container {
+                width: 100%;
+                height: inherit;
+                display: flex;
+            }
+            
+            #tape {
+                margin: auto;
+                margin-top: 20pt;
+                height: 2em;
+            }
+            
+            #inputbox {
+                resize: none;
+            }
+            
+            
+            .textbox {
+                background: #474747;
+                border-radius: 5pt;
+                color: white;
+                font-family: monospace;
+                font-size: 1.2em;
+                padding: 4pt;
+                
+                border: none;
+                width: calc(50% - 5pt);
+                height: 16em;
+                margin: 0 2.5pt 0 2.5pt;
+                
+                word-wrap: break-word;
+                overflow: auto;
+            }
+            ::placeholder {
+                font-style: italic;
+            }
+            
+            .textbox:focus {
+                outline: none;
+            }
+            
+            .error-msg {
+                color: #db4b4b;
+            }
+            
+            .input-msg {
+                color: #808cd9;
+            }
+            
+            .end-msg {
+                color: #64bd85;
+            }
+            
+             .pointer {
+                color: #64bd85;
+            }
+            
+            .icon {
+                height: 3em;
+                width: 3em;
+                margin: 5pt;
+                background: #474747;
+                display: flex;
+                justify-content: center;
+                border-radius: 5pt;
+                transition: all .25s;
+            }
+            
+            .icon:hover {
+                background: grey;
+            }
+            
+            .icon img {
+                margin: auto;
+                height: 75%;
+                cursor: pointer;
+            }
+            
+            .textbox p {
+                margin: 0;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        
+        <main>
+            <div id="header" class="ext" src="../../header.html"></div>
+            
+            <h1>BF Interpreter</h1>
+            
+            <div id="interpreter">
+                <div class="container">
+                    <div class="icon" id="run-btn" title="Run Code"></div>
+                    <div class="icon" id="save-btn" title="Save"></div>
+                    <div class="icon" id="open-btn" title="Open"></div>
+                    <div class="icon" id="tape-btn" title="View Tape"></div>
+                </div>
+                <div class="container">
+                    <textarea id="inputbox" class="textbox" placeholder="Enter Code Here..."></textarea>
+                    <div class="textbox" id="outputbox">Awaiting output...</div>
+                </div>
+            </div>
+            
+            <div class="textbox"id="tape"></div>
+            
+
+        </main>
+        
+        <div id="bg"></div>
+        
+        
+    </body>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../../homepage.js"></script>
+    <script src="../../background.js"></script>
+    <script src="bf_interpreter.js"></script>
+</html>
