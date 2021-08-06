@@ -41,13 +41,13 @@
                 text-align: center;
             }
             
-            #interpreter {
+            .outerbox {
                 width: 75%;
                 margin: auto;
                 padding: 5pt 2.5pt 5pt 2.5pt;
                 border-radius: 5pt;
                 background: #e0e0e0;
-                box-shadow: 5px 5px;
+                box-shadow: 3pt 3pt 5pt #000000;
             }
             
             .container {
@@ -57,9 +57,29 @@
             }
             
             #tape {
-                margin: auto;
-                margin-top: 20pt;
+                margin-top: 5pt;
                 height: 2em;
+                overflow-x: scroll;
+                overflow-y: hidden;
+                white-space: nowrap;
+                width: calc(100% - 12.5pt);
+                
+            }
+            
+            ::-webkit-scrollbar {
+                height: 10pt;
+                margin: 15pt;
+            }
+
+            ::-webkit-scrollbar-thumb {
+                border: solid 3pt rgba(71,71,71);
+                border-radius: 10px;
+                background-color: rgba(224,224,224,0.25);
+                width: 2pt;
+                -webkit-transition: background-color .5s ease;
+            }
+            ::-webkit-scrollbar-thumb:hover{
+                background-color: rgba(224,224,224,1);
             }
             
             #inputbox {
@@ -68,12 +88,15 @@
             
             
             .textbox {
+                flex: 1 1 0;
+                
                 background: #474747;
                 border-radius: 5pt;
                 color: white;
                 font-family: monospace;
                 font-size: 1.2em;
                 padding: 4pt;
+                box-shadow: inset 0 0 5pt #000000;
                 
                 border: none;
                 width: calc(50% - 5pt);
@@ -85,6 +108,11 @@
             }
             ::placeholder {
                 font-style: italic;
+            }
+            
+            .placeholder {
+                font-style: italic;
+                opacity: 25%;
             }
             
             .textbox:focus {
@@ -103,7 +131,18 @@
                 color: #64bd85;
             }
             
-             .pointer {
+            .comment {
+                opacity: 25%;
+            }
+            
+            .pointer {
+                color: #64bd85;
+                border-bottom: solid 2pt;
+            }
+            
+            #codebox span:focus{
+                outline: none;
+                border-bottom: solid 2pt;
                 color: #64bd85;
             }
             
@@ -116,10 +155,17 @@
                 justify-content: center;
                 border-radius: 5pt;
                 transition: all .25s;
+                
+                box-sizing: border-box;
             }
             
             .icon:hover {
                 background: grey;
+            }
+            
+            .icon:active {
+                transform: scale(0.93);
+                box-shadow: inset 0 0 2pt #000000;
             }
             
             .icon img {
@@ -142,7 +188,7 @@
             
             <h1>BF Interpreter</h1>
             
-            <div id="interpreter">
+            <div class="outerbox">
                 <div class="container">
                     <div class="icon" id="run-btn" title="Run Code"></div>
                     <div class="icon" id="save-btn" title="Save"></div>
@@ -151,11 +197,11 @@
                 </div>
                 <div class="container">
                     <textarea id="inputbox" class="textbox" placeholder="Enter Code Here..."></textarea>
-                    <div class="textbox" id="outputbox">Awaiting output...</div>
+                    <div class="textbox" id="codebox" style="display:none"></div>
+                    <div class="textbox" id="outputbox"><span class="placeholder">Awaiting output...</span></div>
                 </div>
+                <div class="textbox"id="tape" style="display:none"></div>
             </div>
-            
-            <div class="textbox"id="tape"></div>
             
 
         </main>
