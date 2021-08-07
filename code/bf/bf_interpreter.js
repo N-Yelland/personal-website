@@ -369,11 +369,10 @@ function step(program) {
 
 async function getNewFileHandle() {
     const options = {
-        suggestedName: "script.bf",
         startIn: "documents",
         types: [
             {
-                description: "BF Scripts",
+                description: "Text Files",
                 accept: {
                     "text/plain": [".txt"],
                 },
@@ -395,6 +394,5 @@ async function writeFile(fileHandle, contents) {
 
 $("#save-btn").on("click", async function () {
     var contents = $("#inputbox").val();
-    console.log(contents);
     writeFile(getNewFileHandle(), contents);
 });
