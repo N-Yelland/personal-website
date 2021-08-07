@@ -364,35 +364,3 @@ function step(program) {
     }
     return next_program;
 }
-
-// File Saving & Loading
-
-async function getNewFileHandle() {
-    const options = {
-        startIn: "documents",
-        types: [
-            {
-                description: "Text Files",
-                accept: {
-                    "text/plain": [".txt"],
-                },
-            },
-        ],
-    };
-    const handle = await window.showSaveFilePicker(options);
-    return handle;
-}
-
-async function writeFile(fileHandle, contents) {
-  // Create a FileSystemWritableFileStream to write to.
-  const writable = await fileHandle.createWritable();
-  // Write the contents of the file to the stream.
-  await writable.write(contents);
-  // Close the file and write the contents to disk.
-  await writable.close();
-}
-
-$("#save-btn").on("click", async function () {
-    var contents = $("#inputbox").val();
-    writeFile(getNewFileHandle(), contents);
-});
