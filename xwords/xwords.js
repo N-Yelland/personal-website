@@ -4,7 +4,7 @@ var D_clues = new Array();
 $("#table-div").hide();
 
 // Initialises puzzle menu...
-var puzzle_count = 8; // how many puzzles are there?
+var puzzle_count = 9; // how many puzzles are there?
 for (i=1; i <= puzzle_count; i++) {
     var i_3 = ("00" + i).slice(-3)
     $("#puzzle-menu").append(`<div class="contents" src="xword_json/cxw${i_3}.json">No. ${i}</div`)
@@ -27,12 +27,12 @@ $("#puzzle-menu > div").on("click", function(){
     buildGrid(url);
 });
 
-window.setting_tools = false;
+window.setting_tools = true;
 if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
-    buildGrid("xword_json/cxw007.json");
+    buildGrid("xword_json/cxw009.json");
 }    
 
 

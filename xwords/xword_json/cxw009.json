@@ -1,0 +1,157 @@
+{
+    "title": "Cryptic Crossword 8",
+    "description": "",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 0],
+            "clue": "Illegally enters south road, surrounded by trees",
+            "answer": "TRESPASSES"
+        },
+        {
+            "loc": ["A", 0, 11],
+            "clue": "One head of the beast is a bird",
+            "answer": "IBIS"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "Gambler, forgetting essential calculation, misinterpreted risk, not quite getting an object of value",
+            "answer": "AMBERGRIS"
+        },
+        {
+            "loc": ["A", 2, 10],
+            "clue": "Adequate sleep? On the contrary - a crumb!",
+            "answer": "PANKO"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Continue with lighter luggage",
+            "answer": "CARRY ON"
+        },
+        {
+            "loc": ["A", 4, 8],
+            "clue": "Life jacket reportedly might dampen when worn by son",
+            "answer": "MAE WEST"
+        },
+        {
+            "loc": ["A", 6, 1],
+            "clue": "Twenty Roman betrayals",
+            "answer": "DOUBLECROSSES"
+        },
+        {
+            "loc": ["A", 8, 1],
+            "clue": "One in politics put in action to be removed from politics",
+            "answer": "DEPOLITICISED"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Playwright's examination of recital",
+            "answer": "CHEKHOV"
+        },
+        {
+            "loc": ["A", 10, 8],
+            "clue": "Fake Chinese porcelain heard to be releasing bubbles",
+            "answer": "FOAMING"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "Level roof over outside of central walls",
+            "answer": "FLOOR"
+        },
+        {
+            "loc": ["A", 12, 6],
+            "clue": "Alcoholic drink containing hints of honey and lemon - that's paradise",
+            "answer": "SHANGRI-LA"
+        },
+        {
+            "loc": ["A", 14, 0],
+            "clue": "Sword softly placed between three English leaders",
+            "answer": "EPEE"
+        },
+        {
+            "loc": ["A", 14, 5],
+            "clue": "Inexperienced and not strong approval",
+            "answer": "GREENLIGHT"
+        },
+        {
+            "loc": ["D", 0, 0],
+            "clue": "Follow enthralling new dream",
+            "answer": "TRANCE"
+        },
+        {
+            "loc": ["D", 0, 2],
+            "clue": "Restriction in primarily economic matters, government organised!",
+            "answer": "EMBARGO"
+        },
+        {
+            "loc": ["D", 0, 4],
+            "clue": "Do try, without reversing at the start, to come below average",
+            "answer": "PARTY"
+        },
+        {
+            "loc": ["D", 0, 6],
+            "clue": "Part of Africa is calm around midnight, then it's over",
+            "answer": "SERENGETI"
+        },
+        {
+            "loc": ["D", 0, 8],
+            "clue": "Poems about English town",
+            "answer": "EPSOM"
+        },
+        {
+            "loc": ["D", 0, 12],
+            "clue": "Very small ring of zinc found around end of June in Italian well",
+            "answer": "BENZENE"
+        },
+        {
+            "loc": ["D", 0, 14],
+            "clue": "Flipped hotel as well, behind Sam's empty flat",
+            "answer": "SMOOTH"
+        },
+        {
+            "loc": ["D", 1, 10],
+            "clue": "Evening entertainment in Innsbruck, perhaps, for Austrian journalists and half of the children",
+            "answer": "APRES-SKI"
+        },
+        {
+            "loc": ["D", 6, 4],
+            "clue": "Mate, of course I've heard of a catalogue",
+            "answer": "BROCHURE"
+        },
+        {
+            "loc": ["D", 6, 8],
+            "clue": "Blow up regularly, runs a repeat air fill!",
+            "answer": "REINFLATE"
+        },
+        {
+            "loc": ["D", 8, 2],
+            "clue": "Examine first the old ulcer - it's rather unsightly",
+            "answer": "EYESORE"
+        },
+        {
+            "loc": ["D", 8, 12],
+            "clue": "Leaving thrilling clubs ignored",
+            "answer": "EXITING"
+        },
+        {
+            "loc": ["D", 9, 0],
+            "clue": "Programmer to present a payment",
+            "answer": "MCAFEE"
+        },
+        {
+            "loc": ["D", 9, 14],
+            "clue": "Shocked scumbag has tremors contained",
+            "answer": "AGHAST"
+        },
+        {
+            "loc": ["D", 10, 6],
+            "clue": "Six spearheads or a shield?",
+            "answer": "VISOR"
+        },
+        {
+            "loc": ["D", 10, 10],
+            "clue": "Perhaps Gabrield is on the Northern line?",
+            "answer": "ANGEL"
+        }
+    ]
+}
