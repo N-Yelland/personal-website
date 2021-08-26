@@ -27,7 +27,7 @@ $("#puzzle-menu > div").on("click", function(){
     buildGrid(url);
 });
 
-window.setting_tools = true;
+window.setting_tools = false;
 if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
