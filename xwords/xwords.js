@@ -33,9 +33,7 @@ if (window.setting_tools) {
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
     buildGrid("xword_json/cxw009.json");
-}    
-
-
+}
 
 // allows instant puzzle navigation via the hash...
 // format: #cxw{n} takes you to the {n}th puzzle
