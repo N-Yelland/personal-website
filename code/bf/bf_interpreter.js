@@ -70,6 +70,57 @@ $("#tape-btn").on("click", function () {
    }
 });
 
+var converter_open = false;
+$("#ascii-converter").hide();
+$("#ascii-converter-btn").on("click", function () {
+    if (!converter_open) {
+        $(this).css({
+            "background": "grey",
+            "border": "solid 2.5pt #474747"
+        });
+        $(this).attr("title", "Close ASCII Converter");
+        converter_open = true;
+        $("#ascii-converter").show();
+    } else {
+        $(this).css({
+            "background": "#474747",
+            "border": "0"
+        });
+        $(this).attr("title", "Open ASCII Converter");
+        converter_open = false;
+        $("#ascii-converter").hide();
+    }
+});
+
+$("#char-entry").on("input", function (e) {
+    var char = $(this).val();
+    if (char.length > 1) {
+        char = char.slice(char.length-1);
+        $(this).val(char);
+    }
+    if (char) {
+        var num = char.charCodeAt(0) % 256;
+        $("#num-entry").val(num);
+    } else {
+        $("#num-entry").val("0");
+    }
+})
+
+$("#num-entry").on("input", function(e) {
+    var num = $(this).val().replace(/\D/, "");
+    if (num.length > 3) {
+        num = num.slice(1);
+    }
+    $(this).val(num);
+    if (num) {
+        var char = String.fromCharCode(num % 256);
+        $("#char-entry").val(char);
+    } else {
+        $("#char-entry").val("");
+    }
+    
+})
+
 // cookie management, to make code persist...
 // from https://www.w3schools.com/js/js_cookies.asp
 function setCookie(cname, cvalue, exdays) {
