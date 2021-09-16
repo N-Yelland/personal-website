@@ -1,0 +1,137 @@
+{
+    "title": "Cryptic Crossword 10",
+    "description": "This crossword was an excuse to try out some split clues.<br> All the split answers have a theme, which is shared with the two longer answers as well.",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 8, 0, "D", 0, 9],
+            "clue": "Officer with American sailors going round California assemble first on part of deck",
+            "answer": "MAJOR/ ARCANA"
+        },
+        {
+            "loc": ["A", 0, 0],
+            "clue": "Doctoring client with care and pager!",
+            "answer": "GENERAL PRACTICE"
+        },
+        {
+            "loc": ["A", 14, 0],
+            "clue": "Head of the army and light infantry left on beaches in Pacific nation",
+            "answer": "MARSHALL ISLANDS"
+        },
+        {
+            "loc": ["D", 0, 7, "D", 8, 13],
+            "clue": "Infantryman to get a look at magazine",
+            "answer": "PRIVATE/ EYE"
+        },
+        {
+            "loc": ["D", 4, 1, "D", 8, 7],
+            "clue": "Flying insect disturbed married lad",
+            "answer": "RED/ ADMIRAL"
+        },
+        {
+            "loc": ["D", 0, 13, "D", 8, 9],
+            "clue": "Businessman listened to grain grinders",
+            "answer": "COLONEL/ SANDERS"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "Almost worn-out stone",
+            "answer": "JADE"
+        },
+        {
+            "loc": ["A", 2, 5],
+            "clue": "Little creature from Eastern country catches cold",
+            "answer": "CHINCHILLA"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Engineers agree rounding measurement incompletely created poorly defined region",
+            "answer": "GREY AREA"
+        },
+        {
+            "loc": ["A", 4, 9],
+            "clue": "Stockings only worn during Naples vacation",
+            "answer": "NYLONS"
+        },
+        {
+            "loc": ["A", 6, 0],
+            "clue": "Talked with current head of department on bringing back short course",
+            "answer": "ADDRESSED"
+        },
+        {
+            "loc": ["A", 6, 10],
+            "clue": "Rubbish unfinished sample of song",
+            "answer": "PSALM"
+        },
+        {
+            "loc": ["A", 8, 6],
+            "clue": "Many were killed, leading to holy communion being cut short at the beginning",
+            "answer": "MASSACRED"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Rock ball",
+            "answer": "MARBLE"
+        },
+        {
+            "loc": ["A", 10, 7],
+            "clue": "Take care of a clergyman",
+            "answer": "MINISTER"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "Scientist, from old city that is to the east of America, ignores answer on evolution",
+            "answer": "MARIE CURIE"
+        },
+        {
+            "loc": ["A", 12, 11],
+            "clue": "Resistance to expressing disapproval in text? Send back nothing first",
+            "answer": "OHMS"
+        },
+        {
+            "loc": ["D", 0, 1],
+            "clue": "Many years are brought up",
+            "answer": "ERA"
+        },
+        {
+            "loc": ["D", 0, 3],
+            "clue": "Engineers return with unknown rock",
+            "answer": "EMERY"
+        },
+        {
+            "loc": ["D", 0, 5],
+            "clue": "Deals cards out, having picked up incomplete trick",
+            "answer": "ACCORDS"
+        },
+        {
+            "loc": ["D", 0, 11],
+            "clue": "Short journey please, without a car at the front for a drink",
+            "answer": "TRIPLE SEC"
+        },
+        {
+            "loc": ["D", 6, 3],
+            "clue": "Shapes of letters, including essential symbol, and digits, first ten ascending",
+            "answer": "RHOMBOIDS"
+        },
+        {
+            "loc": ["D", 8, 1],
+            "clue": "Two different graduates after article on the French state",
+            "answer": "ALABAMA"
+        },
+        {
+            "loc": ["D", 9, 5],
+            "clue": "Old kingdom emerged from the ruin of leaderless America",
+            "answer": "MERCIA"
+        },
+        {
+            "loc": ["D", 10, 11],
+            "clue": "A most abnormal hole",
+            "answer": "STOMA"
+        },
+        {
+            "loc": ["D", 12, 13],
+            "clue": "Clay mound evens out",
+            "answer": "MUD"
+        }
+    ]
+}

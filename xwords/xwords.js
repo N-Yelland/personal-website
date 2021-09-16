@@ -4,7 +4,7 @@ var D_clues = new Array();
 $("#table-div").hide();
 
 // Initialises puzzle menu...
-var puzzle_count = 9; // how many puzzles are there?
+var puzzle_count = 10; // how many puzzles are there?
 for (i=1; i <= puzzle_count; i++) {
     var i_3 = ("00" + i).slice(-3)
     $("#puzzle-menu").append(`<div class="contents" src="xword_json/cxw${i_3}.json">No. ${i}</div`)
@@ -32,7 +32,7 @@ if (window.setting_tools) {
     $("h1").html("Crossword Setting Tool");
     $("#table-div").show();
     $("#puzzle-menu, #game-menu").hide();
-    buildGrid("xword_json/cxw009.json");
+    buildGrid("xword_json/cxw010.json");
 }
 
 // allows instant puzzle navigation via the hash...
@@ -47,7 +47,7 @@ if(window.location.hash.match(/^#cxw\d+$/)){
 // Deselection handling
 $(document).click(function(event) {
     var target = $(event.target);
-    if (target.closest(".word, li").length == 0) {
+    if (target.closest(".word, li, #clue-display").length == 0) {
         $(".word, li").removeClass("selected");
         $(".word, li").removeClass("cursor");
         $("#clue-display").empty();
@@ -68,13 +68,44 @@ function buildGrid(url) {
             $("#puzzle-description").html("");
         }
 
-        // build table
+        // builds table
         for (i=0; i < grid.size[0]; i++) {
             $("#grid").append(`<tr></tr>`)
             for (j=0; j < grid.size[1]; j++) {            
                 $(`#grid tr:nth-child(${i+1})`).append("<td></td>")
             }
         }
+        // splits multiple clues:
+        var new_clues = new Array();
+        for (i = 0; i < grid.clues.length; i++) {
+            var clue = grid.clues[i];
+            if (clue.loc.length > 3) {
+                var raw_answer_parts = clue.answer.split(/\//g);
+                var answer_parts = raw_answer_parts.map(ans => ans.trim().replace(/(-$)|(^-)/g, ""));
+                var isMultiDir = !clue.loc.every((val, i, arr) => val == arr[0] || i % 3 != 0);
+                for (var j = 0; j < answer_parts.length; j++) {
+                    var new_clue = j == 0 ? clue.clue : `See ...`;
+                    var links = answer_parts//.filter(e => answer_parts.indexOf(e) != j);
+                    var new_clue_obj = {
+                        loc: clue.loc.slice(3*j, 3*j+3),
+                        clue: new_clue,
+                        answer: answer_parts[j],
+                        links: links,
+                        isRoot: j == 0,
+                        isMultiDir: isMultiDir
+                    }
+                    if (j == 0) {
+                        new_clue_obj.full_answer = clue.answer.replace(/\//g, "");
+                    }
+                    new_clues.push(new_clue_obj);
+                }
+                clue.answer = answer_parts[0];
+            } else {
+                new_clues.push(clue);
+            }
+        }
+        grid.clues = new_clues;
+        console.log(grid.clues)
 
         var clues_list = grid.clues.sort( (a,b) => {
             var size = grid.size[1];
@@ -85,7 +116,9 @@ function buildGrid(url) {
 
         var index = 0
         var prev_starts = new Array();
+        var clue_groups = new Array();
 
+        // make clue IDs
         clues_list.forEach(function (clue) {
             var coord = clue.loc.slice(1);
 
@@ -98,21 +131,55 @@ function buildGrid(url) {
             }
 
             var clueID = (index).toString() + clue.loc[0];
+            clue_groups.push([clueID])
+
+            clue.clueID = clueID;
+        });
+
+        clues_list.forEach(function (clue) {
+
+            if (clue.isRoot) {
+                var Enum = createEnum(clue.full_answer);
+                var labels = clue.links.map(function (a) {
+                    var link = clues_list.find(c => c.answer == a);
+                    var cID = link.clueID;
+                    if (clue.loc[0] == link.loc[0]) {
+                        var cID = link.clueID.slice(0,-1);
+                    }
+                    return cID;
+                });
+                var label = labels.join("/");
+            } else {
+                var Enum = createEnum(clue.answer);
+                var label = clue.clueID.slice(0,-1)
+            }
+            
 
             var answer_text = clue.answer.replace(/-|\s/g, "");
-            var len = answer_text.length;
 
-            var Enum = createEnum(clue.answer);
-            
             if (clue.clue == "" && window.setting_tools) {
                 clue.clue = clue.answer;
             }
-            var clue_text = {
-                num: clueID.slice(0,-1),
-                text: clue.clue + " (" + Enum + ")",
-                answer: clue.answer
+                       
+            // groups linked clues together
+            if (clue.isRoot != undefined) {
+                clue.links = clue.links.map(a => clues_list.find(c => c.answer == a).clueID);
             }
-            
+
+            var clue_text = {
+                num: label,
+                text: clue.clue + " (" + Enum + ")",
+                answer: clue.answer,
+                isRoot: clue.isRoot,
+                isMultiDir: clue.isMultiDir,
+                links: clue.links,
+                clueID: clue.clueID
+            }
+
+            if (clue.isRoot == false) {
+                var rootID = clue.links.find(l => clues_list.find(c => c.isRoot && c.clueID == l ));
+                clue_text.text = `<i>See ${rootID}</i>`
+            }
 
             if (clue.loc[0] == "A") {
                 A_clues.push(clue_text);
@@ -122,23 +189,28 @@ function buildGrid(url) {
                 D_clues.push(clue_text);
             }
 
-
+            
+            var len = answer_text.length;
+            var coord = clue.loc.slice(1);
             for (i=0; i < len; i++) {
                 var cell = getCell(coord);
                 cell.addClass("word");
-                cell.addClass("clue" + clueID);
-
+                if (clue.links) {
+                    cell.addClass("clue" + clue.links.join("-"));
+                } else {
+                    cell.addClass("clue" + clue.clueID);
+                }
                 if (cell.has("input").length == 0) {
                     var input = document.createElement("input");
                     input.setAttribute("type", "text");
                     input.setAttribute("pattern", "[a-zA-Z]")
                     cell.append(input);
                 }
-                
+                /*
                 if (window.setting_tools) {
                     cell.html(answer_text[i]);
                 }
-
+                */
                 if (clue.loc[0] == "A") {
                     coord[1] += 1;
                 } else if (clue.loc[0] == "D") {
@@ -147,37 +219,40 @@ function buildGrid(url) {
             }
         });
 
-        A_clues.forEach(function(clue) {
-            var li = document.createElement("li");
-            li.setAttribute("value", clue.num);
-            li.classList.add("clue" + clue.num + "A");
-            li.innerHTML = clue.text;
-            $("#A-clues ol").append(li);
+        var clue_cols = [{col_name: "A-clues", col: A_clues}, {col_name: "D-clues", col: D_clues}];
+        clue_cols.forEach(function (c) {
+            c.col.forEach(function(clue) {
+                var li = document.createElement("li");
+                li.setAttribute("data-number", clue.num + ". ");
+                if (clue.links) {
+                    li.classList.add("clue" + clue.links.join("-"));
+                } else {
+                    li.classList.add("clue" + clue.clueID);
+                }                
+                li.innerHTML = clue.text;
+                console.log(clue.isMultiDir, clue.isRoot)
+                if (clue.isRoot || clue.isMultiDir || clue.isRoot == undefined) {
+                    $(`#${c.col_name} ol`).append(li);
+                }
+            });
         });
-        D_clues.forEach(function(clue) {
-            var li = document.createElement("li");
-            li.setAttribute("value", clue.num);
-            li.classList.add("clue" + clue.num + "D");
-            li.innerHTML = clue.text;
-            $("#D-clues ol").append(li);
-        });
-
-
+        
+        var clue_re = /clue(\d+(A|D)-?)+/g
         $(".word, li").on("mouseover", function () {
-            var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
+            var classes = $(this).attr("class").match(clue_re);
             var clueID = classes[0];
             $(`[class*="${clueID}"]`).addClass("hovered");
         });
 
         $(".word, li").on("mouseout", function () {
-            var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
+            var classes = $(this).attr("class").match(clue_re);
             var clueID = classes[0];
             $(`[class*="${clueID}"]`).removeClass("hovered");
         });
 
         $(".word, li").on("click", function () {
             
-            var classes = $(this).attr("class").match(/clue\d+(A|D)/g);
+            var classes = $(this).attr("class").match(clue_re);
             
             // deals with case where letter is in multiple words...
             if (classes.length > 1) {
@@ -472,8 +547,8 @@ function check_completion() {
 }
 
 function update_clue_display(clueID) {
-    var clue_text = $(`li.${window.selectedClue}`).html();
-    var clue_html = `<strong>${clueID.substring(4)}:</strong> ${clue_text}`;
+    var clue_text = $(`li.${clueID}`).html();
+    var clue_html = `<strong>${clueID.substring(4).replace(/-/g, "/")}:</strong> ${clue_text}`;
     $("#clue-display").html(clue_html);
 }
 
