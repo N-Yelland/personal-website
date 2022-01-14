@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Nicholas Yelland</title>
+        <link rel="stylesheet" href="../style.css">
+        
+        <style>            
+            main {
+                height: auto;
+                padding-bottom: 50px;
+            }
+            
+            h1 {
+                text-align: center;
+            }
+            
+            .container {
+                display: flex;
+                flex-flow: row wrap;
+                justify-content: center;
+                align-content: center;
+                align-items: center;
+            }
+            
+            .contents {
+                display: block;
+                padding: 5pt;
+                margin: 0 5pt;
+                
+                background: white;
+                border-radius: 7pt;
+                box-shadow: 0 0 5pt 1pt #888;
+                
+                text-align: center;
+                font-weight: bold;
+                font-size: 1.2em;
+                
+                -webkit-user-select: none; /* Safari */        
+                -moz-user-select: none; /* Firefox */
+                -ms-user-select: none; /* IE10+/Edge */
+                user-select: none; /* Standard */
+                
+                transition: all .25s;
+                cursor: pointer;
+
+            }
+            
+            .contents:hover {
+                box-shadow: 0 0 5pt 3pt #444;
+                font-size: 2em;
+            }
+            
+            td {
+                background-color: black;
+            }
+            
+            h4, ol {
+                margin: 0;
+                font-size: 1.1em;
+                padding-left: 2em;
+            }
+                        
+            h3 {
+                text-align: center;
+            }
+
+
+            .row {
+                border: 0pt solid black;
+                display: flex;
+                justify-content: center;
+                
+            }
+
+            .box {
+                border: 2pt solid lightgrey;
+                display: inline-block;
+                height: 50px;
+                width: 50px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 3px;
+
+                font-size: 2em;
+
+                transition: all .25s;
+            }
+
+            .box.active {
+                border-color: grey;
+            }
+            
+            .box.flash {
+                border-color: rgb(158, 7, 7);
+            }
+            .key {
+                min-width: 30px;
+                padding: 0 5pt 0 5pt;
+                height: 40px;
+
+                border: 2pt solid lightgrey;
+                border-radius: 5px;
+                background: lightgrey;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                margin: 3px;
+
+                font-size: 1.5em;
+                font-family:'Trebuchet MS', Arial, sans-serif
+            }
+
+            .correct {
+                background: #3ac955 !important;
+                color: white;
+            }
+
+            .appears {
+                background: #dec849;
+                color: white;
+            }
+
+            .incorrect {
+                background: #545454;
+                color: white;
+            }
+            
+            #loading-screen {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                font-size: 3em;
+                font-style: italic;
+
+                background: rgba(255,255,255,0.75);
+            }
+
+            #grid-container {
+                position: relative;
+                width: auto;
+                display: inline-block;
+                margin-bottom: 10px;
+            }
+
+            #message-box {
+                position: fixed;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                top: 10%;
+            }
+
+            #change-size-box {
+                position: absolute;
+                
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                top: 20%;
+                border: 1pt solid black;
+                background: white;
+
+                padding: 10px;
+
+            }
+
+            .message {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                background: black;
+                color: white;
+
+                top: 10%;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px ;
+            }
+
+            .icon {
+                flex: 0 0 auto;
+                height: 3em;
+                width: 3em;
+                margin: 5pt 0pt 5pt 5pt;
+                display: flex;
+                justify-content: center;
+                border-radius: 5pt;
+                transition: all .25s;
+                
+                box-sizing: border-box;
+                cursor: pointer;
+            }
+            
+            .icon:hover img {
+                filter: invert(49%) sepia(17%) saturate(0%) hue-rotate(227deg) brightness(98%) contrast(88%); /* grey */
+            }
+            
+            .icon:active {
+                transform: scale(0.90);
+            }
+            
+            .icon img {
+                margin: auto;
+                height: 75%;
+                transition: all .25s;
+                filter: invert(97%) sepia(0%) saturate(440%) hue-rotate(159deg) brightness(89%) contrast(90%); /* light grey */
+            }
+
+            #menu-bar {
+                display: flex;
+            }
+
+            #game-title {
+                flex-grow: 4;
+                height: 1.5em;
+                width: 6em;
+
+                font-size: 2em;
+
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            #notice {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                margin-top: 10px;
+                font-style: italic;
+            }
+
+            #game-container {
+                position: relative;
+                flex-direction: column;
+                justify-content: flex-start;
+                font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+                min-height: 100vh;
+            }
+
+            .pm-btn {
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                font-family: 'Courier New', Courier, monospace;
+                background: black;
+                color: white;
+                width: 1em;
+                height: 1em;
+                font-weight: bold;
+                border-radius: 50%;
+                margin: 0 3px 0 3px;
+                cursor: pointer;
+            }
+
+            #N-display {
+                margin: 0 3px 0 3px;
+                min-width: 1em;
+                text-align: center;
+            }
+
+            .noselect {
+                -webkit-touch-callout: none; /* iOS Safari */
+                    -webkit-user-select: none; /* Safari */
+                    -khtml-user-select: none; /* Konqueror HTML */
+                    -moz-user-select: none; /* Old versions of Firefox */
+                        -ms-user-select: none; /* Internet Explorer/Edge */
+                            user-select: none; /* Non-prefixed version, currently
+                                                supported by Chrome, Edge, Opera and Firefox */
+            }
+
+        </style>
+        
+    </head>
+    <body>    
+        <main>
+            
+            <div id="header" class="ext" src="../header.html"></div>
+            
+            <div class="container" id="game-container">
+
+                <div id="menu-bar">
+                    <div class="icon" id="restart-btn" title="Restart"></div>
+                    <div class="icon" id="plusminus-btn" title="Add/Remove Letters"></div>
+                    <div id="game-title">WORDLE+</div>
+                    <div class="icon" id="stats-btn" title="View Stats"></div>
+                    <div class="icon" id="settings-btn" title="Settings"></div>
+                </div>
+            
+                <div id="grid-container">
+                    <div id="loading-screen">loading...</div>
+                    <div id="grid"></div>
+                </div>
+                
+                <div id="message-box"></div>
+
+                <div id="change-size-box">
+                    <h3 style="margin-top:0">Add/Remove Letters</h3>
+                    <div class="container" style="width: 100%; font-size: 2em;">
+                        <div id="minus" class="pm-btn noselect">-</div><div id="N-display">5</div><div id="plus" class="pm-btn noselect">+</div>
+                    </div>
+                    
+
+                    <div id="confirm-btn">Done</div>
+                </div>
+
+                <div id="keyboard"></div>
+
+                <br>
+                <div id="notice">This is a beta version, and is stil in development</div>
+
+            </div>
+            
+        
+        </main>
+
+        <div id="bg"></div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script type='text/javascript' src='http://code.jquery.com/ui/1.12.0/jquery-ui.min.js'></script> 
+        <script src="../homepage.js"></script>
+        <script src="../background.js"></script>
+        <script src="wordle+.js"></script>
+        
+        
+    </body>
+</html>
