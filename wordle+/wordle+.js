@@ -4,7 +4,10 @@
 
 var full_dict, dict, N, R, answer, in_progress;
 
-run()
+$(document).ready(function () {
+    run()
+});
+
 async function run() {
     N = 5; //default size is the 'original' 5, will be changeable
 
