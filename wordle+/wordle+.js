@@ -237,10 +237,8 @@ function set_event_handlers() {
                     var msg = `${guess} is not in the wordlist!`
                 }
                 message(msg, 1500);
-                $(`#row${R}`).effect("shake", {
-                    distance: 10
-                })
-                $(`#row${R} .box`).addClass("flash")
+                shake(`#row${R}`);
+                $(`#row${R} .box`).addClass("flash");
                 setTimeout(function () {
                     $(`#row${R} .box`).removeClass("flash")
                 }, 500);
@@ -324,4 +322,12 @@ function message(text, duration) {
     var msg = $(`<div class="message">${text}</div>`);
     msg.appendTo("#message-box");
     msg.delay(duration).fadeOut(1000);
+}
+
+function shake(div,interval=100,distance=10,times=4){
+    $(div).css('position','relative');
+    for(var iter=0;iter<(times+1);iter++){
+        $(div).animate({ left: ((iter%2==0 ? distance : distance*-1))}, interval);
+    }
+    $(div).animate({ left: 0},interval);
 }
