@@ -300,6 +300,9 @@ function set_event_handlers() {
         }
     });
 
+    $("#stats-btn, #settings-btn").click(function () {
+        message("Not implemented yet", 1000);
+    })
 
     return new Promise(resolve => {
         console.log("[3] Finished setting event handlers");
