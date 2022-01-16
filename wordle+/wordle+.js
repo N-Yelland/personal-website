@@ -113,7 +113,7 @@ async function choose_answer() {
 
     // Here, we use the Datamuse API to find the frequency of the word, to ensure it's not too obscure!
     var f = 0; // f is the number of times the word occurs per million words of English text according to Google Books Ngrams.
-    var f_min = 1.00 // f_min is the minimum frequency threshhold - reduce for harder words!
+    var f_min = 2;// f_min is the minimum frequency threshhold - reduce for harder words!
     // keep finding new word until f >= f_min
     while (f < f_min) {
         answer = random_choice_from(dict);
@@ -122,13 +122,14 @@ async function choose_answer() {
                 .then(data => {
                     if (data.length > 0) {
                         f = parseFloat(data[0].tags[0].replace("f:",""));
-                        console.log(answer, f);
+                        //console.log(answer, f);
                     }});
     }
 
 
     return new Promise(resolve => {
-        console.log(`[4] Chosen answer - Hint: it's ${answer}!`);
+        console.log(`[4] Chosen answer`);
+        //console.log(`Hint: it's ${answer}!`);
         resolve();
     });
 }
@@ -163,13 +164,36 @@ function set_event_handlers() {
 
             var box = $(".box.active");
 
-            //cursor does not move backwards from first position
-            $(".box:not(:first-child).active").removeClass("active");
-
+            // sort out nice behaviour...
+            if (box.html() == "") {
+                if (box.index() != 0) {
+                    box.removeClass("active");
+                    box = box.prev();
+                    box.addClass("active");
+                }
+            }
             box.html("");
-            box.prev(".box").addClass("active");
+            
 
             awaiting_input = true;
+        }
+
+        // if arrow keys are pressed...
+        if (awaiting_input && key == "ArrowLeft") {
+            var box = $(".box.active");
+
+            if (box.index() != 0) {
+                box.removeClass("active");
+                box.prev().addClass("active");
+            }
+        }
+        if (awaiting_input && key == "ArrowRight") {
+            var box = $(".box.active");
+
+            if (box.index() != N-1) {
+                box.removeClass("active");
+                box.next().addClass("active");
+            }
         }
 
         // if enter is pressed...
@@ -182,7 +206,7 @@ function set_event_handlers() {
                 guess = guess + $(this).html();
             });
 
-            console.log(guess);
+            //console.log(`Player guessed ${guess}`);
 
             // is the guess complete and valid?
             if (dict.includes(guess)) {
@@ -208,7 +232,7 @@ function set_event_handlers() {
 
                 //did the player 'win'?
                 if (correct_letters == N) {
-                    console.log(`Player wins after ${R+1} guesses.`);
+                    //console.log(`Player wins after ${R+1} guesses.`);
                     var msgs = ["Well done!", "Congratulations!", "Magnificent", "Splendid!", "By Jove!", "Aren't you clever!", "Amazing!"];
                     message(random_choice_from(msgs), 2000);
                     //invite player to play new game
@@ -221,7 +245,7 @@ function set_event_handlers() {
                     } else {
                         // player loses if that was the last row!
                         awaiting_input = false;
-                        console.log(`Player ran out of guesses. The answer was ${answer}.`);
+                        //console.log(`Player ran out of guesses. The answer was ${answer}.`);
                         var msg = `Unlucky. The correct answer was ${answer}`;
                         message(msg, 3000);
                         //invite player to play new game
@@ -265,7 +289,7 @@ function set_event_handlers() {
 
     $("#restart-btn").click(function () {
         // warn player that this will end game in progress
-        var warning_text = "Warning - this will end you game in progress.\n Are you sure you want to restart?";
+        var warning_text = "Warning - this will end you game in progress.\nAre you sure you want to restart?";
         if (!in_progress || window.confirm(warning_text)) {
             $("#loading-screen").show();
             new_game();
@@ -274,7 +298,7 @@ function set_event_handlers() {
 
     $("#plusminus-btn").click(function () {
         // warn player that this will end game in progress
-        var warning_text = "Warning - this will end you game in progress.\n Are you sure you want to do this?";
+        var warning_text = "Warning - this will end you game in progress.\nAre you sure you want to do this?";
         if (!in_progress || window.confirm(warning_text)) {
             $("#change-size-box").show();
         }
