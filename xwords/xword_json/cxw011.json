@@ -1,0 +1,137 @@
+{
+    "title": "Cryptic Crossword 11",
+    "description": "An unthemed crossword with more 'straightforward' clues, insofar as they do not rely too heavily on 'crosswordese' abbreviations and the like.",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["D", 0, 1],
+            "clue": "Headwear not originially from the city.",
+            "answer": "URBAN"
+        },
+        {
+            "loc": ["D", 0, 3],
+            "clue": "Brief time, or little vacation, that's beginning in southeast of country.",
+            "answer": "TIMOR-LESTE"
+        },
+        {
+            "loc": ["D", 0, 5],
+            "clue": "Brand man's upcycled craft with skilful use of foil.",
+            "answer": "SWORDSMANSHIP"
+        },
+        {
+            "loc": ["D", 0, 7],
+            "clue": "Off the shelf parsnips? Nothing odd with that.",
+            "answer": "AS IS"
+        },
+        {
+            "loc": ["D", 0, 11],
+            "clue": "God makes important waterway flow backwards.",
+            "answer": "ZEUS"
+        },
+        {
+            "loc": ["D", 0, 13],
+            "clue": "March in Paris, afterwards Ellie returns to city.",
+            "answer": "MARSEILLE"
+        },
+        {
+            "loc": ["D", 6, 1],
+            "clue": "After essential part is forgotten in setup, awkwardly retract my indication of approval - I don't want my name to be associated with this.",
+            "answer": "PSEUDONYM"
+        },
+        {
+            "loc": ["D", 11, 3],
+            "clue": "Church apparatus in Georgia, for example.",
+            "answer": "FONT"
+        },
+        {
+            "loc": ["D", 5, 7],
+            "clue": "Pair starts to manufacture incense for cathedrals abroad.",
+            "answer": "DUOMI"
+        },
+        {
+            "loc": ["D", 11, 7],
+            "clue": "Follower overheard story",
+            "answer": "TALE"
+        },
+        {
+            "loc": ["D", 2, 9],
+            "clue": "As icicles once melted for archaeology, perhaps.",
+            "answer": "SOCIAL SCIENCE"
+        },
+        {
+            "loc": ["D", 5, 11],
+            "clue": "Two companies say head of HR replacing a maniac internally is fair game.",
+            "answer": "COCONUT SHY"
+        },
+        {
+            "loc": ["D", 10, 13],
+            "clue": "Blame line in the ground.",
+            "answer": "FAULT"
+        },
+        {
+            "loc": ["A", 1, 0],
+            "clue": "Force me to think that lingerie's being cleaned.",
+            "answer": "BRAINWASH"
+        },
+        {
+            "loc": ["A", 1, 10],
+            "clue": "Fifty-fifty split by age, on reflection, is permitted.",
+            "answer": "LEGAL"
+        },
+        {
+            "loc": ["A", 3, 0],
+            "clue": "Delivery work.",
+            "answer": "LABOUR"
+        },
+        {
+            "loc": ["A", 3, 7],
+            "clue": "Director orchestrates housing subsidy first, benefits second.",
+            "answer": "SCORSESE"
+        },
+        {
+            "loc": ["A", 5, 2],
+            "clue": "Finish dinner, initially on lap in front of TV?",
+            "answer": "CLOSED CIRCUIT"
+        },
+        {
+            "loc": ["A", 7, 5],
+            "clue": "A price to pay to reach tropical island.",
+            "answer": "ATOLL"
+        },
+        {
+            "loc": ["A", 7, 0],
+            "clue": "Inconspicuous espionage conceals operations.",
+            "answer": "USES"
+        },
+        {
+            "loc": ["A", 7, 11],
+            "clue": "US mobile unit.",
+            "answer": "CELL"
+        },
+        {
+            "loc": ["A", 9, 0],
+            "clue": "Student union requests include case for refocus on unfounded beliefs.",
+            "answer": "SUPERSTITIONS"
+        },
+        {
+            "loc": ["A", 11, 0],
+            "clue": "Short film - cutting first half of contents might be of interest?",
+            "answer": "CONFLICT"
+        },
+        {
+            "loc": ["A", 11, 9],
+            "clue": "Goes for a meal and gnaws away.",
+            "answer": "EATS AT"
+        },
+        {
+            "loc": ["A", 13, 0],
+            "clue": "Making pork pies from unlikely ingredients!",
+            "answer": "LYING"
+        },
+        {
+            "loc": ["A", 13, 6],
+            "clue": "Before depression, note absence of former star.",
+            "answer": "BLACK HOLE"
+        }
+    ]
+}
