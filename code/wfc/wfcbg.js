@@ -2,9 +2,9 @@ const W = $(window).width();
 const H = $(window).height();
 
 const draw = SVG().addTo('body').size(W,H-1);
-const R = 10; // user determined
+const R = 25; // user determined
 
-const L = H/R
+const L = H/(R-0.2)
 const C = Math.ceil(W/L);
 
 
@@ -168,11 +168,11 @@ function fill_gaps() {
         var r = gaps[i][0];
         var c = gaps[i][1];
         var t = draw.image(`tiles/20.svg`);
-        t.move((c+0.2)*L, (r+0.2)*L).size(L*1.2, L*1.2);
+        t.move((c)*L, (r)*L).size(L*1.2, L*1.2);
         if (gaps[i][2] == "SW") {
             t.transform({
                 scaleX: -1,
-                translate: [-L*0.8,-0.2*L]
+                translate: [-L*0.6, 0],
             });
         }
         if (gaps[i][2] == "NW") {
