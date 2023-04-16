@@ -1,0 +1,65 @@
+[
+    {
+        "node_id": "top",
+        "title": "SCRAMBLED EGGS",
+        "status": "unlocked",
+        "seen": false,
+        "page": "anagrams"
+    },
+    {
+        "node_id": "upper0",
+        "title": "OVER-EGGS-POSED",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["top"],
+        "page": "photos"
+    },
+    {
+        "node_id": "upper1",
+        "title": "HOPPY ENDINGS",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["top"],
+        "page": "books"
+    },
+    {
+        "node_id": "upper2",
+        "title": "CHOCOLATE BUTTONS",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["top"],
+        "page": "symbols"
+    },
+    {
+        "node_id": "lower0",
+        "title": "PHOTO ALBUM(EN)",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["upper0", "upper2"],
+        "page": "pictures"
+    },
+    {
+        "node_id": "lower1",
+        "title": "CRACKING CODES",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["upper0", "upper1"],
+        "page": "cipher"
+    },
+    {
+        "node_id": "lower2",
+        "title": "EASTER TEL-EGG-RAPHY",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["upper1", "upper2"],
+        "page": "telegraphy"
+    },
+    {
+        "node_id": "bottom",
+        "title": "THE FINALE",
+        "status": "locked",
+        "seen": false,
+        "prereqs": ["lower0", "lower1"],
+        "page": "finale"
+    }
+]
