@@ -1,4 +1,3 @@
-
 function complete_puzzle() {
 
     $(".title").addClass("complete")

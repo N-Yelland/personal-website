@@ -208,7 +208,7 @@ function launch_terminal() {
 
     send("\n\tPRESS ANY KEY TO BEGIN")
 
-    $(document).on("keydown", function () {
+    $(document).on("keydown", function (e) {
         e.preventDefault()
         $(document).off("keydown")
         
