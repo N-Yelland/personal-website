@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../puzzle.css">
+        <link rel="stylesheet" href="finale/finale.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="../jquery.svg.css"> 
+        <script type="text/javascript" src="../jquery.svg.min.js"></script>
+        <script type="text/javascript" src="../jquery.svganim.min.js"></script>
+        <script src="../puzzles.js"></script>
+
+        <script src="finale/finale.js"></script>
+        <script src="finale/stage1.js"></script>
+        <script src="finale/stage2.js"></script>
+        <script src="finale/flowchart.js"></script>
+        <script src="finale/stage3.js"></script>
+        
+    </head>
+    <body>
+
+        <main>
+            <div class="title">SECURITY OVERRIDE</div>
+            <!--
+            <div id="return-btn">
+                <img src="../images/return_icon.svg">
+            </div>
+            -->
+
+            <div class="main-content">
+
+                <div id="terminal" class="container">
+                    <div id="terminal-output" class="body"></div>
+
+                    <div id="terminal-input">
+                        
+                        <form id="cli-form" autocomplete="off">
+                            <span class="prefix" hidden>></span>
+                            <input type="text" id="command-line" disabled>
+                            <input type="submit" hidden />
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </main>
+
+        <div id="screen"></div>
+        <!-- <div id="tooltip"></div> -->
+
+    </body>
+
+    
+    <div id="section-title"></div>
+</html>

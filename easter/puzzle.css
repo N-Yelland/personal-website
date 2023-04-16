@@ -1,0 +1,195 @@
+#screen {
+    left: 10vw;
+}
+
+#return-btn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6vh;
+    padding: 5pt;
+
+    opacity: 0.5;
+    transition-property: opacity, tramsform;
+    transition-duration: 0.5s;
+    cursor: pointer;
+}
+
+#return-btn:hover {
+    opacity: 1;
+}
+
+#return-btn:active {
+    transform: scale(0.95);
+}
+
+#return-btn img {
+    height: 100%;
+    object-fit: contain;
+}
+
+.title {
+    height: 10%;
+    color: red;
+    font-weight: bold;
+    font-size: 7vh;
+    text-align: center;
+    background-color: darkgray;
+    transition: color 0.5s;
+}
+
+.title.complete {
+    color: var(--green-accent)
+}
+
+.main-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 90%;
+}
+
+.main-content div {
+    text-align: center;
+    font-size: 3vh;
+}
+
+.entry-box {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 3vh;
+    background-color: rgb(60, 71, 113);
+    display: flex;
+    padding: 5pt;
+    justify-content: center;
+    gap: 5pt;
+}
+
+.entry-box div {
+    background-color: rgba(255, 255, 255, 0.5);
+    transition: background-color 0.25s;
+}
+
+.entry-box div:focus {
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.entry-box .input-box {
+    height: 6vh;
+    width: 6vh;
+    caret-color: transparent;
+    font-size: 6vh;
+    overflow: hidden;
+}
+
+.entry-box .wide-input-box {
+    height: 4vh;
+    width: 50vw;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
+
+.wide-input-box::-webkit-scrollbar {
+    display: none;
+}
+
+.order-box {
+    background-color: darkgray;
+    width: 30vw;
+    height: 60vh;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.draggable {
+    width: 20vw;
+    background-color: rgb(100, 100, 100);
+    position: fixed;
+    padding: 3pt;
+    cursor: grab;
+    transition: 
+        box-shadow 0.25s,
+        border 0.25s,
+        background-color 0.25s;
+    border: solid black 0.1pt;
+    font-weight: bold;
+}
+
+.draggable.done {
+    border: none;
+    background-color: transparent;
+}
+
+.draggable.dragged {
+    cursor: grabbing;
+    box-shadow: 1pt 1pt 5pt 1pt black;
+}
+
+.button-box {
+    background-color: darkgray;
+    height: 50vh;
+    width: 50vw;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.button-box .symbol-button {
+    font-family: 'SimSun', Times, serif;
+    font-weight: bold;
+    font-size: 9vh;
+    
+    height: 10vh;
+    width: 10vh;
+    padding: 10pt;
+    margin: 6pt;
+    margin-left: 7pt;
+    border-radius: 50%;
+
+    background-color: white;
+    border: solid black 0.1pt;
+    box-shadow: 1pt 1px 2pt 1pt black;
+
+    cursor: pointer;
+    transition: transform 0.25s;
+    
+}
+
+.symbol-button:hover {
+    transform: scale(1.1);
+}
+
+.symbol-button:active {
+    transform: scale(0.95);
+}
+
+.symbol-button.correct {
+    pointer-events: none;
+    background-color: rgb(35, 194, 35);
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
+
+
+.picture-box {
+    height: 40vh;
+}
+
+.picture-box img {
+    max-height: 100%;
+    cursor: zoom-in;
+}
+
+#big_ver {
+    background-color: transparent;
+    cursor: zoom-out;
+    z-index: 5;
+}

@@ -1,0 +1,118 @@
+{
+    "request_table": {
+        "ACCESS": [
+            "RAM", "DATALINK", "POWER", "DATA", "OVERCLOCK", "CPU",
+            "DISK","MEDIA", "END", "STORAGE"
+        ],
+        "CPU": [
+            "STORAGE", "POWER", "ACCESS", "RAM", "MEDIA", "OVERCLOCK",
+            "DISK", "END", "DATA", "DATALINK"
+        ],
+        "DATA": [
+            "OVERCLOCK", "POWER",  "DISK", "STORAGE",  "CPU", "MEDIA",
+            "ACCESS", "RAM", "END", "DATALINK"
+        ],
+        "DATALINK": ["POWER", "MEDIA", "DISK", "OVERCLOCK", "END",
+            "ACCESS", "CPU", "RAM", "DATA", "STORAGE"
+        ],
+        "DISK": [
+            "OVERCLOCK", "MEDIA", "ACCESS", "CPU", "STORAGE", "POWER",
+            "DATA", "DATALINK", "END", "RAM"
+        ],
+        "MEDIA": [
+            "CPU", "DATALINK", "STORAGE", "POWER", "DATA", "DISK", "END",
+            "OVERCLOCK", "RAM", "ACCESS"
+        ],
+        "OVERCLOCK": [
+            "CPU", "ACCESS", "DISK", "DATALINK", "MEDIA", "STORAGE",
+            "POWER", "RAM", "END", "DATA"
+        ],
+        "POWER": [
+            "DATALINK", "CPU", "ACCESS", "DISK", "RAM", "OVERCLOCK",
+            "DATA", "STORAGE", "MEDIA", "END"
+        ],
+        "RAM": [
+            "OVERCLOCK", "DATALINK", "POWER", "ACCESS", "CPU", "END",
+            "DISK", "DATA", "MEDIA", "STORAGE"
+        ],
+        "STORAGE": [
+            "RAM", "POWER", "DATA", "ACCESS", "CPU", "OVERCLOCK",
+            "DATALINK", "DISK", "MEDIA", "END"
+        ]
+    },
+
+    "PIN_table" : {
+        "1.0.3": ["0000", "1024", "4557", "5403", "8873", "9000", "6262"],
+        "1.0.4": ["2012", "2013", "5553", "5545", "7831", "5546", "5549"],
+        "1.1.1": ["8925", "8339", "0225", "3405", "7497", "3913", "6150"],
+        "1.1.2": ["8666", "5056", "7668", "4145", "4345", "7722", "9909"],
+        "1.1.3": ["8366", "5058", "7368", "4244", "7700", "7701", "9909"],
+        "1.2.1": ["1100", "1200", "9902", "7110", "5026", "3671", "4448"],
+        "1.2.2": ["9999", "7579", "2222", "8296", "1999", "0562", "3415"]
+    },
+
+    "venn_lookup": {
+        "A" : "1.1.1",
+        "AR": "1.1.2",
+        "ARF": "1.1.3",
+        "AF": "1.0.4",
+        "R": "1.0.3",
+        "RF": "1.2.1",
+        "F": "1.2.2"
+    },
+
+    "label_table": [
+        [
+            "xrg0", "xrg1", "arg0", "arg1", "arg2", "arg3", "arg4", "arg5",
+            "arg6", "arg7", "arg8", "arg9", "+xrg", "+arg", "/xrg", "/arg"
+        ],
+        [
+            "numx", "num1", "num2", "num3", "num4", "-mxr", "-ups", "-fls",
+            "-all", "flgA", "flgB", "flgC", "flag", "FLAG", "/end", "/bin"
+        ],
+        [
+            "numy", "num5", "num6", "num7", "num8", "+mxr", "+ups", "+fls",
+            "+all", "0x01", "0x02", "0x03", "0x04", "0x05", "0x06", "0x07"
+        ],
+        [
+            "unit", "test", "post", "file", "q/01", "q/02", "q/03", "null",
+            "NULL", "0x08", "0x09", "0x0a", "0x0b", "0x0c", "0x0d", "0x0e"
+        ]
+    ],
+
+    "instruction_lookup": {
+        "0N0L2N3L": {
+            "xyz": [1, 3, 5],
+            "ab": [0, 1]
+        },
+        "1N1L3N4L": {
+            "xyz": [2, 2, 5],
+            "ab": [1, 0]
+        },
+        "6N6L4N2L": {
+            "xyz": [2, 1, 4],
+            "ab": [-1, 0]
+        },
+        "5N5L9N7L": {
+            "xyz": [3, 6, 6],
+            "ab": [1, 1]
+        },
+        "ANAL7N8L": {
+            "xyz": [6, 5, 6],
+            "ab": [0, -1]
+        },
+        "CNCL8N9L": {
+            "xyz": [1, 4, 3],
+            "ab": [1, -1]
+        },
+        "BNBLFNDL": {
+            "xyz": [4, 5, 3],
+            "ab": [-1, 1]
+        },
+        "ENELDNFL": {
+            "xyz": [4, 2, 1],
+            "ab": [-1, -1]
+        }
+    }
+
+}
