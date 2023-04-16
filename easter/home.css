@@ -1,0 +1,62 @@
+
+body {
+    cursor: none;
+}
+
+#main {
+    cursor: url(images/crosshair.png) 15 15, auto;
+}
+
+#screen {
+    left: 10vw;
+}
+
+.node {
+    stroke: var(--cube-color);
+    stroke-width: 2pt;
+    transition: stroke 0.25s;
+}
+
+.node:hover {
+    stroke: var(--accent-color);
+}
+
+.node.complete:hover {
+    stroke: var(--green-accent);
+}
+
+.complete {
+    color: var(--green-accent) !important;
+}
+
+.cursor {
+    fill: var(--accent-color);
+    pointer-events: none;
+}
+
+#section-title {
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 7vh;
+    font-family: 'Courier New', Courier, monospace;
+    display: none;
+
+}
+
+#tooltip {
+    color: var(--accent-color);
+    text-align: center;
+    font-size: 5vh;
+    font-weight: bold;
+    font-family: 'Courier New', Courier, monospace;
+    position: absolute;
+    pointer-events: none;
+    white-space: nowrap;
+    display: none;
+    padding-left: 3pt;
+    transform: translate(calc(-50% + 5vh), -100%);
+}
+
+line {
+    pointer-events: none;
+}

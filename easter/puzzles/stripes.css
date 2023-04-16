@@ -1,0 +1,77 @@
+:root {
+    --purple: rgb(150, 133, 212);
+    --purple-light: rgb(194, 184, 230);
+    
+    --gold: rgb(207, 211, 1);
+    --gold-light: rgb(221, 255, 100);
+    
+    --orange: rgb(255, 123, 0);
+    --orange-light: rgb(255, 169, 89);
+
+    --blue: rgb(0, 143, 124);
+}
+
+
+.striped-purple-gold {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--purple),
+        var(--purple) 20px,
+        transparent 20px,
+        transparent 40px
+    ),
+
+    linear-gradient(
+        to bottom,
+        var(--gold-light),
+        var(--gold)
+    );
+}
+
+.striped-blue-gold {
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--blue),
+        var(--blue) 20px,
+        transparent 20px,
+        transparent 40px
+    ),
+
+    linear-gradient(
+        to bottom,
+        var(--gold-light),
+        var(--gold)
+    );
+}
+
+.striped-blue-orange {
+    background: repeating-linear-gradient(
+        45deg,
+        var(--blue),
+        var(--blue) 20px,
+        transparent 20px,
+        transparent 40px
+    ),
+
+    linear-gradient(
+        to bottom,
+        var(--orange-light),
+        var(--orange)
+    );
+}
+
+.striped-orange-purple {
+    background: repeating-linear-gradient(
+        -45deg,
+        var(--orange),
+        var(--orange) 20px,
+        transparent 20px,
+        transparent 40px
+    ),
+
+    linear-gradient(
+        to bottom,
+        var(--purple-light),
+        var(--purple)
+    );
+}

@@ -1,0 +1,71 @@
+
+.telegraphy-box {
+    background-color: darkgray;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    border-radius: calc(4vh + 20pt);
+
+}
+
+.telegraphy-box div {
+    margin: 10pt;
+    background-color: white;
+    outline: solid gray 3px;
+
+    height: 8vh;
+    width: 8vh;
+    padding: 10pt;
+    margin: 8pt;
+    margin-left: 7pt;
+    border-radius: 50%;
+    
+    transition: all 0.25s;
+}
+
+.material-symbols-outlined {
+    font-size: 6vh !important;
+    padding-top: 1vh;
+}
+
+
+#play-button, #send-button {
+    cursor: pointer;
+}
+
+#play-button.pressed {
+    background: gray;
+}
+
+#light {
+    background: transparent;
+    transition: all 0.1s;
+}
+
+#light.lit {
+    background-color: white;
+    box-shadow: 0 0 60px 30px #fff;  /* inner white */
+
+}
+
+#send-button.disabled {
+    background: transparent;
+    pointer-events: none;
+}
+
+#send-button:active {
+    background: transparent;
+}
+
+#message {
+    margin-top: 3vh;
+    font-weight: bold;
+
+}
+
+#message.correct {
+    color: rgb(52, 255, 52);
+}

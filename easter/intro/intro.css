@@ -1,0 +1,82 @@
+
+#screen {
+    left: 100vw;
+    background-color: var(--bg-color);
+}
+
+span {
+    white-space: pre;
+}
+
+#line1, #line2 {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+
+    font-size: 6vh;
+
+}
+
+.main-content {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    height: 100%;
+
+    background-color: black;
+    color: white;
+}
+
+.main-content div {
+    text-align: center;
+    font-size: 3vh;
+}
+
+#logo {
+    height: 20vh;
+    object-fit: cover;
+    align-self: center;
+    padding-left: 3vw;
+    padding-bottom: 3vh;
+    z-index: 1;
+    cursor: pointer;
+    transition: transform 0.25s;
+
+    filter: invert(1)
+}
+
+#logo:hover {
+    transform: scale(1.1);
+}
+
+#logo:active {
+    transform: scale(0.9);
+}
+
+#subtitle {
+    margin-top: 1vh;
+    color: grey
+}
+
+#password-entry {
+    margin-top: 5vh;
+    position: relative;
+}
+
+#password {
+    background-color: transparent;
+    border: none;
+    caret-color: white;
+    color: inherit;
+    font-family: inherit;
+}
+
+#password:focus {
+    outline: none;
+}
+
+#message {
+    position: absolute;
+    display: none;
+    top: 0;
+}
