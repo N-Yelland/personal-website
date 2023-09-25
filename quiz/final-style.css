@@ -1,0 +1,151 @@
+#final-scores {
+    height: 30%;
+    width: 100%;
+    position: fixed;
+    left: 50%;
+    bottom: 0%;
+    transform: translate(-50%,0%);
+    z-index: 7;
+    align-items: center;
+    justify-content: center;
+
+    color: black;
+    display: flex;
+    
+    font-weight: bold;
+
+    box-sizing: border-box;
+    /*border: 1px solid white;*/
+
+    transition: all 0.25s;
+}
+
+.bar {
+    width: 100%;
+    background: inherit;
+    border-radius: 15px 15px 0 0;
+    margin: 0; /*calc(var(--bar-height) * 2/7);*/
+}
+
+.player {
+    box-sizing: border-box;
+}
+
+.player.nonbuzzed {
+    filter: opacity(0.66);
+}
+
+.stack {
+    position: absolute;
+    /*border: 1px solid white;*/
+
+    bottom: 100%;
+    left: 0%;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.player.empty {
+    filter: grayscale(0.5);
+    color: red !important;
+}
+
+.player.frozen {
+    box-shadow: 0px -2px 0px 2px white inset;
+}
+.frozen .bar {
+    box-shadow: 0px 2px 0px 2px white inset;
+}
+
+#pause-icon {
+    opacity: 0;
+    position: fixed;
+    top:40%;
+    left:50%;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+    height: 50vh;
+    width: 50vh;
+
+    padding: 10pt;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    color: white;
+}
+i.pause {
+    font-size: 20em;
+}
+
+.alert {
+    opacity: 0;
+    position: fixed;
+    top:40%;
+    left:50%;
+    z-index: 9;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    
+    text-align: center;
+
+    color: white;
+    font-size: 3em;
+    text-shadow: 4px 4px #000000;
+    font-weight: bold;
+}
+
+.alert p{
+    font-size: 2em;
+    margin: 0 0 0 0;
+}
+
+#red-line {
+    opacity: 0;
+    width: 100vw;
+    z-index: 8;
+    border: 1px solid red;
+    left: 0;
+    bottom: calc(30% + 4px);
+    height: 0;
+    position: absolute;
+}
+
+#thankyou-msg {
+    top: 80%;
+    font-style: italic;
+}
+
+.disco {
+    text-shadow: none;
+    font-size: 4em;
+    width: 100%;
+
+    background: linear-gradient(to right, rgb(248, 60, 60) 20%, #FF0 40%, rgb(70, 243, 188) 60%, rgb(176, 95, 239) 80%, rgb(248, 60, 60) 100%);
+    background-size: 200% auto;
+    
+    color: #000;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+    animation: shine 1.75s linear infinite;
+    @keyframes shine {
+        to {
+        background-position: 200% center;
+        }
+    }
+}
+
+@keyframes shine {
+    to {
+    background-position: 200% center;
+    }
+}

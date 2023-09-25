@@ -1,6 +1,7 @@
 const alph = "ABCDEFGHIHJKLMNOPQRSTUVWXYZ"
 const N = 500;
 
+// parses text file for wordlist
 fetch('big_wordlist.txt')
     .then(response => response.text())
     .then(data => {
@@ -30,11 +31,6 @@ function main() {
     wordlist.sort((a,b) => a.length - b.length);
 
     window.tree = branch_list(wordlist);
-        
-    console.log(tree);
-
-    console.log(collapse_tree(tree));
-
 }
 
 

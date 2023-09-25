@@ -1,0 +1,142 @@
+{
+    "title": "Cryptic Crossword 12",
+    "description": "It's been a while since the last addition to this collection. Hopefully my cluing has improved since.",
+    "size": [15, 15],
+    "clues": [
+        {
+            "loc": ["A", 0, 2],
+            "clue": "Ledger with a commoner at the top; noble to express disapproval before King.",
+            "answer": "ACCOUNT BOOK"
+        },
+        {
+            "loc": ["A", 2, 0],
+            "clue": "It doesn’t look so good after it’s been blown up?",
+            "answer": "BITMAP"
+        },
+        {
+            "loc": ["A", 2, 7],
+            "clue": "Now things get deeper, fish face uncertainty, becoming endangered at first.",
+            "answer": "BASS CLEF"
+        },
+        {
+            "loc": ["A", 4, 0],
+            "clue": "Royal Institute bridging gap with talk’s second part: Illustrating Magnetism.",
+            "answer": "CHARISMA"
+        },
+        {
+            "loc": ["A", 4, 9],
+            "clue": "Headwear worn by head of fashion is lacking.",
+            "answer": "BEREFT"
+        },
+        {
+            "loc": ["A", 6, 0],
+            "clue": "Explosion of growth.",
+            "answer": "BOOM"
+        },
+        {
+            "loc": ["A", 6, 5],
+            "clue": "Track technician’s run round cycling god.",
+            "answer": "DOLLY GRIP"
+        },
+        {
+            "loc": ["A", 8, 1],
+            "clue": "Character from Crete after two pieces of cheese from Athens with Hellenic herb.",
+            "answer": "FENUGREEK"
+        },
+        {
+            "loc": ["A", 8, 11],
+            "clue": "Support thing on stage.",
+            "answer": "DUOMI"
+        },
+        {
+            "loc": ["A", 10, 0],
+            "clue": "Witch’s brew recepticle I found in the toilet earlier.",
+            "answer": "WICCAN"
+        },
+        {
+            "loc": ["A", 10, 7],
+            "clue": "Midfielder becomes hot in friendly game.",
+            "answer": "PHEASANT"
+        },
+        {
+            "loc": ["A", 12, 0],
+            "clue": "Michael Cera’s first misuse of substance.",
+            "answer": "CHEMICAL"
+        },
+        {
+            "loc": ["A", 12, 9],
+            "clue": "Vegetables you and I would eat first on board ship.",
+            "answer": "SWEDES"
+        },
+        {
+            "loc": ["A", 14, 2],
+            "clue": "Test if Royal Variety performer makes noises behind the scenes.",
+            "answer": "FOLEY ARTIST"
+        },
+        {
+            "loc": ["D", 0, 3],
+            "clue": "Members of the crew arrived with Japanese food.",
+            "answer": "CAMERAMEN"
+        },
+        {
+            "loc": ["D", 0, 5],
+            "clue": "Against having part of speech included in newspaper column.",
+            "answer": "OPPOSED"
+        },
+        {
+            "loc": ["D", 0, 7],
+            "clue": "Egyptian god, naked, stands before a land of many pyramids.",
+            "answer": "NUBIA"
+        },
+        {
+            "loc": ["D", 0, 9],
+            "clue": "He manages 14 stores in America, taking nothing from union leader.",
+            "answer": "BEST BOY"
+        },
+        {
+            "loc": ["D", 0, 11],
+            "clue": "Pacino’s careful holding one of these!",
+            "answer": "OSCAR"
+        },
+        {
+            "loc": ["D", 1, 1],
+            "clue": "Automatic response to shock when either there is no resistance, or the resistance is lowered immediately.",
+            "answer": "FIGHT OR FLIGHT"
+        },
+        {
+            "loc": ["D", 1, 13],
+            "clue": "Unauthorised finale stopped randomly.",
+            "answer": "SELF-APPOINTED"
+        },
+        {
+            "loc": ["D", 6, 7],
+            "clue": "Heard story from cleaner.",
+            "answer": "LYE"
+        },
+        {
+            "loc": ["D", 6, 11],
+            "clue": "Take back topless dress worn by a bunch of people.",
+            "answer": "REPOSSESS"
+        },
+        {
+            "loc": ["D", 8, 5],
+            "clue": "Rich chocolate sauce odour cleared out to avoid, say, stomach ache.",
+            "answer": "GANACHE"
+        },
+        {
+            "loc": ["D", 8, 9],
+            "clue": "King beginning to try and sense corruption in parliament.",
+            "answer": "KNESSET"
+        },
+        {
+            "loc": ["D", 10, 3],
+            "clue": "Primarily over-acting celebrities return to take up fringe characters in movie!",
+            "answer": "CAMEO"
+        },
+        {
+            "loc": ["D", 10, 7],
+            "clue": "Regularly up for, like, a dance.",
+            "answer": "POLKA"
+        }
+    ]
+}

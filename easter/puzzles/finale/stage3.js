@@ -18,6 +18,9 @@ function start_stage_3() {
 
     send("\n")
     send("OPENING SECURE CONNECTION TO MASTER KEY FILE...")
+
+    send("Automated Message from Server: " + message3)
+
     send("Connection: <span id='stability'>STABLE</span>")
 
     make_file_pane("mk_file", blocks)
@@ -293,9 +296,7 @@ function finish() {
             send(`ERROR: Unrecognised Command: "${user_input.split(" ")[0]}"\n`)
         } else {
             send("FOUND (1) SECRET:\n")
-            send("I lied about the out-of-bounds zones...")
-            send("You can find the Grand Prize in a location oft guarded by a Fearsome Beast")
-            send("Beath Machines than control the forces of Darkness and Time")
+            send("The Grand Prize was right under your fingertips all along!")
         }
     
     })

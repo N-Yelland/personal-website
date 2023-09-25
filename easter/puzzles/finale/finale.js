@@ -87,12 +87,13 @@ window.countdown = setInterval(function() {
 
 // DATA
 
-const init_time = "30:00"
+const init_time = "20:00"
 const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 const numbers = '0123456789'
 
-const message1 = "MEMO: dont leave the manual in the photocopier!!!!"
-const message2 = "MEMO: stop using the manual as a bookmark!!! Also talk to someone about finally planning that garden!"
+const message1 = "MEMO: dont leave the manual in the photocopier!"
+const message2 = "MEMO: don't accidentally submit the manual instead of my dissertation!!"
+const message3 = "MEMO: stop hiding the manual under the rug. there's no need to be so paranoid!!!"
 
 $.getJSON("finale/data.json", function(data) {
     // This collates the various data used throughout the finale (stored in data.json) into different
@@ -214,7 +215,7 @@ function launch_terminal() {
         
         send(`\nTIME UNTIL SESSION TERMINATION: <span id='timer'>${init_time}</span>`)
 
-        start_stage_1()
+        start_stage_3()
     })
     
 }

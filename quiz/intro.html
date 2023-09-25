@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>The Quiz Grid</title>
+        <link rel="stylesheet" href="final-style.css">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+
+        <style>
+            body {
+                background: grey;
+                margin: 0;
+            }
+
+            main {
+                background: rgb(0, 0, 0);
+                width: 100%;
+                height: 100vh;
+                margin: 0;
+                padding: 10pt;
+                box-sizing: border-box;
+                font-family: 'Playfair Display', serif;
+                
+            }
+
+            .q {
+                background-color: transparent;
+                perspective: 1000px; /* Remove this if you don't want the 3D effect */
+                transform: translate(-50%, -50%);
+                position: fixed;
+                transition: all 1.2s;
+                font-family: 'Playfair Display', serif;
+                
+                z-index: 0;
+            }
+
+            .q-inner {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                transition: transform 1.2s ;
+                transform-style: preserve-3d;
+            }
+
+            .q:not(#start-btn) {
+                pointer-events: none;
+            }
+
+            #start-btn {
+                cursor: pointer;
+                font-size: .75em;
+            }
+
+            .q-back:hover {
+                border-color: white;
+                filter: brightness(1.1);
+                transform: scale(1.05) rotateY(180deg);
+            }
+
+            .q.open .q-inner {
+                transform: rotateY(180deg);
+            }
+
+            .q.open {
+                z-index: 2;
+            }
+
+            .q-front, .q-back {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                -webkit-backface-visibility: hidden; /* Safari */
+                backface-visibility: hidden;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+
+                /*background-color: rgb(253, 106, 86)*/
+                background: rgb(252,66,60);
+                background: linear-gradient(180deg, rgb(255, 105, 100) 0%, rgb(255, 79, 79) 100%);
+                
+                color: black;
+                display: flex;
+                
+                font-weight: bolder;
+                border-radius: 20pt;
+                border: 3pt solid rgb(255, 213, 201);
+                box-sizing: border-box;
+
+                box-shadow: 5px 10px #888888;
+                transition: border-color, filter, transform 0.25s;
+            }
+
+            .xmas .q-front, .xmas .q-back {
+                background: linear-gradient(180deg, rgb(49, 175, 60) 0%, rgb(25, 93, 21) 100%);
+                border: 3pt solid rgb(210, 255, 214);
+                color: white;
+            }
+
+            .q-front {
+                font-size: 2em;
+                cursor: pointer;
+                padding: 5pt;
+                filter: grayscale(1);
+            }
+
+            .q-back {
+                padding-left: 7.5%;
+                padding-right: 7.5%;
+                transform: rotateY(180deg);
+                display: flex;
+                flex-direction: column;
+                font-size: 1.5em;
+            }
+
+            .content{
+                margin-top: 0.5em;
+                margin-bottom:0.75em;
+                font-size: 3em;
+            }
+
+            #template{
+                display: none;
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <main>
+            <div id="template" class="q noselect">
+                <div class="q-inner">
+                    <div class="q-front"></div>
+                    <div class="q-back"><div class="content"></div></div>
+                </div>
+            </div>
+        </main>3
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+
+    <script src="cookies.js"></script>
+    <script src="config.js"></script>
+    <script src="grid.js"></script>
+    
+    <script>
+        var R = 5, C = 5; // # of rows and columns in grid
+        //var VM = 12, HM = 15; //margin in vw/vh
+        //var S = 4; //separaion in vw/vh
+
+        var labels = new Array(R*C);
+        var title_text = game_title
+
+        var xmas_sfx = new Audio("media/sfx/sleighbells_long.wav")
+
+        var intro_music = new Audio("media/sfx/intro_music.wav");
+        var intro_length = 8140 //ms
+        var begin_sfx = new Audio("media/sfx/begin_sound.wav");
+        
+
+        var words = title_text.split("/");
+        for (var r = 0; r < R; r++) {
+            for (var c = 0;  c < C; c++) {
+                if (words[r]) {
+                    labels[r*R+c] = words[r][c];
+                }
+            }
+        }
+
+        labels[22] = "Begin"
+
+        for (var r = 0; r < R; r++) {
+            for (var c = 0;  c < C; c++) {
+                new_q = build_question({
+                    title: "",
+                    question: labels[r*R+c]
+                });
+
+                if (xmas && (r + c) % 2 == 0) {
+                    new_q.addClass("xmas");
+                }
+
+                new_q.css({
+                    top:  VM + r*(100-2*VM)/(R-1) + "vh",
+                    left: HM + c*(100-2*HM)/(C-1) + "vw",
+
+                    height: 100/R - S + "vh",
+                    width: 100/C - S + "vw",
+                });
+
+                $("body").append(new_q);
+            }
+        }
+
+        $(document).ready(function () {
+            // click anywhere to start animation
+            $(document).on("keypress", function (e) {
+                if (e.key == " ") {
+                    start_intro();
+                    $(document).off("keypress");
+                }
+            });
+        });
+        
+        function start_intro() {
+            // resets local game info!
+            clearCookies()
+
+            // plays sound - final hit is at 8140ms
+            intro_music.play();
+
+            if (xmas) {
+                setTimeout(function () {
+                    console.log("Playing Xmas SFX...")
+                    xmas_sfx.play();
+                }, intro_length);
+            }
+
+            var t = intro_length/(R*C)
+
+            var order = [...Array(R*C-1).keys()];
+
+            var order = order
+                .map(value => ({ value, sort: Math.random() }))
+                .sort((a, b) => a.sort - b.sort)
+                .map(({ value }) => value);
+
+            order.splice(22, 0, R*C) // ensures that #22 is the last to flip
+
+            // randomly flip tiles to reveal title.
+            $(".q:not(#template)").each(function (i) {
+                var q = $(this);
+                setTimeout(function () {
+                    if (i == 22) {
+                        q.attr("id", "start-btn");
+                        q.click(function (e) {
+                            begin_sfx.play();
+                            console.log("Starting game...");
+                            start_game();
+                        });
+                    }
+                    q.addClass("open");
+                }, t*order[i]);
+            });
+        }
+
+        var t2 = 5250/(R*C);
+        function start_game() {
+            $(".q:not(#template)").each(function (index) {
+                var q = $(this);
+                setTimeout(function () {
+                    q.animate({
+                        opacity: 0
+                    }, 100);
+                }, t2*index);
+            });
+
+            //redirect to grid.html
+            setTimeout(function () {
+                window.location.replace("grid.html");
+            }, 5250);//500 + 100*R*C
+        }
+
+    </script>
+
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Quiz Grid</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="final-style.css">
+        
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <main>
+            <div id="template" class="q noselect">
+                <div class="q-inner">
+                    <div class="q-front"></div>
+                    <div class="q-back">
+                        <i class="material-icons icon close">close</i>
+                        <div class="title"></div>
+                        <div class="media">
+                            <audio controls>
+                                <source>
+                                Error: Your browser does not support audio playback.
+                            </audio>
+                            <img>
+                        </div>
+                        <div class="content"></div>
+                        <div class="btn hint-btn">
+                            <div class="label no select">Reveal Hint</div>
+                            <div class="hint"></div>
+                        </div>
+                        <div class="btn answer-btn">
+                            <div class="label noselect">Reveal Answer</div>
+                            <div class="answer"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="screen" class="screen"></div>
+            <div id="img-screen" class="screen"></div>
+            <div id="top-screen" class="screen"></div>
+
+            <div id="scoreboard">
+                <div id="scoreboard-title">Scoreboard</div>
+
+                <div id="player-template" class="player">
+                    <i class="material-icons icon close noselect">close</i>
+                    <i class="material-icons icon shuffle noselect">sync</i>
+                    <div class="player-name" contenteditable="true"></div>
+                    <div class="player-score">
+                        <div class="score-num">0</div>
+                        <div class="score-btn sub noselect">-</div>
+                        <div class="score-btn add noselect">+</div>
+                    </div>
+                </div>
+
+                <div id="new-player" class="player noselect">
+                    <i class="material-icons plus">add_circle_outline</i>
+                    Click to add new player
+                </div>
+            </div>
+
+            <div id="counter" class="variable-bar">
+                <div id="counter-fill" class="variable-bar-fill"></div>
+                <div id="counter-num" class="variable-bar-num">0</div>
+            </div>
+
+            <div id="timer" class="variable-bar">
+                <div id="timer-fill" class="variable-bar-fill"></div>
+                <div id="timer-num" class="variable-bar-num">30</div>
+            </div>
+
+            <div id="final">
+                <div id="pause-icon">
+                    <i class="material-icons pause">pause</i>
+                </div>
+                <div id="buzzer-alert" class="alert">
+                    <p>player_name</p> Buzzed In!
+                </div>
+                <div id="winner-alert" class="alert disco">
+                    <p>player_name</p> are the Winners!
+                </div>
+                <div id="red-line"></div>
+                <div id="thankyou-msg" class="alert">Thank you for playing!</div>
+            </div>
+
+        </main>
+    </body>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/svg.js/2.6.5/svg.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/jszip.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.8.0/xlsx.js"></script>
+
+    <script src="cookies.js"></script>
+    <script src="config.js"></script>
+    <script src="grid.js"></script>
+    <script src="final.js"></script>
+
+</html>

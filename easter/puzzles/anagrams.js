@@ -14,7 +14,7 @@ function get_answer(entry_box) {
 }
 
 const correct_answers = [
-    "KINDER", "POACHED", "DINOSAUR", "FREERANGE"
+    "FLORENTINE", "BENEDICT", "HARDBOILED"
 ]
 
 $(document).on("keyup", function () {
@@ -30,7 +30,7 @@ $(document).on("keyup", function () {
         }
     })
 
-    if (num_correct == 4) {
+    if (num_correct == correct_answers.length) {
         complete_puzzle()
     }
 

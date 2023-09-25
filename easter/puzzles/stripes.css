@@ -8,7 +8,11 @@
     --orange: rgb(255, 123, 0);
     --orange-light: rgb(255, 169, 89);
 
-    --blue: rgb(0, 143, 124);
+    --pink: rgb(240, 92, 227);
+    --pink-light: rgb(255, 197, 250);
+
+    --blue: rgb(51, 173, 204);
+    --blue-light: rgb(155, 220, 236);
 }
 
 
@@ -73,5 +77,29 @@
         to bottom,
         var(--purple-light),
         var(--purple)
+    );
+}
+
+.pink {
+    background: linear-gradient(
+        to bottom,
+        var(--pink-light),
+        var(--pink)
+    );
+}
+
+.gold {
+    background: linear-gradient(
+        to bottom,
+        var(--gold-light),
+        var(--gold)
+    );
+}
+
+.blue {
+    background: linear-gradient(
+        to bottom,
+        var(--blue-light),
+        var(--blue)
     );
 }

@@ -1,0 +1,136 @@
+{
+    "questions" : [
+        {
+            "title": "Black Holes",
+            "question": "Named after its discoverer, what name is given to the radius of the event horizon of a spherical non-rotating black hole?",
+            "hint": "It's a German name that literally means 'black shield'.",
+            "answer": "Schwarzschild Radius"
+        },{
+            "title": "Rugby Union",
+            "question": "If a team scores three tries, two of which are converted, and a penalty goal, what is their total score?",
+            "hint": "Hint: penalty goals are worth 3, conversions are worth 2.",
+            "answer": "22"
+        },{
+            "title": "Mesopotamian<br>Culture",
+            "question": "One of the earliest surviving works of literature is the Epic of Gilgamesh. What language was it originally written in?",
+            "hint" : "It's not Sumerian or Babylonian",
+            "answer": "Akkadian"
+        },{
+            "title": "Blade Runner",
+            "question": "What novel served as the primary basis for the 1982 film <em>Blade Runner</em>?",
+            "hint": "It was written by Philip K. Dick.",
+            "answer": "<em>Do Androids Dream of Electric Sheep?</em>"
+        },{
+            "title": "Alchemy",
+            "question": "What does the term ‘chrysopoeia’ refer to?",
+            "hint": "The mythical philosopher’s stone supposedly aided in this task.",
+            "answer": "Creation/Transumtation of gold"
+        },{
+            "title": "Kurt Vonnegut",
+            "question": "Which novel by Vonnegut bears the alternative title <em>The Children’s Crusade: A Duty-Dance with Death</em>?",
+            "hint": "It contains the number 'five'.",
+            "answer": "<em>Slaughterhouse-Five</em>"
+        },{
+            "title": "The Kardashians",
+            "question": "Robert Kardashian, Kim’s father, gained recognition as his role as the defence attorney in which high profile murder trial?",
+            "hint": "The defendant bore the nickname 'The Juice'.",
+            "answer": "The trial of O. J. Simpson"
+        },{
+            "title": "Talking Animals",
+            "question": "<em>Watership Down</em> is a 1972 novel by Richard Adams featuring anthropomorphised versions of which creatures?",
+            "hint": "The Latin name of the creatures is <em>Oryctolagus cuniculus.</em>"
+        },{
+            "title": "Hieronymus<br>Bosch",
+            "question": "What is the name of this 1482 triptych (3 panel painting) by Dutch painter Hieronymus Bosch?",
+            "hint": "It's named after the Biblical scene depicted in the central panel",
+            "answer": "<em>The Last Judgement</em>"
+        },{
+            "title": "Oliver Cromwell",
+            "question": "What name is given to the time period in British history during which Oliver Cromwell (and later his son) held the title Lord Protector?",
+            "hint": "It’s Latin for ‘between reign’.",
+            "answer": "Interregnum"
+        },{
+            "title": "Organic Chemistry",
+            "question": "The functional group of an aldehyde contains a double bond between which two elements?",
+            "hint": "The same double bond appears in all carboxylic acids.",
+            "answer": "Carbon and Oxygen"
+        },{
+            "title": "Biological<br>Taxonomy",
+            "question": "What is the defining characteristic of eukaryotes, which make up one of three domains of life on earth?",
+            "hint": "Aniamls, plants, algae, and fungi are all eukaryotes",
+            "answer": "Their cells have a nucleus"
+        },{
+            "title": "Barack Obama",
+            "question": "While this fact was disputed by Donald Trump, in which state of America was Barack Obama born?",
+            "hint": "It's the only American state without any straight-line borders.",
+            "answer": "Hawaii"
+        },{
+            "title": "Indonesian<br>Geography",
+            "question": "Name any one of the three countries with which Indonesia shares a land border.",
+            "hint": "Two of the borders are on the Islands of Timor and Borneo.",
+            "answer": "East Timor, Malaysia, Papua New Guinea"
+        },{
+            "title": "French Cuisine",
+            "question": "'Potatoes au gratin' is the American name for which French potato-based dish?",
+            "hint": "The dish consists of sliced potatoes baked in milk or cream.",
+            "answer": "Dauphinoise potatoes"
+        },{
+            "title": "Liqueurs",
+            "question": "Give the name of the French herbal liqueur which inspired the name of a colour after its unqiue yellow-green hue.",
+            "hint": "It's also the name of a mountain range near Grenoble.",
+            "answer": "Chartreuse"
+        },{
+            "title": "Arcade Games",
+            "question": "Which 1981 arcade game is shown here? It was highly successful, and its influence can still be seen in modern mobile games such as <em>Crossy Road</em>",
+            "hint": "The objective of the game is to direct frogs to their homes while navigating lethal hazards.",
+            "answer": "<em>Frogger</em>"
+        },{
+            "title": "Video Game Music",
+            "question": "This is the original start-up sound of which classic video game?",
+            "hint": "More iconic audio from this game include the titular character's 'wakka-wakka'.",
+            "answer": "<em>Pac-Man</em>"
+        },{
+            "title": "Stephen Spielberg",
+            "question": "Stpehen Spielberg has won the Acadmey Award for Best Director on two occasions, for <em>Schindler's List</em> and which other film?",
+            "hint": "The film stars Tom Hanks and Matt Damon.",
+            "answer": "<em>Saving Private Ryan</em>"
+        },{
+            "title": "3D Shapes",
+            "question": "How many edges does a regular dodecahedron have?",
+            "hint": "A dodecahedron has 12 pentagonal faces.",
+            "answer": "30"
+        },{
+            "title": "Trigonometry",
+            "question": "What trigognometric function is obtained as the ratio of the sine and cosine functions?",
+            "hint": "It shares its name with a line that meets a circle at exactly one point.",
+            "answer": "Tangent (tan)"
+        },{
+            "title": "Leonardo da Vinci",
+            "question": "This work, attributed in whole or in part to da Vinci, sold in 2017 setting the record for the most expensive painting ever sold at public auction. But what was the name of the painting?",
+            "hint": "It is a Latin phrase meaning 'Saviour of the World'",
+            "answer": "<em>Salvator Mundi</em>"
+        },{
+            "title": "Luxury Hotels",
+            "question": "London has the most five-star hotels of any city in the world. But which city comes second?",
+            "hint": "One such five-star hotel in this city is the Burj Al Arab",
+            "answer": "Dubai"
+        },{
+           "title": "Enrico Fermi",
+           "question": "Enrico Fermi was an Italian physicist, who gives his name to the 'Fermi paradox' which highlights the apparently unexpected lack of what in the universe given high estimates for its existence?",
+           "hint": "The SETI project aims to eliminate this paradox.",
+           "answer": "Extraterrestrial life"
+        },{
+            "title": "Football",
+            "question": "",
+            "hint": "",
+            "answer": ""
+        },{
+            "title": "Psychopaths",
+            "question": "An independent group of psychologists named Anton Chigurh as the <em>Most Realistic Depiction of a Psychopath</em>, but what work is this character from?",
+            "hint": "In the film adaptation, he is played by Javier Bardem",
+            "answer": "<em>No Country for Old Men</em>"
+        },{
+
+        }
+    ]
+}

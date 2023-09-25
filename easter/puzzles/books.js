@@ -1,14 +1,12 @@
 const correct_answer = [
-    "JE B",
-    "G JO",
-    "FFA DK",
-    "SG JP",
-    "FQOTO JH",
-    "CN BL",
-    "HOTS MA",
-    "TTWH KH",
-    "R BH",
-    "FO BB"
+    "V TA",
+    "IN PM",
+    "CD OT",
+    "GP LAUM",
+    "RD TSG",
+    "NS C",
+    "AB TLLPB",
+    "ST T"
 ]
 
 $(document).ready(function () {
